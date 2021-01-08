@@ -13,73 +13,15 @@
     Page-level template for everything but notices.
 {% endcomment %}
 
-<!--[if lt IE 8]>
-    <div class="browser-warning displayed">
-        <h2>Please note that the eRegulations tool does not support Internet Explorer version 7 or below.</h2>
-        <ul>
-            <li>To improve your experience, please <a href="http://browsehappy.com/">upgrade your browser <span class="cf-icon cf-icon-right"></span></a></li>
-            <li>If you are using IE8 or later, you may need to turn off "Compatibility View."</li>
-        </ul>
-    </div>
-<![endif]-->
-
 <header id="site-header" class="reg-header chrome-header" role="banner">
 {% include "regulations/main-header.html" %}
 
-<div class="sub-head
-            {% block sub-head-class %}
+<div class="sub-head 
               {% if not version_span.timeline.is_present %}
               non-current
-              {% endif %}
-            {% endblock %}">
-    {% block sub-head-skip-nav %}
+              {% endif %}">
     <a href="#content-wrapper" class="hidden-text">Skip to main content</a> <!-- skip to content link for screen readers-->
-    {% endblock %}
-    {% block sub-head-drawer-icons %}
-    <div class="toc-head">
-        {% block sidebar-drawer-icons %}
-        <a href="#" id="panel-link" class="toc-toggle panel-slide"
-           title="Navigation drawer toggle">
-          {% include "regulations/svgs/open-caret.svg" %}
-          {% include "regulations/svgs/close-caret.svg" %}
-        </a>
-        {% endblock %}
-        <ul class="drawer-toggles">
-          {% block sidebar-icons %}
-            {% block sidebar-toc-link %}
-              {% spaceless %}
-                <li>
-                  <a href="#table-of-contents" id="menu-link" class="toc-nav-link current" title="Table of Contents">
-                    <span class="icon-text">Table of Contents</span>
-                    {% include "regulations/svgs/table-of-contents.svg" %}
-                  </a>
-                </li>
-              {% endspaceless %}
-            {% endblock %}
-            {% block sidebar-history-link %}
-              {% spaceless %}
-                <li>
-                  <a href="#timeline" id="timeline-link" class="toc-nav-link" title="Regulation Timeline">
-                    <span class="icon-text">Regulation Timeline</span>
-                    {% include "regulations/svgs/timeline.svg" %}
-                  </a>
-                </li>
-              {% endspaceless %}
-            {% endblock %}
-            {% block sidebar-search-link %}
-              {% spaceless %}
-                <li>
-                  <a href="#search" id="search-link" class="toc-nav-link" title="Search">
-                    <span class="icon-text">Search</span>
-                    {% include "regulations/svgs/search.svg" %}
-                  </a>
-                </li>
-              {% endspaceless %}
-            {% endblock %}
-          {% endblock %}
-        </ul>
-    </div> <!-- /toc-head-->
-    {% endblock %}
+    {% include "regulations/toc-head.html" %}
     {% block sub-head-content %}
     <div id="content-header" class="header-main group">
         <div class="wayfinding">
