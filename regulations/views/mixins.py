@@ -5,26 +5,29 @@ from django.conf import settings
 
 from regulations.generator import api_reader
 
-class SidebarMixin:
+class SidebarContextMixin:
     # contains either class paths or class objects (not instances)
-    components = settings.SIDEBARS
+    sidebar_classes = settings.SIDEBARS
+    client = api_reader.ApiReader()
 
     def get_context_data(self, **kwargs):
-        context = super(SidebarMixin, self).get_context_data(**kwargs)
+        context = super(SidebarContextMixin, self).get_context_data(**kwargs)
 
-        client = api_reader.ApiReader()
+        sidebars = []
+        for class_or_class_path in self.sidebar_classes:
+            sidebars.append(
+                self.build_sidebar_context(
+                    class_or_class_path,
+                    context['label_id'],
+                    context['version']))
 
-        klasses = []
-        for class_or_class_path in self.components:
-            if isinstance(class_or_class_path, six.string_types):
-                module, class_name = class_or_class_path.rsplit('.', 1)
-                klasses.append(getattr(import_module(module), class_name))
-            else:
-                klasses.append(class_or_class_path)
-
-        sidebars = [klass(context['label_id'], context['version'])
-                    for klass in klasses]
-        context['sidebars'] = [sidebar.full_context(client, self.request)
-                               for sidebar in sidebars]
+        context['sidebars'] = sidebars
 
         return context
+
+    def build_sidebar_context(self, sidebar_class, label_id, version):
+        if isinstance(sidebar_class, six.string_types):
+            module_name, class_name = sidebar_class.rsplit('.', 1)
+            sidebar_class = getattr(import_module(module_name), class_name)
+        sidebar = sidebar_class(label_id, version)
+        return sidebar.full_context(self.client, self.request)

@@ -10,11 +10,11 @@ from regulations.generator.versions import fetch_grouped_history
 from regulations.generator.toc import fetch_toc
 from regulations.generator.section_url import SectionUrl
 from regulations.views.chrome import version_span
-from regulations.views.mixins import SidebarMixin
+from regulations.views.mixins import SidebarContextMixin
 
 
 
-class SectionView(SidebarMixin, TemplateView):
+class SectionView(SidebarContextMixin, TemplateView):
 
     url_path_view = 'chrome_section_view'
 
