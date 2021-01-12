@@ -27,6 +27,13 @@ class SectionView(SidebarContextMixin, TemplateView):
         return generator.layers(
             utils.layer_names(self.request), 'cfr', label_id,
             self.sectional_links, version)
+    
+    def get_section_tree(self, label_id, version):
+        # do we have that data?
+        tree = generator.get_tree_paragraph(label_id, version)
+        if tree is None:
+            raise Http404
+        return tree
   
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -36,10 +43,7 @@ class SectionView(SidebarContextMixin, TemplateView):
         label_id = context['label_id']
         version = context['version']
 
-        # do we have that data?
-        tree = generator.get_tree_paragraph(label_id, version)
-        if tree is None:
-            raise Http404
+        tree = self.get_section_tree(label_id, version)
 
         # unfortunatly rendering it...
         layers = list(self.determine_layers(label_id, version))
