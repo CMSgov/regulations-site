@@ -5,6 +5,7 @@ from django.conf import settings
 
 from regulations.generator import api_reader
 
+
 class SidebarContextMixin:
     # contains either class paths or class objects (not instances)
     sidebar_classes = settings.SIDEBARS
