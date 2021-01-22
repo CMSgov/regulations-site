@@ -11,7 +11,7 @@ from regulations.views.diff import ChromeSectionDiffView
 from regulations.views.diff import PartialSectionDiffView
 from regulations.views.partial import PartialDefinitionView
 from regulations.views.partial import PartialParagraphView
-from regulations.views.partial import PartialRegulationView, PartialSectionView
+from regulations.views.partial import PartialRegulationView
 from regulations.views.section import SectionView
 from regulations.views import partial_interp
 from regulations.views.partial_search import PartialSearch
