@@ -5,8 +5,7 @@ from regulations.views.about import about
 from regulations.views.chrome_breakaway import ChromeSXSView
 from regulations.views.chrome import (
     ChromeView, ChromeLandingView,
-    ChromeSearchView,
-    ChromeSubterpView)
+    ChromeSearchView)
 from regulations.views.diff import ChromeSectionDiffView
 from regulations.views.diff import PartialSectionDiffView
 from regulations.views.partial import PartialDefinitionView
@@ -100,13 +99,6 @@ urlpatterns = [
         SectionView.as_view(),
         name='chrome_section_view'),
 
-    # Subterp, interpretations of a while subpart, emptypart or appendices
-    # Example: http://.../201-Subpart-A-Interp/2013-10706
-    #          http://.../201-Subpart-Interp/2013-10706
-    #          http://.../201-Appendices-Interp/2013-10706
-    url(rf'^(?P<label_id>{match_sub_interp})/(?P<version>{match_version})$',
-        lt_cache(ChromeSubterpView.as_view()), name=ChromeSubterpView.version_switch_view),
-
     # Interpretation of a section/paragraph or appendix
     # Example: http://.../201-4-Interp/2013-10704
     url(rf'^(?P<label_id>{match_interp})/(?P<version>{match_version})$',
@@ -162,16 +154,6 @@ urlpatterns = [
     # Example: http://.../partial/definition/201-2-g/2011-1738
     url(rf'^partial/definition/(?P<label_id>{match_paragraph})/(?P<version>{match_version})$',
         lt_cache(PartialDefinitionView.as_view()), name='partial_definition_view'),
-
-    # A regulation section without chrome
-    # Example: http://.../partial/201-4/2013-10704
-
-    # Subterp, interpretations of a whole subpart, emptypart or appendices
-    # Example: http://.../partial/201-Subpart-A-Interp/2013-10706
-    #          http://.../partial/201-Subpart-Interp/2013-10706
-    #          http://.../partial/201-Appendices-Interp/2013-10706
-    url(rf'^partial/(?P<label_id>{match_sub_interp})/(?P<version>{match_version})$',
-        lt_cache(partial_interp.PartialSubterpView.as_view()), name='partial_subterp_view'),
 
     # An interpretation of a section/paragraph or appendix without chrome.
     # Example: http://.../partial/201-2-Interp/2013-10704
