@@ -9,7 +9,6 @@ from regulations.views.chrome import (
 from regulations.views.diff import ChromeSectionDiffView
 from regulations.views.diff import PartialSectionDiffView
 from regulations.views.partial import PartialDefinitionView
-from regulations.views.partial import PartialParagraphView
 from regulations.views.partial import PartialRegulationView
 from regulations.views.section import SectionView
 from regulations.views import partial_interp
@@ -112,14 +111,6 @@ urlpatterns = [
             partial_class=PartialRegulationView,
             version_switch_view='chrome_regulation_view')),
         name='chrome_regulation_view'),
-
-    # A regulation paragraph with chrome
-    # Example: http://.../201-2-g/2013-10704
-    url(rf'^(?P<label_id>{match_paragraph})/(?P<version>{match_version})$',
-        lt_cache(ChromeView.as_view(
-            partial_class=PartialParagraphView,
-            version_switch_view='chrome_paragraph_view')),
-        name='chrome_paragraph_view'),
 
     # A regulation landing page
     # Example: http://.../201

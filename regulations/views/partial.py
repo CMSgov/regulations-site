@@ -64,35 +64,6 @@ class PartialSectionView(PartialView):
 
         return context
 
-
-class PartialParagraphView(PartialSectionView):
-    """ Single paragraph of a regtext """
-    def transform_context(self, context, builder):
-        node = builder.tree
-        # Wrap with layers until we reach a section
-        while len(node['label']) > 2:
-            node = {'node_type': node['node_type'],
-                    'children': [node],
-                    'label': node['label'][:-1]}
-
-        # added to give the proper parent container ID
-        # when interp headers are rendered
-        node['markup_id'] = context['label_id']
-
-        # One more layer for regtext
-        if node['node_type'] == REGTEXT:
-            node = {'node_type': EMPTYPART,
-                    'children': [node],
-                    'label': node['label'][:1] + ['Subpart']}
-
-        context['markup_page_type'] = 'reg-section'
-        context['tree'] = {'children': [node], 'label': node['label'][:1],
-                           'node_type': REGTEXT}
-        context['navigation'] = self.section_navigation(
-            context['label_id'], context['version'])
-        return context
-
-
 class PartialDefinitionView(PartialView):
     """ Single paragraph of a regtext formatted for display
         as an inline interpretation """
@@ -106,7 +77,6 @@ class PartialDefinitionView(PartialView):
         context['node']['section_id'] = '%s-%s' % (
             builder.tree['label'][0], builder.tree['label'][1])
         return context
-
 
 class PartialRegulationView(PartialView):
     """ Entire regulation without chrome """
