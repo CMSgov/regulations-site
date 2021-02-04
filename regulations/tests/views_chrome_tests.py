@@ -129,6 +129,7 @@ def test_chrome_diff_redirect_label_paragraph(label, expected):
     view = chrome.ChromeView()
     assert view.diff_redirect_label(label, []) == expected
 
+
 def test_chrome_search_version_present(monkeypatch, rf):
     """If a version is in the request, we use it to derive the label_id."""
     monkeypatch.setattr(chrome, 'utils', Mock())

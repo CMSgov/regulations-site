@@ -4,8 +4,8 @@ from django.views.generic.base import TemplateView
 
 from regulations.generator import generator
 from regulations.generator.html_builder import CFRHTMLBuilder
-from regulations.generator.node_types import EMPTYPART, REGTEXT, label_to_text
-from regulations.views import navigation, utils
+from regulations.generator.node_types import label_to_text
+from regulations.views import utils
 
 
 class PartialView(TemplateView):

@@ -1,7 +1,6 @@
 from unittest import TestCase
 
 from mock import patch
-from django.http import Http404
 from django.test import RequestFactory
 
 from regulations.generator.node_types import INTERP

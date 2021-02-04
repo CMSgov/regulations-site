@@ -1,8 +1,4 @@
-from django.http import Http404
-
 from regulations.generator import generator, node_types
-from regulations.generator.html_builder import CFRHTMLBuilder
-from regulations.generator.subterp import filter_by_subterp
 from regulations.views.partial import PartialView
 
 

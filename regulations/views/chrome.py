@@ -6,7 +6,6 @@ from regulations.generator import generator
 from regulations.generator.node_types import label_to_text, type_from_label
 from regulations.generator.section_url import SectionUrl
 from regulations.generator.sidebar.help import Help as HelpSideBar
-from regulations.generator.subterp import filter_by_subterp
 from regulations.generator.toc import fetch_toc
 from regulations.generator.versions import fetch_grouped_history
 from regulations.views import utils
@@ -150,6 +149,7 @@ class ChromeView(TemplateView):
         self._assert_good(response)
         response.render()
         return response.content
+
 
 class ChromeSearchView(ChromeView):
     """Search results with chrome"""
