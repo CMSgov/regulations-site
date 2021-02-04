@@ -38,32 +38,6 @@ class PartialView(TemplateView):
         return self.transform_context(context, builder)
 
 
-class PartialSectionView(PartialView):
-    """ Single section of reg text """
-    template_name = 'regulations/regulation-content.html'
-
-    def section_navigation(self, label, version):
-        nav_sections = navigation.nav_sections(label, version)
-        if nav_sections:
-            p_sect, n_sect = nav_sections
-
-            return {'previous': p_sect, 'next': n_sect,
-                    'page_type': 'reg-section'}
-
-    def transform_context(self, context, builder):
-        child_of_root = builder.tree
-        #   Add a layer to account for subpart if this is regtext
-        if builder.tree['node_type'] == REGTEXT:
-            child_of_root = {
-                'node_type': EMPTYPART,
-                'children': [builder.tree]}
-        context['markup_page_type'] = 'reg-section'
-        context['tree'] = {'children': [child_of_root]}
-        context['navigation'] = self.section_navigation(
-            context['label_id'], context['version'])
-
-        return context
-
 class PartialDefinitionView(PartialView):
     """ Single paragraph of a regtext formatted for display
         as an inline interpretation """
@@ -77,6 +51,7 @@ class PartialDefinitionView(PartialView):
         context['node']['section_id'] = '%s-%s' % (
             builder.tree['label'][0], builder.tree['label'][1])
         return context
+
 
 class PartialRegulationView(PartialView):
     """ Entire regulation without chrome """
