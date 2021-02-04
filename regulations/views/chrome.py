@@ -12,7 +12,7 @@ from regulations.generator.versions import fetch_grouped_history
 from regulations.views import utils
 from regulations.views.reg_landing import regulation_exists, get_versions
 from regulations.views.reg_landing import regulation as landing_page
-from regulations.views.partial import PartialSectionView
+from regulations.views.partial import PartialView
 from regulations.views.partial_search import PartialSearch
 from regulations.views.sidebar import SideBarView
 from regulations.views import error_handling
@@ -181,7 +181,7 @@ class ChromeSearchView(ChromeView):
 class ChromeLandingView(ChromeView):
     """Landing page with chrome"""
     template_name = 'regulations/landing-chrome.html'
-    partial_class = PartialSectionView  # Needed to know sectional status
+    partial_class = PartialView
 
     def check_tree(self, context):
         pass    # Landing page doesn't perform this check
