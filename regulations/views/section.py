@@ -64,17 +64,7 @@ class SectionView(SidebarContextMixin, TemplateView):
         builder.tree = tree
         builder.generate_html()
 
-        child_of_root = builder.tree
-
-        # Add a layer to account for subpart if this is regtext
-        # maybe to account for when a section isn't in a subpart
-        # e.g. 433.1 isn't under a subpart
-        if builder.tree['node_type'] == REGTEXT:
-            child_of_root = {
-                'node_type': EMPTYPART,
-                'children': [builder.tree]}
-
-        return {'children': [child_of_root]}
+        return builder.tree
 
     def determine_layers(self, label_id, version):
         """Figure out which layers to apply by checking the GET args"""
