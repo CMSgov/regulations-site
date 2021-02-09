@@ -1,12 +1,13 @@
 {% comment %}
     Used once per section. Contained by subparts at the top level.
 {% endcomment %}
+{% load layers %}
 
 <section id="{{c.label | join:'-'}}" class="reg-section">
     {% if c.title %}
     <h3 class="section-title" tabindex="0"> {{c.title}} </h3>
     {% endif %}
-    {{c.text}}
+    {{c.text | internalcitation:c.label}}
     <div class="children">
     {% for node in c.children %}
     {% include "regulations/regulation_text.html" with c=node %}
