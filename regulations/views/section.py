@@ -1,6 +1,7 @@
 from django.views.generic.base import TemplateView
 from django.http import Http404
 
+from regulations.generator import api_reader
 from regulations.generator import generator
 from regulations.generator.html_builder import CFRHTMLBuilder
 from regulations.views import navigation, utils
@@ -21,6 +22,8 @@ class SectionView(SidebarContextMixin, TemplateView):
 
     sectional_links = True
 
+    client = api_reader.ApiReader()
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
@@ -38,7 +41,7 @@ class SectionView(SidebarContextMixin, TemplateView):
             raise error_handling.MissingContentException()
 
         c = {
-            'tree':                 self.get_tree(label_id, version),
+            'tree':                 self.get_regulation(label_id, version),
             'markup_page_type':     'reg-section',
             'navigation':           self.get_neighboring_sections(label_id, version),
             'formatted_id':         label_to_text(label_id_list, True, True),
@@ -53,18 +56,11 @@ class SectionView(SidebarContextMixin, TemplateView):
 
         return {**context, **c}
 
-    def get_tree(self, label_id, version):
-        # do we have that data?
-        tree = generator.get_tree_paragraph(label_id, version)
-        if tree is None:
+    def get_regulation(self, label_id, version):
+        regulation = self.client.regulation(label_id, version)
+        if regulation is None:
             raise Http404
-
-        layers = list(self.determine_layers(label_id, version))
-        builder = CFRHTMLBuilder(layers)
-        builder.tree = tree
-        builder.generate_html()
-
-        return builder.tree
+        return regulation
 
     def determine_layers(self, label_id, version):
         """Figure out which layers to apply by checking the GET args"""
