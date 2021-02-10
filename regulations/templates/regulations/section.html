@@ -2,35 +2,44 @@
 {% load static %}
 {% load macros %}
 {% block app_js %}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}"/>
 {% endblock %}
 
 {% block body %}
 
 <header>
-    {% include "regulations/main-header.html" %}
+    <div class="container">
+        {% include "regulations/main-header.html" %}
+    </div>
 </header>
 
-<aside>
+<aside class="left-sidebar">
     {% with nav_class='toc-nav__base toc-nav__cfr-viewer' toc_items=TOC top_toc=True %}
         {% include "regulations/toc.html" %}
     {% endwith %}
 </aside>
 
 <main>
-    <section>
-        {% include "regulations/regulation_text.html" with c=tree %}
-        {%include "regulations/navigation.html"%}
-    </section> <!-- /.reg-text -->        
+    <div class="container">
+        <section>
+            {% include "regulations/regulation_text.html" with c=tree %}
+            {% include "regulations/navigation.html" %}
+        </section> <!-- /.reg-text -->
+    </div>
 </main>
 
-<aside>
+<aside class="right-sidebar">
     <div>
         {%include "regulations/sidebar.html"%}
     </div>
 </aside>
 
+<div class="clearfix"></div>
+
 <footer>
-{% include "regulations/footer.html" %}
+    <div class="container">
+        {% include "regulations/footer.html" %}
+    </div>
 </footer>
 
 {% endblock %}

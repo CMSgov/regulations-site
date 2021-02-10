@@ -1,0 +1,60 @@
+/*
+ Layout
+ ==========================================================================
+ layout.scss defines the structural layout of the site
+ */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+   .clearfix:before,
+   .clearfix:after {
+       content: " "; /* 1 */
+       display: table; /* 2 */
+   }
+   
+   .clearfix:after {
+       clear: both;
+   }
+   
+   .clearfix {
+       *zoom: 1;
+   }
+
+/* ============================
+  	Grid
+============================ */
+
+.container {
+	max-width: 1280px;
+	margin: 0 auto;
+	width: 85%;
+	position: relative;
+} 
+
+header {
+}
+
+main {
+  float: left;
+  width: calc(100% - 800px);
+}
+
+aside {
+
+  &.left-sidebar {
+    float: left;
+    width: 400px;
+  }
+
+  &.right-sidebar {
+    float: right;
+    width: 400px;
+  }
+
+}
+
+footer {
+  
+}
