@@ -7,7 +7,7 @@
     {% if c.title %}
     <h3 class="section-title" tabindex="0"> {{c.title}} </h3>
     {% endif %}
-    {{c.text | internalcitation:c.label}}
+    {{c.text | internalcitation:c | safe}}
     <div class="children">
     {% for node in c.children %}
     {% include "regulations/regulation_text.html" with c=node %}
