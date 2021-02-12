@@ -29,10 +29,11 @@ class SectionView(SidebarContextMixin, TemplateView):
 
         # getting url info (label and version)
         # answering the question: what are we looking at?
-        label_id = context['label_id']
         version = context['version']
-        label_id_list = label_id.split('-')
-        reg_part = label_id_list[0]
+        reg_part = context["part"]
+        reg_section = context["section"]
+        label_id = f"{reg_part}-{reg_section}"
+        label_id_list = [reg_part, reg_section]
         toc = self.get_toc(reg_part, version)
         history = fetch_grouped_history(reg_part)
         meta = utils.regulation_meta(reg_part, version)

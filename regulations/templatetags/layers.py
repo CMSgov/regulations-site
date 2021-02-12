@@ -21,8 +21,8 @@ def internalcitation(value, arg):
         for citation in citations:
             original = value[citation["offsets"][0][0]:citation["offsets"][0][1]]
             # /433/section/112#433-112-c
-            url = reverse("reader_view", args=citation["citation"][:2]) + "#" + "-".join(citation["citation"])
-            context = {"citation": citation["citation"], "original": original }
+            url = reverse("reader_view", args=[*citation["citation"][:2], arg['version']]) + "#" + "-".join(citation["citation"])
+            context = {"citation": citation["citation"], "original": original, "url": url }
             rendered_citation = citation_template.render(context)
             value = value[:citation["offsets"][0][0]] + rendered_citation + value[citation["offsets"][0][1]:]
         return value
