@@ -37,7 +37,7 @@ class ChromeView(TemplateView):
     """ Base class for views which wish to include chrome. """
     template_name = 'regulations/chrome.html'
     #   Which view name to use when switching versions
-    version_switch_view = 'chrome_section_view'
+    version_switch_view = 'reader_view'
     sidebar_components = SideBarView.components
     partial_class = None
 
@@ -115,7 +115,6 @@ class ChromeView(TemplateView):
 
         context['version_span'] = version_span(
             context['history'], context['meta']['effective_date'])
-        context['version_switch_view'] = self.version_switch_view
         context['diff_redirect_label'] = self.diff_redirect_label(
             context['label_id'], toc)
 
@@ -136,7 +135,7 @@ class ChromeView(TemplateView):
 
         self.check_tree(context)
         self.add_main_content(context)
-        context['sidebar_content'] = self.sidebar(label_id, version)
+        # context['sidebar_content'] = self.sidebar(label_id, version)
 
         return context
 

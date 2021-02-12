@@ -31,7 +31,7 @@ def get_regulations_list(all_versions):
 
         reg = {'part': part,
                'meta': reg_meta,
-               'reg_first_section': first_section,
+               'reg_first_section': first_section.split("-")[1],
                'amendments': amendments}
 
         regs.append(reg)

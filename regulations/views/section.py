@@ -16,8 +16,6 @@ from regulations.views.mixins import SidebarContextMixin
 
 class SectionView(SidebarContextMixin, TemplateView):
 
-    url_path_view = 'chrome_section_view'
-
     template_name = 'regulations/section.html'
 
     sectional_links = True
@@ -51,7 +49,6 @@ class SectionView(SidebarContextMixin, TemplateView):
             'TOC':                  toc,
             'meta':                 meta,
             'version_span':         version_span(history, meta['effective_date']),
-            'version_switch_view':  self.url_path_view,
             'diff_redirect_label':  label_id,
         }
 

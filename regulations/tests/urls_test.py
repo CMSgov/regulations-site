@@ -8,11 +8,11 @@ class UrlTests(TestCase):
         self.assertEqual(r, '/about')
 
     def test_chrome_section_url(self):
-        r = reverse('chrome_section_view', args=('201-2', '2012-1123'))
+        r = reverse('reader_view', args=('201', '2', '2012-1123'))
         self.assertEqual(r, '/201-2/2012-1123')
 
         r = reverse(
-            'chrome_section_view', args=('201-2', '2012-1123_20121011'))
+            'reader_view', args=('201', '2', '2012-1123_20121011'))
         self.assertEqual(r, '/201-2/2012-1123_20121011')
 
     def test_sxs_url(self):
