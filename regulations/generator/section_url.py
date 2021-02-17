@@ -35,9 +35,8 @@ class SectionUrl(object):
 
             if sectional:
                 view_name = 'reader_view'
-                label = self.view_label_id(citation, version)
-                part = label.split("-")[0]
-                section = label.split("-")[1]
+                part = citation[0]
+                section = citation[1]
 
                 try:
                     url = reverse(view_name, args=(part, section, version))

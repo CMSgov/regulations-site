@@ -203,7 +203,7 @@ class ChromeLandingView(ChromeView):
 
         current, _ = get_versions(kwargs['label_id'])
         kwargs['version'] = current['version']
-        kwargs['label_id'] = utils.first_section(reg_part, current['version'])
+        kwargs['label_id'] = f"{reg_part}-{utils.first_section(reg_part, current['version'])}"
         return kwargs
 
 

@@ -28,7 +28,6 @@ def get_versions(label_id):
 
 
 def regulation(request, label_id):
-
     context = {}
     current_version, new_version = get_versions(label_id)
     if new_version:
@@ -37,7 +36,7 @@ def regulation(request, label_id):
 
     context['label_id'] = label_id
     context['reg_first_section'] = utils.first_section(
-        label_id, current_version['version']).split('-')[1]
+        label_id, current_version['version'])
     context['reg_part'] = label_id.split('-')[0]
 
     context['meta'] = utils.regulation_meta(label_id,

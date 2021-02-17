@@ -31,25 +31,19 @@ class SectionView(SidebarContextMixin, TemplateView):
         reg_part = context["part"]
         reg_section = context["section"]
         label_id = f"{reg_part}-{reg_section}"
-        label_id_list = [reg_part, reg_section]
         toc = self.get_toc(reg_part, version)
-        history = fetch_grouped_history(reg_part)
         meta = utils.regulation_meta(reg_part, version)
+        tree = self.get_regulation(label_id, version)
 
         if not meta:
             raise error_handling.MissingContentException()
 
         c = {
-            'tree':                 self.get_regulation(label_id, version),
-            'markup_page_type':     'reg-section',
+            'tree':                 tree,
             'navigation':           self.get_neighboring_sections(label_id, version),
-            'formatted_id':         label_to_text(label_id_list, True, True),
             'reg_part':             reg_part,
-            'history':              history,
             'TOC':                  toc,
             'meta':                 meta,
-            'version_span':         version_span(history, meta['effective_date']),
-            'diff_redirect_label':  label_id,
         }
 
         return {**context, **c}
