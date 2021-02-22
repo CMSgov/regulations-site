@@ -1,60 +1,41 @@
-/*
- Layout
- ==========================================================================
- layout.scss defines the structural layout of the site
- */
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-   .clearfix:before,
-   .clearfix:after {
-       content: " "; /* 1 */
-       display: table; /* 2 */
-   }
-   
-   .clearfix:after {
-       clear: both;
-   }
-   
-   .clearfix {
-       *zoom: 1;
-   }
-
-/* ============================
-  	Grid
-============================ */
-
-.container {
-	max-width: 1280px;
-	margin: 0 auto;
-	width: 85%;
-	position: relative;
-} 
+//-----------------------------------------------------------------------------------------
+// Layout: Working Layout to be Mostly Replaced by the CMS Design System grid
+//-----------------------------------------------------------------------------------------
 
 header {
+  padding: 2em;
+  border-bottom: 1px solid $primary_color;
+}
+
+.box {
+  display: flex;
 }
 
 main {
-  float: left;
+  display: table-cell;
   width: calc(100% - 800px);
+  padding: 1em 2em;
 }
 
 aside {
+  padding: 1em 2em;
 
   &.left-sidebar {
-    float: left;
+    display: table-cell;
     width: 400px;
+    background: $reverse_background_color;
   }
 
   &.right-sidebar {
-    float: right;
+    display: table-cell;
     width: 400px;
+    border-left: 1px solid $border_color;
   }
 
 }
 
 footer {
-  
+  padding: 1em 2em;
+  border-top: 1px solid $border_color;
 }

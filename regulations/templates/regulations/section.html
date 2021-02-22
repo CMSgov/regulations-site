@@ -8,36 +8,35 @@
 {% block body %}
 
 <header>
-    <div class="container">
-        {% include "regulations/main-header.html" %}
-    </div>
+    {% include "regulations/main-header.html" %}
 </header>
 
-<aside class="left-sidebar">
-    {% with nav_class='toc-nav__base toc-nav__cfr-viewer' toc_items=TOC top_toc=True %}
-        {% include "regulations/toc.html" %}
-    {% endwith %}
-</aside>
+<div class="box">
 
-<main>
-    <div class="container">
+    <aside class="left-sidebar">
+        {% with nav_class='toc-nav__base toc-nav__cfr-viewer' toc_items=TOC top_toc=True %}
+            {% include "regulations/toc.html" %}
+        {% endwith %}
+    </aside>
+
+    <main>
         <section>
             {% include "regulations/regulation_text.html" with c=tree %}
             {% include "regulations/navigation.html" %}
         </section> <!-- /.reg-text -->
-    </div>
-</main>
+    </main>
 
-<aside class="right-sidebar">
-    <div>
-        {%include "regulations/sidebar.html"%}
-    </div>
-</aside>
+    <aside class="right-sidebar">
+        <div>
+            {%include "regulations/sidebar.html"%}
+        </div>
+    </aside>
 
-<div class="clearfix"></div>
+</div>   
 
 <footer>
     <div class="container">
+        <h4>Footer</h4>
         {% include "regulations/footer.html" %}
     </div>
 </footer>

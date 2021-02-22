@@ -1,10 +1,23 @@
-/*
-Main.scss
-==========================================================================
-main.scss imports all supporting scss files
-and includes any non-semantic helper classes
-*/
 
-// Type & Layout
+//-----------------------------
+// Main: Base application CSS
+//-----------------------------
+
+@charset "UTF-8";
+
+// Normalize
 @import 'normalize';
-@import 'layout';
+
+// CMS Design System
+// Add here
+
+// Medicaid and CHIP Regulations Site
+
+@import 'application_settings';
+@import 'layout'; 			
+@import "partials/typography";
+@import "partials/header";
+@import "partials/sidebar_left";
+@import "partials/sidebar_right";
+@import 'partials/reg_text'; 
+@import "partials/footer";
