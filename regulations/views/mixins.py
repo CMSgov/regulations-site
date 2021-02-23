@@ -33,6 +33,7 @@ class SidebarContextMixin:
         sidebar = sidebar_class(label_id, version)
         return sidebar.full_context(self.client, self.request)
 
+
 class CitationContextMixin:
     def get_context_data(self, **kwargs):
         context = super(CitationContextMixin, self).get_context_data(**kwargs)

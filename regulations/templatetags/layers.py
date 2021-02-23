@@ -4,6 +4,7 @@ from regulations.generator import api_reader
 
 register = template.Library()
 
+
 @register.filter(name='internalcitation')
 def internalcitation(value, arg):
     if value == "":
@@ -20,7 +21,7 @@ def internalcitation(value, arg):
             original = value[citation["offsets"][0][0]:citation["offsets"][0][1]]
             # /433/section/112#433-112-c
             url = reverse("reader_view", args=[*citation["citation"][:2], version]) + "#" + "-".join(citation["citation"])
-            context = {"citation": citation["citation"], "original": original, "url": url }
+            context = {"citation": citation["citation"], "original": original, "url": url}
             rendered_citation = citation_template.render(context)
             value = value[:citation["offsets"][0][0]] + rendered_citation + value[citation["offsets"][0][1]:]
         return value
