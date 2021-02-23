@@ -3,14 +3,10 @@ from django.http import Http404
 
 from regulations.generator import api_reader
 from regulations.generator import generator
-from regulations.generator.html_builder import CFRHTMLBuilder
 from regulations.views import navigation, utils
-from regulations.generator.node_types import EMPTYPART, REGTEXT, label_to_text
-from regulations.generator.versions import fetch_grouped_history
 from regulations.generator.toc import fetch_toc
 from regulations.generator.section_url import SectionUrl
 from regulations.views import error_handling
-from regulations.views.chrome import version_span
 from regulations.views.mixins import SidebarContextMixin
 
 
