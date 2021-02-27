@@ -94,6 +94,7 @@ urlpatterns = [
     url(rf'^(?P<label_id>{match_paragraph})/CURRENT$',
         redirect_by_current_date, name='redirect_by_current_date'),
 
+    path('<part>/<version>/', SectionView.as_view(), name='reader_view'),
     path('<part>/<section>/<version>/', SectionView.as_view(), name='reader_view'),
 
     # Interpretation of a section/paragraph or appendix
@@ -101,14 +102,6 @@ urlpatterns = [
     url(rf'^(?P<label_id>{match_interp})/(?P<version>{match_version})$',
         lt_cache(ChromeView.as_view(partial_class=partial_interp.PartialInterpView)),
         name='chrome_interp_view'),
-
-    # The whole regulation with chrome
-    # Example: http://.../201/2013-10704
-    url(rf'^(?P<label_id>{match_reg})/(?P<version>{match_version})$',
-        lt_cache(ChromeView.as_view(
-            partial_class=PartialRegulationView,
-            version_switch_view='chrome_regulation_view')),
-        name='chrome_regulation_view'),
 
     # A regulation landing page
     # Example: http://.../201

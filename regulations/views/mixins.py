@@ -8,7 +8,20 @@ from regulations.generator.toc import fetch_toc
 from regulations.generator.section_url import SectionUrl
 
 
-class SidebarContextMixin:
+class CitationContextMixin:
+    def get_context_data(self, **kwargs):
+        context = super(CitationContextMixin, self).get_context_data(**kwargs)
+        citation = []
+        if 'part' in context:
+            citation.append(context["part"])
+        if 'section' in context:
+            citation.append(context["section"])
+        if len(citation) > 0:
+            context['citation'] = "-".join(citation)
+        return context
+
+
+class SidebarContextMixin(CitationContextMixin):
     # contains either class paths or class objects (not instances)
     sidebar_classes = settings.SIDEBARS
     client = api_reader.ApiReader()
@@ -21,7 +34,7 @@ class SidebarContextMixin:
             sidebars.append(
                 self.build_sidebar_context(
                     class_or_class_path,
-                    f"{context['part']}-{context['section']}",
+                    context['citation'],
                     context['version']))
 
         context['sidebars'] = sidebars
@@ -34,14 +47,6 @@ class SidebarContextMixin:
             sidebar_class = getattr(import_module(module_name), class_name)
         sidebar = sidebar_class(label_id, version)
         return sidebar.full_context(self.client, self.request)
-
-
-class CitationContextMixin:
-    def get_context_data(self, **kwargs):
-        context = super(CitationContextMixin, self).get_context_data(**kwargs)
-        if 'part' in context and 'section' in context:
-            context['citation'] = f"{context['part']}-{context['section']}"
-        return context
 
 
 class TableOfContentsMixin:
