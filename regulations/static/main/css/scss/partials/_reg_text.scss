@@ -5,6 +5,48 @@
 
 @import "../application_settings";
 
+.reg-text {
+
+	h1 {
+		padding-top: 1em;
+	}
+}
+
 .reg-section {
     margin: 1em 0;
+    line-height: 1.7em;
+}
+
+.next-previous {
+	display: flex;
+	margin: 4em auto;
+
+	.next-prev {
+		direction: table-cell;
+		width: 50%;
+		text-decoration: none;
+
+		&.previous {
+			&:before {
+				background-image: url('../../images/previous.svg');
+			}
+		}
+
+		&.next {
+			text-align: right;
+
+			&:before {
+				background-image: url('../../images/next.svg');
+			}
+		}
+	}
+
+	.next-prev-label {
+		font-weight: bold;
+	}
+
+	.next-prev-title {
+		font-size: .9em;
+		color: $primary_text_color;
+	}
 }

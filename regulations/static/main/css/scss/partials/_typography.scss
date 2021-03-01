@@ -20,11 +20,13 @@ body {
 }
 
 h1 {
-  font-size: $base_font_size*1.5;
+  font-size: $base_font_size*1.7;
+  font-family: $secondary_site_font;
+  margin-bottom: 2em;
 }
 
 h2 {
-  font-size: $base_font_size*1.4;
+  font-size: $base_font_size*1.5;
   font-weight: bold;
   font-family: $secondary_site_font;
 }

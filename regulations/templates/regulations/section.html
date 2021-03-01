@@ -19,24 +19,19 @@
         {% endwith %}
     </aside>
 
-    <main>
-        <section>
-            {% include "regulations/regulation_text.html" with c=tree %}
-            {% include "regulations/navigation.html" %}
-        </section> <!-- /.reg-text -->
+    <main class="reg-text">
+        {% include "regulations/regulation_text.html" with c=tree %}
+        {% include "regulations/navigation.html" %}
     </main>
 
     <aside class="right-sidebar">
-        <div>
-            {%include "regulations/sidebar.html"%}
-        </div>
+        {%include "regulations/sidebar.html"%}
     </aside>
 
 </div>   
 
 <footer>
     <div class="container">
-        <h4>Footer</h4>
         {% include "regulations/footer.html" %}
     </div>
 </footer>
