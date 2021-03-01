@@ -22,6 +22,15 @@
 
 			a {
 				font-weight: 500;
+
+				&.active {
+					font-weight: bold;
+					color: $teritary_link_color;
+
+					&:hover {
+						color: $teritary_link_hover;
+					}
+				}
 			}
 		}
 	}
