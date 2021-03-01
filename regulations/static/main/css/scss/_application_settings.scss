@@ -82,7 +82,8 @@ a {
 
   &:hover {
     color: $primary_link_hover;
-    @include transition
+    cursor: pointer;
+    @include transition;
   }
 }
 

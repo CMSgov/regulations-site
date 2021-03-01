@@ -5,6 +5,28 @@
 
 @import "../application_settings";
 
+
+// Temporary: Gives users a way to switch between part, subpart, and section views
+.switch-view {
+	background: $teritary_background_color;
+	padding: .5em 0;
+	border-bottom: 1px solid $border_color;
+
+	ul {
+		margin: 0;
+		text-align: right;
+
+		li {
+			display: inline;
+			margin-right: 2em;
+
+			a {
+				font-weight: 500;
+			}
+		}
+	}
+}
+
 header {
 
 	a {
