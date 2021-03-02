@@ -7,21 +7,22 @@ from regulations.generator import api_reader
 from regulations.generator.toc import fetch_toc
 from regulations.generator.section_url import SectionUrl
 
-
-class CitationContextMixin:
-    def get_context_data(self, **kwargs):
-        context = super(CitationContextMixin, self).get_context_data(**kwargs)
+def build_citation(context):
         citation = []
         if 'part' in context:
             citation.append(context["part"])
         if 'section' in context:
             citation.append(context["section"])
-        if len(citation) > 0:
-            context['citation'] = "-".join(citation)
+        return "-".join(citation)
+
+class CitationContextMixin:
+    def get_context_data(self, **kwargs):
+        context = super(CitationContextMixin, self).get_context_data(**kwargs)
+        context['citation'] = build_citation(context)
         return context
 
 
-class SidebarContextMixin(CitationContextMixin):
+class SidebarContextMixin():
     # contains either class paths or class objects (not instances)
     sidebar_classes = settings.SIDEBARS
     client = api_reader.ApiReader()
@@ -34,7 +35,7 @@ class SidebarContextMixin(CitationContextMixin):
             sidebars.append(
                 self.build_sidebar_context(
                     class_or_class_path,
-                    context['citation'],
+                    build_citation(context),
                     context['version']))
 
         context['sidebars'] = sidebars

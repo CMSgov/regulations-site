@@ -11,7 +11,7 @@ from regulations.views.diff import ChromeSectionDiffView
 from regulations.views.diff import PartialSectionDiffView
 from regulations.views.partial import PartialDefinitionView
 from regulations.views.partial import PartialRegulationView
-from regulations.views.section import SectionView
+from regulations.views.reader import ReaderView
 from regulations.views import partial_interp
 from regulations.views.partial_search import PartialSearch
 from regulations.views.partial_sxs import ParagraphSXSView
@@ -94,8 +94,8 @@ urlpatterns = [
     url(rf'^(?P<label_id>{match_paragraph})/CURRENT$',
         redirect_by_current_date, name='redirect_by_current_date'),
 
-    path('<part>/<version>/', SectionView.as_view(), name='reader_view'),
-    path('<part>/<section>/<version>/', SectionView.as_view(), name='reader_view'),
+    path('<part>/<version>/', ReaderView.as_view(), name='reader_view'),
+    path('<part>/<section>/<version>/', ReaderView.as_view(), name='reader_view'),
 
     # Interpretation of a section/paragraph or appendix
     # Example: http://.../201-4-Interp/2013-10704
