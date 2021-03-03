@@ -7,6 +7,7 @@ from regulations.generator import api_reader
 from regulations.generator.toc import fetch_toc
 from regulations.generator.section_url import SectionUrl
 
+
 def build_citation(context):
         citation = []
         if 'part' in context:
@@ -14,6 +15,7 @@ def build_citation(context):
         if 'section' in context:
             citation.append(context["section"])
         return "-".join(citation)
+
 
 class CitationContextMixin:
     def get_context_data(self, **kwargs):
