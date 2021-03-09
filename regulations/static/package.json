@@ -1,5 +1,5 @@
 {
-  "name": "regualtions",
+  "name": "regulations",
   "description": "",
   "scripts": {
     "css": "npx sass -I node_modules regulations/css/scss/main.scss regulations/css/main.css",
