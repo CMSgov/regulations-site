@@ -7256,6 +7256,10 @@ a:hover {
   transition: all 0.1s ease-in;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   padding: 2em;
   border-bottom: 1px solid #17415F;
@@ -7302,6 +7306,10 @@ a:hover {
 }
 
 html {
+  scroll-behavior: smooth;
+}
+
+html {
   font-size: 1rem;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
@@ -7334,6 +7342,10 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .switch-view {
@@ -7388,6 +7400,10 @@ a:hover {
   transition: all 0.1s ease-in;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 aside.left-sidebar {
   color: #fff;
 }
@@ -7431,13 +7447,44 @@ aside.left-sidebar .toc-section-name {
   margin-bottom: 1em;
 }
 
-a {
-  color: #046791;
+.jump-to {
+  border-bottom: 1px solid #046791;
+  padding-bottom: 2em;
 }
-a:hover {
-  color: #17415F;
+.jump-to .jump-to-label {
+  margin: 1em 0 0.5em 0;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.jump-to .jump-to-input {
+  display: inline-block;
+}
+.jump-to input.submit {
+  display: inline-block;
+  padding: 0.4em 1em;
+  background: #A3E8FF;
+  border: none;
+  border-radius: 3px;
   cursor: pointer;
+}
+.jump-to input.submit:hover {
+  background: #fff;
   transition: all 0.1s ease-in;
+}
+.jump-to .number-box {
+  width: 40px;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid #C4C4C4;
+  margin-right: 0.5em;
+  color: #fff;
+}
+.jump-to .number-box:focus {
+  color: #fff;
+}
+.jump-to label {
+  font-weight: 600;
+  font-size: 1.1em;
 }
 
 a {
@@ -7447,6 +7494,23 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #046791;
+}
+a:hover {
+  color: #17415F;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .reg-text h1 {
@@ -7500,6 +7564,10 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /*# sourceMappingURL=main.css.map */
