@@ -22,7 +22,16 @@
 
 <div class="box">
 
-    <aside class="left-sidebar">
+    <aside class="left-sidebar js-collapsable">
+        <div class="toc-controls">
+            <button class="js-collapse collapse">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                COLLAPSE
+            </button>
+            <button class="js-collapse expand">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </button>
+        </div>
         <div class="jump-to">
           <div class="jump-to-label">Jump to Regulation Section</div>
           <form method="GET" action="{% url 'goto' %}">
@@ -57,4 +66,5 @@
     </div>
 </footer>
 
+<script src="{% static '/js/collapse.js'%}"></script>
 {% endblock %}

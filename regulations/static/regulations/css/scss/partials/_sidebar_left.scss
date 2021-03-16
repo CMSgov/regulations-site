@@ -57,6 +57,55 @@ aside.left-sidebar {
 		font-size: .9em;
 		margin-bottom: 1em;
 	}
+
+	.toc-controls {
+		border-bottom: 1px solid $secondary_border_color;
+		padding-bottom: 1em;
+		margin: 0 -2em;
+
+		button {
+			outline: none;
+			color: $reverse_link_color;
+			border: none;
+			background: none;
+			margin-left: 2em;
+			cursor: pointer;
+
+			&:hover {
+				color: $reverse_link_hover;
+				@include transition;
+			}
+
+			img {
+				height: 1em;
+				padding-right: 5px;
+			}
+			&.expand {
+				margin: 0 auto;
+				display: none;
+			}
+		}
+	}
+
+	&.collapsed {
+		width: 1em;
+		padding: 1em;
+		div {
+			display: none;
+		}
+		div.toc-controls {
+			margin: 0 -1em;
+			.collapse {
+				display: none;
+			}
+			.expand {
+				display: block;
+			}
+			display: block;
+		}
+	}
+
+	transition: all .25s ease-out;
 }
 
 .jump-to {
