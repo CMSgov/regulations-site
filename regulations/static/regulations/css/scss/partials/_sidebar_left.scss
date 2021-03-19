@@ -7,6 +7,10 @@
 
 aside.left-sidebar {
 	color: $reverse_text_color;
+	height: 100vh;
+	overflow-y: scroll;
+	position: sticky;
+	top: 0px;
 
 	a {
 		color: $reverse_link_color;
@@ -17,7 +21,7 @@ aside.left-sidebar {
 	}
 
 	ul {
-		padding: 0;
+		padding: 1em 0;
 
 		&.toggle-toc-menu-sections {
 			padding-left: 1em;

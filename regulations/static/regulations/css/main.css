@@ -13362,6 +13362,7 @@ header {
 main {
   display: table-cell;
   width: calc(100% - 800px);
+  flex: 1;
   padding: 2em;
 }
 
@@ -13565,6 +13566,10 @@ html {
 
 aside.left-sidebar {
   color: #fff;
+  height: 100vh;
+  overflow-y: scroll;
+  position: sticky;
+  top: 0px;
   transition: all 0.25s ease-out;
 }
 aside.left-sidebar a {
@@ -13574,7 +13579,7 @@ aside.left-sidebar a:hover {
   color: #fff;
 }
 aside.left-sidebar ul {
-  padding: 0;
+  padding: 1em 0;
 }
 aside.left-sidebar ul.toggle-toc-menu-sections {
   padding-left: 1em;
@@ -13627,25 +13632,26 @@ aside.left-sidebar .toc-controls button img {
   height: 1em;
   padding-right: 5px;
 }
-aside.left-sidebar .toc-controls button.expand {
+aside.left-sidebar .toc-controls button[data-set-state=expanded] {
   margin: 0 auto;
   display: none;
 }
-aside.left-sidebar.collapsed {
+aside.left-sidebar[data-state=collapsed] {
   width: 1em;
   padding: 1em;
+  scrollbar-width: none;
 }
-aside.left-sidebar.collapsed div {
+aside.left-sidebar[data-state=collapsed] div {
   display: none;
 }
-aside.left-sidebar.collapsed div.toc-controls {
+aside.left-sidebar[data-state=collapsed] div.toc-controls {
   margin: 0 -1em;
   display: block;
 }
-aside.left-sidebar.collapsed div.toc-controls .collapse {
+aside.left-sidebar[data-state=collapsed] div.toc-controls [data-set-state=collapsed] {
   display: none;
 }
-aside.left-sidebar.collapsed div.toc-controls .expand {
+aside.left-sidebar[data-state=collapsed] div.toc-controls [data-set-state=expanded] {
   display: block;
 }
 
@@ -13737,12 +13743,15 @@ html {
 }
 
 .reg-section {
-  margin: 1em 0;
+  margin: 1em auto;
   line-height: 1.7em;
   max-width: 75ch;
 }
 .reg-section:last-of-type {
   margin-bottom: 3em;
+}
+.reg-section :target {
+  background: #EEFAFE;
 }
 
 .next-previous {

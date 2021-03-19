@@ -28,6 +28,9 @@
     &:last-of-type {
     	margin-bottom: 3em;
     }
+    :target {
+	background: $teritary_background_color;
+    }
 }
 
 .next-previous {
