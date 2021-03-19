@@ -80,28 +80,34 @@ aside.left-sidebar {
 				height: 1em;
 				padding-right: 5px;
 			}
-			&.expand {
+
+			&[data-set-state="expanded"] {
 				margin: 0 auto;
 				display: none;
 			}
 		}
 	}
 
-	&.collapsed {
+	&[data-state="collapsed"] {
 		width: 1em;
 		padding: 1em;
+		scrollbar-width: none;
+
 		div {
 			display: none;
 		}
+
 		div.toc-controls {
 			margin: 0 -1em;
-			.collapse {
+			display: block;
+
+			[data-set-state="collapsed"] {
 				display: none;
 			}
-			.expand {
+
+			[data-set-state="expanded"] {
 				display: block;
 			}
-			display: block;
 		}
 	}
 

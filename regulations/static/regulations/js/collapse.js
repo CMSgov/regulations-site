@@ -1,14 +1,14 @@
-function makeCollapsable(el) {
-    const collapse_buttons = el.querySelectorAll('.js-collapse');
-    for (const collapse_button of collapse_buttons) {
-        collapse_button.addEventListener('click', function() {
-            el.classList.toggle("collapsed");
+function makeStateful(el) {
+    const state_change_buttons = el.querySelectorAll('[data-set-state]');
+    for (const state_change_button of state_change_buttons) {
+        state_change_button.addEventListener('click', function() {
+            el.setAttribute("data-state", this.getAttribute("data-set-state"));
         });
     }
 }
 
-const collapsables = document.querySelectorAll(".js-collapsable")
+const stateful_elements = document.querySelectorAll("[data-state]")
 
-for (const el of collapsables) {
-    makeCollapsable(el);
+for (const el of stateful_elements) {
+    makeStateful(el);
 }
