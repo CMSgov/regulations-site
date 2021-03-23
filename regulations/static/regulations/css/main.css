@@ -13755,10 +13755,10 @@ html {
   padding: 0.5em 0;
   scroll-margin-top: 2em;
 }
-.reg-section a {
+.reg-section .reference {
   visibility: hidden;
 }
-.reg-section:hover a {
+.reg-section:hover .reference {
   visibility: visible;
 }
 

@@ -35,12 +35,12 @@
 	scroll-margin-top: 2em;
     }
 
-    a {
+    .reference {
        visibility: hidden;
     }
 
     &:hover {
-       a {
+       .reference {
            visibility: visible;
        }
    }
