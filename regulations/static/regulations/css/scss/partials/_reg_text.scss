@@ -29,8 +29,10 @@
     	margin-bottom: 3em;
     }
 
-    :target {
+    &:target {
         background: $teritary_background_color;
+	padding: 0.5em 0;
+	scroll-margin-top: 2em;
     }
 }
 
