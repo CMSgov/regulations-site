@@ -13755,6 +13755,12 @@ html {
   padding: 0.5em 0;
   scroll-margin-top: 2em;
 }
+.reg-section a {
+  visibility: hidden;
+}
+.reg-section:hover a {
+  visibility: visible;
+}
 
 .next-previous {
   display: flex;

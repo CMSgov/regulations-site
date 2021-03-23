@@ -34,6 +34,16 @@
 	padding: 0.5em 0;
 	scroll-margin-top: 2em;
     }
+
+    a {
+       visibility: hidden;
+    }
+
+    &:hover {
+       a {
+           visibility: visible;
+       }
+   }
 }
 
 .next-previous {
