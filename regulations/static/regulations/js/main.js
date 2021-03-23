@@ -7,8 +7,12 @@ function makeStateful(el) {
     }
 }
 
-const stateful_elements = document.querySelectorAll("[data-state]")
+function main() {
+    const stateful_elements = document.querySelectorAll("[data-state]")
 
-for (const el of stateful_elements) {
-    makeStateful(el);
+    for (const el of stateful_elements) {
+        makeStateful(el);
+    }
 }
+
+main();

@@ -4,6 +4,7 @@
 {% load layers %}
 
 <section id="{{c.label | join:'-'}}" class="reg-section">
+    <a href="#{{c.label | join:'-'}}"><i class="fa fa-link"></i></a>
     {% if c.title %}
     <h1 class="section-title" tabindex="0"> {{c.title}} </h1> <!-- TO DO: Subpart view: There should only be one H1 - sections titles should be H2 -->
     {% endif %}
