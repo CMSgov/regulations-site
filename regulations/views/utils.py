@@ -57,6 +57,10 @@ def find_subpart(section, toc, subpart=None):
             value = find_subpart(section, el['sub_toc'], '-'.join(el['index'][1:]))
             if value is not None:
                 return value
+        elif 'Subjgrp' in el['index'] and 'sub_toc' in el:
+            value = find_subpart(section, el['sub_toc'], subpart)
+            if value is not None:
+                return value
     return None
 
 

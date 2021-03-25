@@ -1,11 +1,13 @@
 from django.views.generic.base import TemplateView
 from django.http import Http404
 from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 from regulations.generator import api_reader
 from regulations.views import navigation, utils
 from regulations.views import errors
 from regulations.views.mixins import SidebarContextMixin, CitationContextMixin, TableOfContentsMixin
+from regulations.views.utils import find_subpart
 
 
 class ReaderView(TableOfContentsMixin, SidebarContextMixin, CitationContextMixin, TemplateView):
@@ -91,11 +93,20 @@ class SubpartReaderView(ReaderView):
             'section_view_link': reverse('section_reader_view', args=(part, section, version)),
         }
 
-    def build_toc_url(self, part, subpart, section, version):
-        return reverse('subpart_reader_view', args=(part, subpart, version))
-
 
 class SectionReaderView(ReaderView):
+    def get(self, request, *args, **kwargs):
+        if request.GET.get("section-only"):
+            return super().get(request, *args, **kwargs)
+
+        toc = self.get_toc(kwargs.get("part"), kwargs.get("version"))
+        subpart = find_subpart(kwargs.get("section"), toc)
+        if subpart is not None:
+            url = reverse("reader_view", kwargs={"part": kwargs.get("part"), "subpart": subpart, "version": kwargs.get("version")})
+            return HttpResponseRedirect(url)
+
+        return super().get(request, *args, **kwargs)
+
     def get_view_links(self, context, toc):
         part = context['part']
         section = context['section']
