@@ -23,9 +23,11 @@ class SearchView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         all_versions = versions.fetch_regulations_and_future_versions()
+        # I feel like this makes more sense elsewhere in the class flow
         results = self.get_data()
-        results['results'] = (result for result in results['results'] if is_current(result, all_versions[result['regulation']]))
-        return {**context, **results}
+        # This is mixing tenses
+        results['results'] = list((result for result in results['results'] if is_current(result, all_versions[result['regulation']])))
+        return {**context, **results, **self.request.GET.dict()}
 
 def is_current(result, versions):
     return result['version'] == get_current_version(versions)

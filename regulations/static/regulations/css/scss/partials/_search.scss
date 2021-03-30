@@ -1,0 +1,29 @@
+//-----------------------------
+// Search View
+//-----------------------------
+
+@import "../application_settings";
+
+.search {
+    border: #ddd solid 1px;
+    padding: .5em;
+    margin-bottom: 2em;
+    display: flex;
+
+    input {
+        flex: 1;
+        border: none;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        border: none;
+        border-left: #ddd solid 2px;
+        background: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

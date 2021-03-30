@@ -13357,6 +13357,7 @@ header {
 
 .box {
   display: flex;
+  width: 100%;
 }
 
 main {
@@ -13481,6 +13482,47 @@ html {
 }
 .part-names li .part-title {
   display: table-cell;
+}
+
+a {
+  color: #046791;
+}
+a:hover {
+  color: #17415F;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.container {
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.search {
+  border: #ddd solid 1px;
+  padding: 0.5em;
+  margin-bottom: 2em;
+  display: flex;
+}
+.search input {
+  flex: 1;
+  border: none;
+}
+.search input:focus {
+  outline: none;
+}
+.search button {
+  border: none;
+  border-left: #ddd solid 2px;
+  background: none;
+}
+.search button:hover {
+  cursor: pointer;
 }
 
 a {
@@ -13741,6 +13783,20 @@ a:hover {
 
 html {
   scroll-behavior: smooth;
+}
+
+.right-sidebar {
+  max-width: 400px;
+}
+.right-sidebar div {
+  padding-left: 2em;
+}
+.right-sidebar div h4 {
+  margin: 0;
+}
+.right-sidebar div p {
+  color: #5B616B;
+  margin: 0;
 }
 
 a {
