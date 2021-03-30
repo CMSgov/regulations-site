@@ -33,6 +33,7 @@ def get_current_results(results, versions):
         if is_current(result, versions[result['regulation']]):
             yield result
 
+
 def is_current(result, versions):
     return result['version'] == get_current_version(versions)
 

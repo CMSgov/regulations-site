@@ -102,7 +102,10 @@ class SectionReaderView(ReaderView):
         toc = self.get_toc(kwargs.get("part"), kwargs.get("version"))
         subpart = find_subpart(kwargs.get("section"), toc)
         if subpart is not None:
-            url = reverse("reader_view", kwargs={"part": kwargs.get("part"), "subpart": subpart, "version": kwargs.get("version")})
+            url = reverse("reader_view", kwargs={
+                "part": kwargs.get("part"),
+                "subpart": subpart,
+                "version": kwargs.get("version")})
             return HttpResponseRedirect(url)
 
         return super().get(request, *args, **kwargs)
