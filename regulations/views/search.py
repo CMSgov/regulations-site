@@ -11,26 +11,31 @@ class SearchView(TemplateView):
 
     template_name = 'regulations/search.html'
 
+    def accumulate_results(self, results, current_page=0):
+        response = self.client.search(self.request.GET.get("q"), page=current_page)
+        if not response['results']:
+            return results
+        return self.accumulate_results(results + response['results'], current_page=current_page+1)
+
     def get_data(self):
-        result = self.client.search(self.request.GET.get("q"))
-        if result['total_hits'] > len(result['results']):
-            i = 1
-            while next := self.client.search(self.request.GET.get("q"), page=i)['results']:
-                result['results'] = result['results'] + next
-                i += 1
-        return result
+        return self.accumulate_results([])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         all_versions = versions.fetch_regulations_and_future_versions()
-        # I feel like this makes more sense elsewhere in the class flow
         results = self.get_data()
-        # This is mixing tenses
-        results['results'] = list((result for result in results['results'] if is_current(result, all_versions[result['regulation']])))
-        return {**context, **results, **self.request.GET.dict()}
+        context['results'] = list(get_current_results(results, all_versions))
+        return {**context, **self.request.GET.dict()}
+
+
+def get_current_results(results, versions):
+    for result in results:
+        if is_current(result, versions[result['regulation']]):
+            yield result
 
 def is_current(result, versions):
     return result['version'] == get_current_version(versions)
+
 
 def get_current_version(versions):
     today = datetime.today()
