@@ -17,6 +17,7 @@ urlpatterns = [
     path('<numeric:part>/<version:version>/', PartReaderView.as_view(), name='part_reader_view'),
     path('<numeric:part>/<subpart:subpart>/<version:version>/', SubpartReaderView.as_view(), name="subpart_reader_view"),
     path('<numeric:part>/<numeric:section>/<version:version>/', SectionReaderView.as_view(), name='section_reader_view'),
+    path('<numeric:part>/<version:version>/', PartReaderView.as_view(), name='reader_view'),
     path('<numeric:part>/<numeric:section>/<version:version>/', SectionReaderView.as_view(), name='reader_view'),
     path('<numeric:part>/<subpart:subpart>/<version:version>/', SubpartReaderView.as_view(), name="reader_view"),
     path('goto/', GoToRedirectView.as_view(), name='goto'),

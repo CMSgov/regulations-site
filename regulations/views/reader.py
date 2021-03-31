@@ -1,4 +1,7 @@
-from django.views.generic.base import TemplateView
+from django.views.generic.base import (
+    TemplateView,
+    View,
+)
 from django.http import Http404
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -94,32 +97,17 @@ class SubpartReaderView(ReaderView):
         }
 
 
-class SectionReaderView(ReaderView):
+class SectionReaderView(TableOfContentsMixin, View):
     def get(self, request, *args, **kwargs):
-        if request.GET.get("section-only"):
-            return super().get(request, *args, **kwargs)
+        url_kwargs = {
+            "part": kwargs.get("part"),
+            "version": kwargs.get("version"),
+        }
 
         toc = self.get_toc(kwargs.get("part"), kwargs.get("version"))
         subpart = find_subpart(kwargs.get("section"), toc)
         if subpart is not None:
-            url = reverse("reader_view", kwargs={
-                "part": kwargs.get("part"),
-                "subpart": subpart,
-                "version": kwargs.get("version")})
-            return HttpResponseRedirect(url)
+            url_kwargs["subpart"] = subpart
 
-        return super().get(request, *args, **kwargs)
-
-    def get_view_links(self, context, toc):
-        part = context['part']
-        section = context['section']
-        version = context['version']
-        citation = context['citation']
-        subpart = utils.find_subpart(section, toc)
-        if subpart is None:
-            subpart = utils.first_subpart(part, version)
-
-        return {
-            'part_view_link': reverse('part_reader_view', args=(part, version)) + '#' + citation,
-            'subpart_view_link': reverse('subpart_reader_view', args=(part, subpart, version)) + '#' + citation,
-        }
+        url = reverse("reader_view", kwargs=url_kwargs)
+        return HttpResponseRedirect(url)
