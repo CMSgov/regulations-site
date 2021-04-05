@@ -61,6 +61,14 @@ header {
 	}
 
 	.search-header {
-		display: inline-block;
+		float: right;
+
+		.search-box {
+			width: 430px;
+
+			input {
+				border: 1px solid $border_color;
+			}
+		}
 	}
 }

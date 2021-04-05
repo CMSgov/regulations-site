@@ -13,12 +13,6 @@
 
 <div class="search-header">
     <form class="search-box" action="{% url 'search' %}">
-        <input type=search name="q" placeholder="{{ q | default:'Search Regulations'}}" placeholder="Search Regulations"></input>
-        <button type="reset" class="search-reset">
-        <i class="fa fa-times"></i>
-        </button>
-        <button type="submit" class="search-submit">
-        <i class="fa fa-search"></i>
-        </button>
+        <input type=search name="q" placeholder="Search Regulations"></input>
     </form>
 </div>

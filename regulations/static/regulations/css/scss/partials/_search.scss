@@ -164,6 +164,27 @@
 		&:focus{
 			color: $primary_link_hover;
 		}
+
+		&::placeholder {
+			color: $primary_text_color;
+		}
+
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			color: $primary_text_color;
+		}
+
+		&::-moz-placeholder { /* Firefox 19+ */
+			color: $primary_text_color;
+		}
+
+		&:-ms-input-placeholder { /* IE 10+ */
+			color: $primary_text_color;
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+			color: $primary_text_color;
+		}
+
 	}
 
 	.search-reset {
