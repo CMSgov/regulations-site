@@ -22,7 +22,6 @@ class NavigationTest(TestCase):
         self.assertEquals('§ 204.3 Third', n['title'])
 
     @patch('regulations.views.navigation.fetch_toc')
-    @patch('regulations.views.navigation.SectionUrl')
     def test_nav_sections_prefix(self, su, fetch_toc):
         fetch_toc.return_value = [
             {'index': ['204', '1'], 'title': '§ 204.1 First',

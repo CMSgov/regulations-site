@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 
 from regulations.generator import api_reader
-from regulations.views import navigation, utils
+from regulations.views import utils
 from regulations.views import errors
 from regulations.views.mixins import SidebarContextMixin, CitationContextMixin, TableOfContentsMixin
 from regulations.views.utils import find_subpart
@@ -38,7 +38,6 @@ class ReaderView(TableOfContentsMixin, SidebarContextMixin, CitationContextMixin
 
         c = {
             'tree':         tree,
-            'navigation':   self.get_neighboring_sections(reg_citation, reg_version),
             'reg_part':     reg_part,
             'meta':         meta,
             'TOC':          toc,
@@ -53,13 +52,6 @@ class ReaderView(TableOfContentsMixin, SidebarContextMixin, CitationContextMixin
         if regulation is None:
             raise Http404
         return regulation
-
-    def get_neighboring_sections(self, label, version):
-        nav_sections = navigation.nav_sections(label, version)
-        if nav_sections:
-            p_sect, n_sect = nav_sections
-            return {'previous': p_sect, 'next': n_sect,
-                    'page_type': 'reg-section'}
 
     def get_view_links(self, context, toc):
         raise NotImplementedError()
