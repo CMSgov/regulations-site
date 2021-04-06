@@ -1,5 +1,6 @@
 {% extends "regulations/base.html" %}
 {% load static %}
+{% load search %}}
 {% block app_js %}
 <link rel="stylesheet" href="{% static '/css/main.css' %}"/>
 {% endblock %}
@@ -15,7 +16,6 @@
   <div class="box search-page">
     <main>
       <div class="container">
-        <img src="{% static '/images/previous.svg' %}"/>
         <div class="search-back">
           <a href="/"><span class="back-arrow"></span>Back to Regulation Text</a>
         </div>
@@ -56,8 +56,8 @@
           {% for result in results %}
           <div class="result">
               <!-- <div class="results-part">42 CFR Part 433: State Fiscal Administration</div> -->
-              <div class="results-section"><a href="{% url 'reader_view' result.label.0 result.label.1 result.version %}#{{ result.label_string}}">{{ result.title }}</a></div>
-              <div class="results-preview">{{ result.text }}</div>
+              <div class="results-section"><a href="{% url 'reader_view' result.label.0 result.label.1 result.version %}#{{ result.label_string}}">{{ result.title | highlight:q }}</a></div>
+              <div class="results-preview">{{ result.text | highlight:q }}</div>
           </div>
           {% endfor %}
         </div>
