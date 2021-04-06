@@ -65,12 +65,12 @@ class PartReaderView(ReaderView):
         first_subpart = utils.first_subpart(part, version)
 
         return {
-            'subpart_view_link': reverse('subpart_reader_view', args=(part, first_subpart, version)),
-            'section_view_link': reverse('section_reader_view', args=(part, first_section, version)),
+            'subpart_view_link': reverse('reader_view', args=(part, first_subpart, version)),
+            'section_view_link': reverse('reader_view', args=(part, first_section, version)),
         }
 
     def build_toc_url(self, part, subpart, section, version):
-        return reverse('part_reader_view', args=(part, version))
+        return reverse('reader_view', args=(part, version))
 
 
 class SubpartReaderView(ReaderView):
@@ -84,8 +84,8 @@ class SubpartReaderView(ReaderView):
         citation = part + '-' + section
 
         return {
-            'part_view_link': reverse('part_reader_view', args=(part, version)) + '#' + citation,
-            'section_view_link': reverse('section_reader_view', args=(part, section, version)),
+            'part_view_link': reverse('reader_view', args=(part, version)) + '#' + citation,
+            'section_view_link': reverse('reader_view', args=(part, section, version)),
         }
 
 
