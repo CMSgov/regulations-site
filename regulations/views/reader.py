@@ -60,7 +60,6 @@ class PartReaderView(ReaderView):
     def get_view_links(self, context, toc):
         part = context['part']
         version = context['version']
-        first_section = utils.first_section(part, version)
         first_subpart = utils.first_subpart(part, version)
 
         return {
