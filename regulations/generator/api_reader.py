@@ -33,6 +33,18 @@ class ApiReader(object):
     def __init__(self):
         self.cache = caches['api_cache']
 
+    def v2_effective_parts(self, date):
+        return self._get("v2/{}".format(date))
+
+    def v2_effective_parts(self, date):
+        return self._get("v2/{}".format(date))
+
+    def v2_effective_part(self, title, part):
+        return self._get("v2/title/{}/part/{}".format(title, part))
+    
+    def v2_part(self, date, title, part):
+        return self._get("v2/{}/title/{}/part/{}".format(date, title, part))
+
     def all_regulations_versions(self):
         """ Get all versions, for all regulations. """
         return self._get('regulation')

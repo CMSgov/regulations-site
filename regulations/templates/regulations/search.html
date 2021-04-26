@@ -44,8 +44,9 @@
                 <div class="search-results">
                     {% for result in results %}
                         <div class="result">
-                                <div class="results-section"><a href="{% url 'reader_view' result.label.0 result.label.1 result.version %}#{{ result.label_string}}">{{ result.title | highlight:q }}</a></div>
-                                <div class="results-preview">{{ result.text | highlight:q }}</div>
+                            <div class="results-part">{{ result.regulation_title | title}}</div>
+                            <div class="results-section"><a href="{% url 'reader_view' result.label.0 result.label.1 result.version %}#{{ result.label_string}}">{{ result.title | highlight:q }}</a></div>
+                            <div class="results-preview">{{ result.text | highlight:q }}</div>
                         </div>
                     {% endfor %}
                 </div>

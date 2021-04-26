@@ -29,24 +29,15 @@ class ReaderView(TableOfContentsMixin, SidebarContextMixin, CitationContextMixin
         reg_part = context["part"]
         citation = context["citation"]
         reg_citation = "-".join(citation)
-        toc = self.get_toc(reg_part, reg_version)
-        meta = utils.regulation_meta(reg_part, reg_version)
-        tree = self.get_regulation(reg_citation, reg_version)
-        versions = self.get_versions(reg_part)
-
-        if not meta:
-            raise Http404
+        tree = self.client.v2_part(reg_version, 42, reg_part)
 
         c = {
-            'tree':         tree,
-            'versions':     versions,
-            'citation':     citation,
+            'tree':         tree['document'],
             'reg_part':     reg_part,
-            'meta':         meta,
-            'TOC':          toc,
+            'TOC':          tree,
         }
 
-        links = self.get_view_links(context, toc)
+        links = {}#self.get_view_links(context, toc)
 
         return {**context, **c, **links}
 

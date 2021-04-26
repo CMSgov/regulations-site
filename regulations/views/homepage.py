@@ -1,14 +1,16 @@
-from datetime import datetime
+from datetime import date
 import logging
 
 from django.views.generic.base import TemplateView
 from requests import HTTPError
 
 from regulations.views import utils
-from regulations.generator import versions
+from regulations.generator import versions, api_reader
 
 
 logger = logging.getLogger(__name__)
+
+client = api_reader.ApiReader()
 
 
 def get_regulations_list(all_versions):
@@ -57,13 +59,15 @@ class HomepageView(TemplateView):
 
         c = {}
         try:
-            all_versions = versions.fetch_regulations_and_future_versions()
-            regs = get_regulations_list(all_versions)
+            today = date.today()
+            parts = client.v2_effective_parts(today)
+            if not parts:
+                return context
+
             c = {
-                'regulations': regs,
-                'cfr_title_text': regs[0]['meta']['cfr_title_text'],
-                'cfr_title_number': utils.to_roman(regs[0]['meta']['cfr_title_number']),
-                'cfr_titleno_arabic': regs[0]['meta']['cfr_title_number'],
+                'regulations': parts,
+                'cfr_title_text': parts[0]['structure']['label_description'], # TODO: missing title info
+                'cfr_title_number': parts[0]['structure']['identifier'],
             }
         except HTTPError:
             logger.warning("NOTE: eRegs homepage loaded without any stored regulations.")

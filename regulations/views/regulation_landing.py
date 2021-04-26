@@ -1,11 +1,14 @@
+from requests import HTTPError
 from django.views.generic.base import TemplateView
 from django.http import Http404
 
 from regulations.views.mixins import TableOfContentsMixin
-from regulations.generator.versions import get_versions
+from regulations.generator import api_reader
+
+client = api_reader.ApiReader()
 
 
-class RegulationLandingView(TableOfContentsMixin, TemplateView):
+class RegulationLandingView(TemplateView):
 
     template_name = "regulations/regulation_landing.html"
 
@@ -14,15 +17,17 @@ class RegulationLandingView(TableOfContentsMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         reg_part = self.kwargs.get("part")
+
         try:
-            current, _ = get_versions(reg_part)
-        except:
+            current = client.v2_effective_part(42, reg_part)
+        except HTTPError:
             raise Http404
-        reg_version = current['version']
+        
+        reg_version = current['date']
 
         toc = self.get_toc(reg_part, reg_version)
         c = {
-            'TOC': toc,
+            'TOC': current,
             'part': reg_part,
             'content': [
                 'regulations/partials/landing_%s.html' % reg_part,
@@ -30,3 +35,6 @@ class RegulationLandingView(TableOfContentsMixin, TemplateView):
             ],
         }
         return {**context, **c}
+
+    def get_toc(self, part, date):
+        return {}
