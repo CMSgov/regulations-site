@@ -1,10 +1,9 @@
 <li>
-    {% if not item.children %}
-        <span>{{item.title|safe}}</span>
+    {% if item.reserved %}
+        <span>{{item.label|safe}}</span>
     {% else %}
-        <a href="{% url 'reader_view' item.label.0 item.label.1 TOC.date %}" data-section-id="{{item.label|join:'-'}}" id="nav-{{item.label|join:'-'}}">
-            <div class="toc-section-number">§{% if item.is_section_span%}§{% endif %}&nbsp;{{item.label|join:'-'}}</div> 
-            <div class="toc-section-name">{{item.title|safe}}</div>
-        </a>
+    <a href="{% url 'reader_view' item.identifier.0 item.identifier.1 version %}#{{ item.identifier|join:'-' }}" data-section-id="{{item.label|join:'-'}}" id="nav-{{item.label|join:'-'}}">
+        <div class="toc-section-name">{{item.label|safe}}</div>
+    </a>
     {% endif %}
 </li>

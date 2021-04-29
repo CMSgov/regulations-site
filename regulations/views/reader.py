@@ -34,7 +34,7 @@ class ReaderView(TableOfContentsMixin, SidebarContextMixin, CitationContextMixin
         c = {
             'tree':         tree['document'],
             'reg_part':     reg_part,
-            'TOC':          tree,
+            'structure':    tree['structure']['children'][0]['children'][0]['children'][0],
         }
 
         links = {}#self.get_view_links(context, toc)

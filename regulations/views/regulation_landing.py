@@ -28,7 +28,8 @@ class RegulationLandingView(TemplateView):
 
         toc = self.get_toc(reg_part, reg_version)
         c = {
-            'TOC': current,
+            'structure': current['structure']['children'][0]['children'][0]['children'][0],
+            'version': reg_version,
             'part': reg_part,
             'content': [
                 'regulations/partials/landing_%s.html' % reg_part,
