@@ -22,7 +22,7 @@
                     <li>
                         <a href="{% url 'regulation_landing_view' regulation.name %}">
                             <div class="part-title">
-                                {{regulation.document_title|title}}
+                                {{ regulation.structure.children.0.children.0.children.0.label }}
                             </div>
                         </a>
                     </li>
