@@ -1,3 +1,4 @@
+from datetime import date
 from requests import HTTPError
 from django.views.generic.base import TemplateView
 from django.http import Http404
@@ -19,7 +20,7 @@ class RegulationLandingView(TemplateView):
         reg_part = self.kwargs.get("part")
 
         try:
-            current = client.v2_effective_part(42, reg_part)
+            current = client.v2_part(date.today(), 42, reg_part)
         except HTTPError:
             raise Http404
         
