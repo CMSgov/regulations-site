@@ -12,16 +12,13 @@ class SearchView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        all_versions = versions.fetch_regulations_and_future_versions()
         results = get_data(self.request.GET.get("q"))
-        context['results'] = list(get_current_results(results, all_versions))
+        context['results'] = results
         return {**context, **self.request.GET.dict()}
 
 
 def get_data(query):
-    if query:
-        return accumulate_results(query, [])
-    return []
+    return ApiReader().v2_search(query)
 
 
 def accumulate_results(query, results, current_page=0):
