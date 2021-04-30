@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from django.views.generic.base import TemplateView
 
 from regulations.generator.api_reader import ApiReader
@@ -18,4 +16,3 @@ class SearchView(TemplateView):
 
 def get_data(query):
     return ApiReader().v2_search(query)
-

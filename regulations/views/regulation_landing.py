@@ -3,7 +3,6 @@ from requests import HTTPError
 from django.views.generic.base import TemplateView
 from django.http import Http404
 
-from regulations.views.mixins import TableOfContentsMixin
 from regulations.generator import api_reader
 
 client = api_reader.ApiReader()

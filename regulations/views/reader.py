@@ -35,7 +35,7 @@ class ReaderView(TableOfContentsMixin, SidebarContextMixin, CitationContextMixin
             'structure':    tree['structure']['children'][0]['children'][0]['children'][0],
         }
 
-        links = {}#self.get_view_links(context, toc)
+        links = {}
 
         return {**context, **c, **links}
 
