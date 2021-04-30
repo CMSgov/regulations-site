@@ -27,8 +27,6 @@ class ReaderView(TableOfContentsMixin, SidebarContextMixin, CitationContextMixin
         # answering the question: what are we looking at?
         reg_version = context["version"]
         reg_part = context["part"]
-        reg_citation = context["citation"]
-        #toc = self.get_toc(reg_part, reg_version)
         tree = self.client.v2_part(reg_version, 42, reg_part)
 
         c = {

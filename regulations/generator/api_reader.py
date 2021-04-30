@@ -36,9 +36,6 @@ class ApiReader(object):
     def v2_effective_parts(self, date):
         return self._get("v2/{}".format(date))
 
-    def v2_effective_parts(self, date):
-        return self._get("v2/{}".format(date))
-    
     def v2_part(self, date, title, part):
         return self._get("v2/{}/title/{}/part/{}".format(date, title, part))
 

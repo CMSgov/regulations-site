@@ -4,8 +4,7 @@ import logging
 from django.views.generic.base import TemplateView
 from requests import HTTPError
 
-from regulations.views import utils
-from regulations.generator import versions, api_reader
+from regulations.generator import api_reader
 
 
 logger = logging.getLogger(__name__)
@@ -29,7 +28,7 @@ class HomepageView(TemplateView):
 
             c = {
                 'regulations': parts,
-                'cfr_title_text': parts[0]['structure']['label_description'], # TODO: missing title info
+                'cfr_title_text': parts[0]['structure']['label_description'],
                 'cfr_title_number': parts[0]['structure']['identifier'],
             }
         except HTTPError:

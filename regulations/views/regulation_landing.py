@@ -23,10 +23,9 @@ class RegulationLandingView(TemplateView):
             current = client.v2_part(date.today(), 42, reg_part)
         except HTTPError:
             raise Http404
-        
+
         reg_version = current['date']
 
-        toc = self.get_toc(reg_part, reg_version)
         c = {
             'structure': current['structure']['children'][0]['children'][0]['children'][0],
             'version': reg_version,
