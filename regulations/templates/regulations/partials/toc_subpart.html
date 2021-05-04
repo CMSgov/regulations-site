@@ -1,16 +1,16 @@
-<li id="{{item}}" class="section-subpart" tabindex="0">
+<li id="{{item.type}}-{{item.identifier.0}}" class="section-subpart" tabindex="0">
     <h3 class="toc-nav__divider">
         <a class="subpart-letter">{{item.label_level|safe}}
             {% if item.descendant_range %}
                 <span class="subpart-range">({{ item.descendant_range.0 }} - {{ item.descendant_range.1 }})</span></a>
-                <button tabindex="0" data-state="expanded" data-set-state="expanded" data-state-name="{{item.label|join:'-'}}"><i class="fa fa-chevron-down"></i></button>
-                <button tabindex="0" data-state="expanded" data-set-state="collapsed" data-state-name="{{item.label|join:'-'}}"><i class="fa fa-chevron-up"></i></button>
+        <button tabindex="0" data-state="expanded" data-set-state="expanded" data-state-name="{{item.type}}-{{item.identifier.0}}"><i class="fa fa-chevron-down"></i></button>
+        <button tabindex="0" data-state="expanded" data-set-state="collapsed" data-state-name="{{item.type}}-{{item.identifier.0}}"><i class="fa fa-chevron-up"></i></button>
                 <div class="subpart-name">{{item.label_description|safe}}</div>
             {% endif %}
     </h3>
 </li>
 
-<li data-state="expanded" data-state-name="{{item.label|join:'-'}}">
+<li data-state="expanded" data-state-name="{{item.type}}-{{item.identifier.0}}">
     {% if item.children %}
         {% include "regulations/partials/toc_sub_toc.html" with type="subpart" %}
     {% endif %}
