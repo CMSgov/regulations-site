@@ -8,30 +8,18 @@
 {% block body %}
     <main class="reg-title">
         <div class="container">
-            <h1>
-                Title
-                {% if cfr_title_number and cfr_title_text %}
-                    {{cfr_title_number|upper}} {{cfr_title_text}}
-                {% else %}
-                    N/A
-                {% endif %}
-            </h1>
-            
-            <ul class="part-names">
-                {% for regulation in regulations %}
-                    <li>
-                        <a href="{% url 'regulation_landing_view' regulation.name %}">
-                            <div class="part-title">
-                                {{ regulation.structure.children.0.children.0.children.0.label }}
-                            </div>
-                        </a>
-                    </li>
-                {% endfor %}
+            {% for title in structure %}
 
-                {% if not regulations %}
-                    <li>No regulations are currently loaded.</li>
-                {% endif %}
-            </ul>
+            <h1> {{title.label}} </h1>
+            
+            {% for child in title.children %}
+                {% with "regulations/homepage/"|add:child.type|add:".html regulations/homepage/child.html" as templates %}
+                    {% include templates.split %}
+                {% endwith %}
+            {% endfor %}
+            
+
+            {% endfor %}
 
             {% if regulations %}
                 {% include "regulations/partials/recent_changes.html" %}
