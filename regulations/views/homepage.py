@@ -1,6 +1,5 @@
 from datetime import date
 import logging
-import json
 
 from django.views.generic.base import TemplateView
 from requests import HTTPError
@@ -42,13 +41,16 @@ class HomepageView(TemplateView):
 
         return {**context, **c}
 
+
 def different(one, two):
     return one['identifier'] != two['identifier']
+
 
 def merge(one, two):
     if different(one, two):
         return two
-    
+
+
 def merge_children(one, two):
     m = merge(one[len(one)-1], two)
     if m:
