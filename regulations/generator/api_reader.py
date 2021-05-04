@@ -36,11 +36,14 @@ class ApiReader(object):
     def v2_effective_parts(self, date):
         return self._get("v2/{}".format(date))
 
-    def v2_effective_parts(self, date):
-        return self._get("v2/{}".format(date))
-    
     def v2_part(self, date, title, part):
         return self._get("v2/{}/title/{}/part/{}".format(date, title, part))
+
+    def v2_search(self, query, **kwargs):
+        """Search via the API. Never cache these (that's the duty of the search
+        index)"""
+        kwargs['q'] = query
+        return _fetch('v2/search', kwargs)
 
     def all_regulations_versions(self):
         """ Get all versions, for all regulations. """

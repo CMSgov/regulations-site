@@ -27,8 +27,6 @@ class ReaderView(TableOfContentsMixin, SidebarContextMixin, CitationContextMixin
         # answering the question: what are we looking at?
         reg_version = context["version"]
         reg_part = context["part"]
-        citation = context["citation"]
-        reg_citation = "-".join(citation)
         tree = self.client.v2_part(reg_version, 42, reg_part)
 
         c = {
@@ -37,7 +35,7 @@ class ReaderView(TableOfContentsMixin, SidebarContextMixin, CitationContextMixin
             'structure':    tree['structure']['children'][0]['children'][0]['children'][0],
         }
 
-        links = {}#self.get_view_links(context, toc)
+        links = {}
 
         return {**context, **c, **links}
 
@@ -59,6 +57,7 @@ class ReaderView(TableOfContentsMixin, SidebarContextMixin, CitationContextMixin
 
 class PartReaderView(ReaderView):
     def get_view_links(self, context, toc):
+        return {}
         part = context['part']
         version = context['version']
         first_subpart = utils.first_subpart(part, version)

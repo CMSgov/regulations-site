@@ -3,7 +3,6 @@ from requests import HTTPError
 from django.views.generic.base import TemplateView
 from django.http import Http404
 
-from regulations.views.mixins import TableOfContentsMixin
 from regulations.generator import api_reader
 
 client = api_reader.ApiReader()
@@ -23,10 +22,9 @@ class RegulationLandingView(TemplateView):
             current = client.v2_part(date.today(), 42, reg_part)
         except HTTPError:
             raise Http404
-        
+
         reg_version = current['date']
 
-        toc = self.get_toc(reg_part, reg_version)
         c = {
             'structure': current['structure']['children'][0]['children'][0]['children'][0],
             'version': reg_version,
