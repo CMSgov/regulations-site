@@ -26,7 +26,12 @@ class HomepageView(TemplateView):
             if not parts:
                 return context
 
+            full_structure = [parts[0]['structure']]
+            for part in parts[1:]:
+                merge_children(full_structure, part['structure'])
+
             c = {
+                'structure': full_structure,
                 'regulations': parts,
                 'cfr_title_text': parts[0]['structure']['label_description'],
                 'cfr_title_number': parts[0]['structure']['identifier'],
@@ -35,3 +40,14 @@ class HomepageView(TemplateView):
             logger.warning("NOTE: eRegs homepage loaded without any stored regulations.")
 
         return {**context, **c}
+
+
+def different(one, two):
+    return one['identifier'] != two['identifier']
+
+
+def merge_children(one, two):
+    if different(one[len(one)-1], two):
+        one.append(two)
+        return
+    merge_children(one[len(one)-1]['children'], two['children'][0])
