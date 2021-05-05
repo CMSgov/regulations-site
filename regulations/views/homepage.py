@@ -46,14 +46,8 @@ def different(one, two):
     return one['identifier'] != two['identifier']
 
 
-def merge(one, two):
-    if different(one, two):
-        return two
-
-
 def merge_children(one, two):
-    m = merge(one[len(one)-1], two)
-    if m:
-        one.append(m)
+    if different(one[len(one)-1], two):
+        one.append(two)
         return
     merge_children(one[len(one)-1]['children'], two['children'][0])
