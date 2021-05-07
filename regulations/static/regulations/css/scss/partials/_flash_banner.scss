@@ -14,5 +14,13 @@
     a {
         text-decoration: none;
         font-weight: bold;
+
+        &:visited {
+            color: $primary_link_color;
+
+            &:hover {
+                color: $primary_link_hover; 
+            }
+        }
     }
 }

@@ -13893,6 +13893,41 @@ html {
   margin-left: 0.3rem;
 }
 
+.flash-banner {
+  background: #EEFAFE;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px;
+}
+.flash-banner a {
+  text-decoration: none;
+  font-weight: bold;
+}
+.flash-banner a:visited {
+  color: #046791;
+}
+.flash-banner a:visited:hover {
+  color: #17415F;
+}
+
+a {
+  color: #046791;
+}
+a:hover {
+  color: #17415F;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.fa-external-link-alt {
+  font-size: 80%;
+  margin-left: 0.3rem;
+}
+
 header a {
   text-decoration: none;
   color: #026666;
