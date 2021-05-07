@@ -7,6 +7,59 @@
 
 .site-homepage {
 
+    // Hero Banner
+
+    .hero-banner {
+        background: $hero_background_color;
+        color: $reverse_text_color;
+        padding: $spacer-4;
+
+        .hero-text {
+            width: 50%;
+
+            a {
+                color: $hero_link_color;
+
+                &:visited {
+                    color: $hero_link_color;
+                }
+
+                &:hover {
+                    color: $hero_link_hover;
+                }
+            }
+        }
+
+        h1 {
+            margin-bottom: 0;
+            font-family: $primary_site_font;
+            font-size: $font-size-4xl;
+        }
+
+    }
+
+    // Features
+
+    .site-features {
+        background: $teritary_background_color;
+    }
+
+    .feature {
+        @include equal-width-flexbox-col();
+        padding: $spacer-3;
+
+        h3 {
+            font-family: $secondary_site_font;
+            font-weight: normal;
+        }
+    }
+}
+
+
+// Leftover Code from Dec MVP - To Be Deleted
+
+.site-homepage {
+
     .reg-title {
         h1 {
             margin-bottom: 0;

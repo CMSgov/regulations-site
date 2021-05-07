@@ -13610,6 +13610,42 @@ html {
   margin-left: 0.3rem;
 }
 
+.site-homepage .hero-banner {
+  background: #026666;
+  color: #fff;
+  padding: 32px;
+}
+.site-homepage .hero-banner .hero-text {
+  width: 50%;
+}
+.site-homepage .hero-banner .hero-text a {
+  color: #fff;
+}
+.site-homepage .hero-banner .hero-text a:visited {
+  color: #fff;
+}
+.site-homepage .hero-banner .hero-text a:hover {
+  color: #A3E8FF;
+}
+.site-homepage .hero-banner h1 {
+  margin-bottom: 0;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 48px;
+}
+.site-homepage .site-features {
+  background: #EEFAFE;
+}
+.site-homepage .feature {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding: 24px;
+}
+.site-homepage .feature h3 {
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: normal;
+}
+
 .site-homepage .reg-title h1 {
   margin-bottom: 0;
   font-size: 1.7em;
