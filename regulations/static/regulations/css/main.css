@@ -13518,6 +13518,13 @@ body {
   height: 100%;
 }
 
+.site-container {
+  max-width: 1440px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
 .container {
   max-width: 53rem;
   display: block;
@@ -13615,8 +13622,17 @@ html {
   color: #fff;
   padding: 32px;
 }
+.site-homepage .hero-banner .hero-search {
+  margin: 16px 0;
+  height: 42px;
+  position: relative;
+  z-index: 2;
+}
 .site-homepage .hero-banner .hero-text {
   width: 50%;
+  height: 300px;
+  position: relative;
+  z-index: 2;
 }
 .site-homepage .hero-banner .hero-text a {
   color: #fff;
@@ -13626,6 +13642,16 @@ html {
 }
 .site-homepage .hero-banner .hero-text a:hover {
   color: #A3E8FF;
+}
+.site-homepage .hero-banner .hero-image {
+  position: absolute;
+  top: -110px;
+  right: 0;
+  width: 50%;
+  text-align: right;
+}
+.site-homepage .hero-banner .hero-image img {
+  max-width: 100%;
 }
 .site-homepage .hero-banner h1 {
   margin-bottom: 0;
@@ -13934,6 +13960,8 @@ html {
   text-align: center;
   font-size: 14px;
   padding: 8px;
+  position: relative;
+  z-index: 100;
 }
 .flash-banner a {
   text-decoration: none;
@@ -13985,13 +14013,14 @@ header .site-title {
 header .reg-title {
   display: inline-block;
 }
-header .search-header {
+
+.search-header {
   float: right;
 }
-header .search-header .search-box {
+.search-header .search-box {
   width: 380px;
 }
-header .search-header .search-box input {
+.search-header .search-box input {
   border: 1px solid #D6D7D9;
 }
 

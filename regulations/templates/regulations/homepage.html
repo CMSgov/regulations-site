@@ -9,30 +9,44 @@
 
 {% block body %}
     <div class="hero-banner">
-        <div class="hero-text">
-            <h1>Medicaid &amp; CHIP Regulations</h1>
-            <h4>Look up policy with context.</h4>
-            <p>This is a pilot project in the Center for Medicaid and CHIP Services (CMCS). Learn more about <a href="/about">using this tool</a> and <a href="">how this tool is updated</a>, or explore the site as a supplement to existing policy tools.</p>
-        </div>
+        <div class="site-container">
+
+            <div class="hero-search">
+                {% include "regulations/partials/header-search.html" %}
+            </div>
+
+            <div class="hero-text">
+                <h1>Medicaid &amp; CHIP Regulations</h1>
+                <h4>Look up policy with context.</h4>
+                <p>This is a pilot project in the Center for Medicaid and CHIP Services (CMCS). Learn more about <a href="/about">using this tool</a> and <a href="">how this tool is updated</a>, or explore the site as a supplement to existing policy tools.</p>
+            </div>
+
+            <div class="hero-image">
+                <img src="{% static 'images/hero-graphic.svg' %}" />
+            </div>
+
+        </div>    
     </div>
 
-    <div class="site-features flexbox">
+    <div class="site-features">
+        <div class="site-container flexbox">
 
-        <div class="feature">
-            <h3>Sub-Regulatory Guidance</h3>
-            <p>See related State Medicaid Director Letters, CMCS Informational Bulletins, and more. <a href="/about">Learn more.</a></p>
+            <div class="feature">
+                <h3>Sub-Regulatory Guidance</h3>
+                <p>See related State Medicaid Director Letters, CMCS Informational Bulletins, and more. <a href="/about">Learn more.</a></p>
+            </div>
+
+            <div class="feature">
+                <h3>Regulation History</h3>
+                <p>View current and past versions and compare them to find changes over time. <a href="/about">Learn more.</a></p>
+            </div>
+
+            <div class="feature">
+                <h3>Cross-References</h3>
+                <p>Use direct links to jump to cited statutes, regulations, and rules. <a href="/about">Learn more.</a></p>
+            </div>
+
         </div>
-
-        <div class="feature">
-            <h3>Regulation History</h3>
-            <p>View current and past versions and compare them to find changes over time. <a href="/about">Learn more.</a></p>
-        </div>
-
-        <div class="feature">
-            <h3>Cross-References</h3>
-            <p>Use direct links to jump to cited statutes, regulations, and rules. <a href="/about">Learn more.</a></p>
-        </div>
-
     </div>
 
     <main class="site-homepage">

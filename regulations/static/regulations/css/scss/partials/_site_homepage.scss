@@ -14,8 +14,18 @@
         color: $reverse_text_color;
         padding: $spacer-4;
 
+        .hero-search {
+            margin: $spacer-2 0;
+            height: 42px;           // Height of the search box
+            position: relative;
+            z-index: 2;
+        }
+
         .hero-text {
             width: 50%;
+            height: 300px;
+            position: relative;
+            z-index: 2;
 
             a {
                 color: $hero_link_color;
@@ -27,6 +37,18 @@
                 &:hover {
                     color: $hero_link_hover;
                 }
+            }
+        }
+
+        .hero-image {
+            position: absolute;
+            top: -110px;
+            right: 0;
+            width: 50%;
+            text-align: right;
+
+            img {
+                max-width: 100%;
             }
         }
 

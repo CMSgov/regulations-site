@@ -18,6 +18,13 @@ body {
     height: 100%;
 }
 
+.site-container {           // This changes for different screen sizes
+    max-width: 1440px;
+    display: block; 
+    margin: 0 auto;
+    position: relative;
+}
+
 .container {
     max-width: $text-max-width;
     display: block; 
