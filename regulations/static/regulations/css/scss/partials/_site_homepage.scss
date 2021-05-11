@@ -58,6 +58,8 @@
             top: -85px;
             text-align: right;
 
+            // All of these media queries are needed to get the overlapping effect without overlapping the text smoothly at different screen sizes (I know, I designed a mildly ridiculous-to-code homepage because it looked awesome)
+
             @include screen-lg {
                 width: 58%;
                 top: -60px;
