@@ -13651,7 +13651,7 @@ html {
 }
 @media (max-width: 1350px) {
   .site-homepage .hero-banner .hero-text {
-    height: 300px;
+    height: 260px;
   }
 }
 .site-homepage .hero-banner .hero-text a {
@@ -13667,14 +13667,14 @@ html {
   position: absolute;
   right: 0;
   width: 50%;
-  top: -95px;
+  top: -85px;
   text-align: right;
 }
 @media (min-width: 1024px) {
   .site-homepage .hero-banner .hero-image {
     width: 58%;
-    top: -22px;
-    right: -55px;
+    top: -60px;
+    right: -56px;
   }
 }
 @media (min-width: 1050px) {
@@ -13682,42 +13682,57 @@ html {
     width: 56%;
   }
 }
-@media (min-width: 1105px) {
+@media (min-width: 1100px) {
   .site-homepage .hero-banner .hero-image {
     width: 54%;
+    right: -40px;
+  }
+}
+@media (min-width: 1140px) {
+  .site-homepage .hero-banner .hero-image {
+    width: 52%;
+    right: -30px;
+    top: -55px;
+  }
+}
+@media (min-width: 1170px) {
+  .site-homepage .hero-banner .hero-image {
+    width: 50%;
     top: -50px;
   }
 }
 @media (min-width: 1190px) {
   .site-homepage .hero-banner .hero-image {
-    width: 53%;
+    width: 50%;
     top: -60px;
-    right: -40px;
   }
 }
 @media (min-width: 1235px) {
   .site-homepage .hero-banner .hero-image {
-    width: 52%;
-    top: -52px;
+    width: 50%;
+    top: -86px;
     right: -30px;
   }
 }
 @media (min-width: 1280px) {
   .site-homepage .hero-banner .hero-image {
-    width: 51%;
-    top: -80px;
+    width: 49%;
+    top: -98px;
+    right: 0;
   }
 }
 @media (min-width: 1350px) {
   .site-homepage .hero-banner .hero-image {
-    top: -80px;
-    width: 50%;
+    top: -78px;
+    width: 49%;
+    right: 0;
   }
 }
 @media (min-width: 1440px) {
   .site-homepage .hero-banner .hero-image {
-    top: -95px;
+    top: -85px;
     width: 50%;
+    right: 0;
   }
 }
 .site-homepage .hero-banner .hero-image img {
@@ -13731,7 +13746,12 @@ html {
 @media (max-width: 1490px) {
   .site-homepage .hero-banner h1 {
     font-size: 2.7em;
+    line-height: 1.1em;
+    margin-bottom: 8px;
   }
+}
+.site-homepage .hero-banner h4 {
+  margin-top: 0;
 }
 .site-homepage .site-features {
   background: #EEFAFE;
