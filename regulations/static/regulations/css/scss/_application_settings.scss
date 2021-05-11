@@ -74,7 +74,44 @@ $secondary_site_font: "Merriweather", Georgia, serif;
 // Breakpoints
 //--------------------------
 
-// Use CMS Design System
+// Uses CMS Design System + a larger screen size
+
+$width-xxl: 1440px;  // The largest the site container will get
+
+// 544px 
+@mixin screen-sm {
+   @media (min-width: #{$width-sm}) {
+       @content;
+   }
+}
+
+// 768px
+@mixin screen-md {
+   @media (min-width: #{$width-md}) {
+       @content;
+   }
+}
+
+// 1024px
+@mixin screen-lg {
+   @media (min-width: #{$width-lg}) {
+       @content;
+   }
+}
+
+// 1280px
+@mixin screen-xl {
+   @media (min-width: #{$width-xl}) {
+       @content;
+   }
+}
+
+// Custom - 1440px
+@mixin screen-xxl {
+   @media (min-width: #{$width-xxl}) {
+       @content;
+   }
+}
 
 //--------------------------
 // Transitions

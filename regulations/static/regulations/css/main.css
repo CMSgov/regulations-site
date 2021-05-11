@@ -13519,10 +13519,20 @@ body {
 }
 
 .site-container {
-  max-width: 1440px;
   display: block;
   margin: 0 auto;
   position: relative;
+  padding: 24px;
+}
+@media (min-width: 1280px) {
+  .site-container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1440px) {
+  .site-container {
+    max-width: 1440px;
+  }
 }
 
 .container {
@@ -13617,22 +13627,32 @@ html {
   margin-left: 0.3rem;
 }
 
+@media (max-width: 1350px) {
+  .site-homepage .site-container {
+    padding-top: 0;
+  }
+}
 .site-homepage .hero-banner {
   background: #026666;
   color: #fff;
   padding: 32px;
 }
 .site-homepage .hero-banner .hero-search {
-  margin: 16px 0;
   height: 42px;
   position: relative;
   z-index: 2;
 }
 .site-homepage .hero-banner .hero-text {
   width: 50%;
-  height: 300px;
+  height: 276px;
   position: relative;
   z-index: 2;
+  text-shadow: 3px 1px 5px #026666;
+}
+@media (max-width: 1350px) {
+  .site-homepage .hero-banner .hero-text {
+    height: 300px;
+  }
 }
 .site-homepage .hero-banner .hero-text a {
   color: #fff;
@@ -13645,10 +13665,60 @@ html {
 }
 .site-homepage .hero-banner .hero-image {
   position: absolute;
-  top: -110px;
   right: 0;
   width: 50%;
+  top: -95px;
   text-align: right;
+}
+@media (min-width: 1024px) {
+  .site-homepage .hero-banner .hero-image {
+    width: 58%;
+    top: -22px;
+    right: -55px;
+  }
+}
+@media (min-width: 1050px) {
+  .site-homepage .hero-banner .hero-image {
+    width: 56%;
+  }
+}
+@media (min-width: 1105px) {
+  .site-homepage .hero-banner .hero-image {
+    width: 54%;
+    top: -50px;
+  }
+}
+@media (min-width: 1190px) {
+  .site-homepage .hero-banner .hero-image {
+    width: 53%;
+    top: -60px;
+    right: -40px;
+  }
+}
+@media (min-width: 1235px) {
+  .site-homepage .hero-banner .hero-image {
+    width: 52%;
+    top: -52px;
+    right: -30px;
+  }
+}
+@media (min-width: 1280px) {
+  .site-homepage .hero-banner .hero-image {
+    width: 51%;
+    top: -80px;
+  }
+}
+@media (min-width: 1350px) {
+  .site-homepage .hero-banner .hero-image {
+    top: -80px;
+    width: 50%;
+  }
+}
+@media (min-width: 1440px) {
+  .site-homepage .hero-banner .hero-image {
+    top: -95px;
+    width: 50%;
+  }
 }
 .site-homepage .hero-banner .hero-image img {
   max-width: 100%;
@@ -13657,6 +13727,11 @@ html {
   margin-bottom: 0;
   font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 48px;
+}
+@media (max-width: 1490px) {
+  .site-homepage .hero-banner h1 {
+    font-size: 2.7em;
+  }
 }
 .site-homepage .site-features {
   background: #EEFAFE;

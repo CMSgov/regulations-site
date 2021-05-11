@@ -18,14 +18,22 @@ body {
     height: 100%;
 }
 
-.site-container {           // This changes for different screen sizes
-    max-width: 1440px;
+.site-container {               // This is good to target for different screen sizes
     display: block; 
     margin: 0 auto;
     position: relative;
+    padding: $spacer-3;
+
+    @include screen-xl {
+        max-width: $width-xl;
+    }
+
+    @include screen-xxl {
+        max-width: $width-xxl;
+    }
 }
 
-.container {
+.container {                    // Width set for optimal readability of text
     max-width: $text-max-width;
     display: block; 
     margin: 0 auto;

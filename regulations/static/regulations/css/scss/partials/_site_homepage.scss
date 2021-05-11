@@ -7,6 +7,13 @@
 
 .site-homepage {
 
+    .site-container {
+
+        @media (max-width: 1350px) {
+            padding-top: 0; 
+        }
+    }
+
     // Hero Banner
 
     .hero-banner {
@@ -15,7 +22,6 @@
         padding: $spacer-4;
 
         .hero-search {
-            margin: $spacer-2 0;
             height: 42px;           // Height of the search box
             position: relative;
             z-index: 2;
@@ -23,9 +29,14 @@
 
         .hero-text {
             width: 50%;
-            height: 300px;
+            height: 276px;
             position: relative;
             z-index: 2;
+            text-shadow: 3px 1px 5px $secondary_color;
+
+            @media (max-width: 1350px) {
+                height: 300px;
+            }
 
             a {
                 color: $hero_link_color;
@@ -42,10 +53,53 @@
 
         .hero-image {
             position: absolute;
-            top: -110px;
             right: 0;
             width: 50%;
+            top: -95px;
             text-align: right;
+
+            @include screen-lg {
+                width: 58%;
+                top: -22px;
+                right: -55px;
+            }
+
+            @media (min-width: 1050px) {
+                width: 56%;
+            }
+
+            @media (min-width: 1105px) {
+                width: 54%;
+                top: -50px;
+            }
+
+            @media (min-width: 1190px) {
+                width: 53%;
+                top: -60px;
+                right: -40px;
+            }
+
+            @media (min-width: 1235px) {
+                width: 52%;
+                top: -52px;
+                right: -30px;
+            }
+
+
+            @include screen-xl {
+                width: 51%;
+                top: -80px;
+            }
+
+            @media (min-width: 1350px) {
+                top: -80px;
+                width: 50%;
+            }
+
+            @include screen-xxl {
+                top: -95px;
+                width: 50%;
+            }
 
             img {
                 max-width: 100%;
@@ -56,6 +110,10 @@
             margin-bottom: 0;
             font-family: $primary_site_font;
             font-size: $font-size-4xl;
+
+            @media (max-width: 1490px) {
+                font-size: 2.7em;  
+            }
         }
 
     }
@@ -76,7 +134,6 @@
         }
     }
 }
-
 
 // Leftover Code from Dec MVP - To Be Deleted
 
