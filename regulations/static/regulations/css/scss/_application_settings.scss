@@ -82,11 +82,15 @@ $primary_indicator_background: $teal;
 $primary_indicator_text: $white;
 
 //--------------------------
-// Base Font Settings
+// Fonts
 //--------------------------
 
 $primary_site_font: $font-sans;  // Open Sans
 $secondary_site_font: "Merriweather", Georgia, serif;
+
+// More font sizes are in the CMS Design System
+
+$font-size-xs: 12px;
 
 //--------------------------
 // Breakpoints

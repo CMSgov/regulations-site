@@ -13818,7 +13818,7 @@ html {
   padding: 1em 0;
 }
 .homepage-toc .part-names {
-  display: block;
+  display: flex;
   margin: 24px 0;
   padding: 0;
   font-size: 18px;
@@ -13875,7 +13875,7 @@ html {
 }
 .homepage-updates .latest-changes .see-fr {
   font-style: italic;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .indicator {
@@ -14616,20 +14616,29 @@ footer {
   padding: 32px;
   border-top: 1px solid #D6D7D9;
   background: #EEFAFE;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: space-between;
 }
 footer p {
-  font-family: "Open Sans", Helvetica, sans-serif;
-  font-weight: normal;
   font-size: 12px;
   color: #5B616B;
 }
 footer h5 {
   font-family: "Merriweather", Georgia, serif;
   color: #5B616B;
-  margin-bottom: 0;
+  margin: 8px 0 0 0;
+  font-size: 14px;
+}
+footer .address {
+  margin-bottom: 24px;
+  font-size: 12px;
+}
+footer .last-update-footer {
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+footer .about-footer {
+  font-size: 14px;
 }
 footer .footer-left {
   display: table-cell;

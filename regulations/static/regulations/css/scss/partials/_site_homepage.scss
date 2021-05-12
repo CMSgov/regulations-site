@@ -183,7 +183,7 @@
     }
 
     .part-names {
-        display: block;
+        display: flex;
         margin: $spacer-3 0;
         padding: 0;
         font-size: $font-size-lg;
@@ -259,7 +259,7 @@
 
         .see-fr {
             font-style: italic;
-            font-size: $font-size-sm;
+            font-size: $font-size-xs;
         }
     }
 
