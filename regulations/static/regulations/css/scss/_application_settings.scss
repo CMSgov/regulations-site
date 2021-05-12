@@ -25,11 +25,16 @@ $magenta: #862074;
 $white: #fff;
 $black: #000;
 
-// Usage
-// Call This Section in Your CSS, Not the Color Names
+//// Usage ////
+//// Call This Section in Your CSS, Not the Color Names ////
+
+// Colors
 
 $primary_color: $dark_blue;
 $secondary_color: $teal;
+
+
+// Links
 
 $primary_link_color: $mid_blue;
 $primary_link_hover: $dark_blue;
@@ -45,7 +50,11 @@ $reverse_link_hover: $white;
 
 $visited_link_color: $magenta;
 
+// Forms
+
 $placeholder_color: $mid_gray_2;
+
+// Backgrounds
 
 $main_background_color: $white;
 $secondary_background_color: $lightest_gray;
@@ -56,12 +65,21 @@ $hero_background_color: $teal;
 $hero_link_color: $white;
 $hero_link_hover: $light_blue;
 
+//Borders
+
 $border_color: $light_gray;
 $secondary_border_color: $mid_blue;
+
+// Text
 
 $primary_text_color: $dark_gray;
 $secondary_text_color: $mid_gray;
 $reverse_text_color: $white;
+
+// Indicators
+
+$primary_indicator_background: $teal;
+$primary_indicator_text: $white;
 
 //--------------------------
 // Base Font Settings
@@ -135,6 +153,19 @@ $width-xxl: 1440px;  // The largest the site container will get
 }
 
 // -------------------------
+// Indicators
+// -------------------------
+
+.indicator {
+    background: $primary_indicator_background;
+    text-transform: uppercase;
+    color: $primary_indicator_text;
+    font-size: 11px;
+    padding: 2px 5px;
+    border-radius: $border-radius;
+}
+
+// -------------------------
 // General Settings
 // -------------------------
 
@@ -164,7 +195,4 @@ html {
     scroll-behavior: smooth;
 }
 
-.fa-external-link-alt {
-    font-size: 80%;
-    margin-left: .3rem;
-}
+

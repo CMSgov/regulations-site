@@ -13485,6 +13485,15 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 a {
   color: #046791;
 }
@@ -13500,11 +13509,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 header {
@@ -13570,6 +13574,18 @@ aside.right-sidebar {
   width: 400px;
   border-left: 1px solid #D6D7D9;
 }
+aside.homepage-updates {
+  padding-top: 48px;
+}
+
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
 
 a {
   color: #046791;
@@ -13586,11 +13602,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 html {
@@ -13618,6 +13629,15 @@ h2 {
   font-family: "Merriweather", Georgia, serif;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 a {
   color: #046791;
 }
@@ -13633,11 +13653,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 @media (max-width: 1350px) {
@@ -13807,10 +13822,58 @@ html {
 }
 .homepage-toc .part-names a .part-number {
   font-weight: bold;
-  display: table-cell;
+  display: inline;
 }
 .homepage-toc .part-names a .part-title {
-  display: table-cell;
+  display: inline;
+}
+
+.homepage-updates .last-update-external {
+  font-style: italic;
+  font-weight: 600;
+  margin: 0 0 40px 0;
+}
+.homepage-updates .latest-changes {
+  background: #F3F3F3;
+  padding: 32px 48px;
+}
+.homepage-updates .latest-changes h3 {
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.homepage-updates .latest-changes .recent-change {
+  margin: 16px 0;
+  font-size: 14px;
+}
+.homepage-updates .latest-changes .recent-change a {
+  text-decoration: none;
+}
+.homepage-updates .latest-changes .recent-change .recent-date {
+  font-weight: bold;
+}
+.homepage-updates .latest-changes .recent-change .recent-fr {
+  font-weight: bold;
+}
+.homepage-updates .latest-changes .recent-change .recent-title {
+  margin-top: 8px;
+}
+.homepage-updates .latest-changes .recent-change .recent-title:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
+}
+.homepage-updates .latest-changes .see-fr {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
 }
 
 a {
@@ -13828,11 +13891,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 .search-page main {
@@ -14002,6 +14060,15 @@ html {
   color: #046791;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 a {
   color: #046791;
 }
@@ -14017,11 +14084,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 .view-and-compare {
@@ -14058,6 +14120,15 @@ html {
   color: #fff;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 a {
   color: #046791;
 }
@@ -14073,11 +14144,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 .flash-banner {
@@ -14099,6 +14165,15 @@ html {
   color: #17415F;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 a {
   color: #046791;
 }
@@ -14114,11 +14189,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 header a {
@@ -14153,6 +14223,15 @@ header .reg-title {
   border: 1px solid #D6D7D9;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 a {
   color: #046791;
 }
@@ -14168,11 +14247,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 aside.left-sidebar {
@@ -14332,6 +14406,15 @@ aside.left-sidebar[data-state=collapsed] div.toc-controls [data-set-state=expand
   font-size: 18px;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 a {
   color: #046791;
 }
@@ -14347,11 +14430,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 aside.right-sidebar {
@@ -14401,6 +14479,15 @@ aside.right-sidebar button .button-image {
   padding: 0;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 a {
   color: #046791;
 }
@@ -14416,11 +14503,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 .reg-text h1 {
@@ -14477,6 +14559,15 @@ html {
   color: #212121;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 a {
   color: #046791;
 }
@@ -14492,11 +14583,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 footer {
@@ -14557,6 +14643,15 @@ footer .footer-right i:hover {
   transition: all 0.1s ease-in;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
 a {
   color: #046791;
 }
@@ -14572,11 +14667,6 @@ a.external:after {
 
 html {
   scroll-behavior: smooth;
-}
-
-.fa-external-link-alt {
-  font-size: 80%;
-  margin-left: 0.3rem;
 }
 
 main.error-page {
