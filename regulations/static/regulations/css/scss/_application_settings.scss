@@ -106,9 +106,16 @@ $width-xxl: 1440px;  // The largest the site container will get
    }
 }
 
-// Custom - 1440px
+// 1440px - eRegs-specific breakpoint 
 @mixin screen-xxl {
    @media (min-width: #{$width-xxl}) {
+       @content;
+   }
+}
+
+// For adjustments that don't fit into the usual breakpoints
+@mixin custom($screen) {
+   @media (min-width: $screen+'px') {
        @content;
    }
 }

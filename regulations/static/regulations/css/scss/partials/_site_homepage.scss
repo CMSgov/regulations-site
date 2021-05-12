@@ -66,32 +66,32 @@
                 right: -56px;
             }
 
-            @media (min-width: 1050px) {
+            @include custom(1050) {
                 width: 56%;
             }
 
-            @media (min-width: 1100px) {
+            @include custom(1100) {
                 width: 54%;
                 right: -40px;
             }
 
-            @media (min-width: 1140px) {
+            @include custom(1140) {
                 width: 52%;
                 right: -30px;
                 top: -55px;
             }
 
-            @media (min-width: 1170px) {
+            @include custom(1170) {
                 width: 50%;
                 top: -50px;
             }
 
-            @media (min-width: 1190px) {
+            @include custom(1190) {
                 width: 50%;
                 top: -60px;
             }
 
-            @media (min-width: 1235px) {
+            @include custom(1235) {
                 width: 50%;
                 top: -86px;
                 right: -30px;
@@ -103,7 +103,7 @@
                 right: 0;
             }
 
-            @media (min-width: 1350px) {
+            @include custom(1350) {
                 top: -78px;
                 width: 49%;
                 right: 0;
@@ -125,7 +125,7 @@
             font-family: $primary_site_font;
             font-size: $font-size-4xl;
 
-            @media (max-width: 1490px) {
+            @include custom(1490) {
                 font-size: 2.7em;  
                 line-height: 1.1em;
                 margin-bottom: $spacer-1;

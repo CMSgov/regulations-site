@@ -13743,7 +13743,7 @@ html {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 48px;
 }
-@media (max-width: 1490px) {
+@media (min-width: 1490px) {
   .site-homepage .hero-banner h1 {
     font-size: 2.7em;
     line-height: 1.1em;
