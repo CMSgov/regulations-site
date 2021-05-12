@@ -217,7 +217,11 @@
 
     .latest-changes {
         background: $secondary_background_color;
-        padding: $spacer-4 $spacer-6;
+        padding: $spacer-4;
+
+        @include screen-xl {
+            padding: $spacer-4 $spacer-6;
+        }
 
         h3 {
             font-family: $secondary_site_font;
@@ -245,11 +249,10 @@
             }
 
             .recent-title {
-                margin-top: $spacer-1;
+                margin-top: .2em;
 
                 &:after {
-                    content: url('../images/external-link.svg');
-                    padding-left: 5px;
+                    @include external-link;
                 }
             }
         }

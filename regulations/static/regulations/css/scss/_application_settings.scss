@@ -163,6 +163,25 @@ $width-xxl: 1440px;  // The largest the site container will get
     font-size: 11px;
     padding: 2px 5px;
     border-radius: $border-radius;
+    margin-right: 4px;
+}
+
+// -------------------------
+// External Links
+// -------------------------
+
+@mixin external-link {
+  content: url('../images/external-link.svg');
+  padding-left: 5px;
+}
+
+a {
+    &.external {
+
+      &:after {
+        @include external-link;
+      }
+    }
 }
 
 // -------------------------
@@ -171,6 +190,8 @@ $width-xxl: 1440px;  // The largest the site container will get
 
 // For margins and padding: From the CMS Design System, default to $spacer-* where * is a number between 1–7 (i.e. $spacer-2)
 
+
+
 a {
     color: $primary_link_color;
 
@@ -178,16 +199,6 @@ a {
         color: $primary_link_hover;
         cursor: pointer;
         @include transition;
-    }
-
-    // By default, all external links should get this class
-
-    &.external {
-
-      &:after {
-        content: url('../images/external-link.svg');
-        padding-left: 5px;
-      }
     }
 }
 

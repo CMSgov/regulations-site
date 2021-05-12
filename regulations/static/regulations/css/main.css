@@ -13492,6 +13492,12 @@ readers do not read off random characters that represent icons */
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -13501,10 +13507,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -13585,6 +13587,12 @@ aside.homepage-updates {
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -13594,10 +13602,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -13636,6 +13640,12 @@ h2 {
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -13645,10 +13655,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -13835,7 +13841,12 @@ html {
 }
 .homepage-updates .latest-changes {
   background: #F3F3F3;
-  padding: 32px 48px;
+  padding: 32px;
+}
+@media (min-width: 1280px) {
+  .homepage-updates .latest-changes {
+    padding: 32px 48px;
+  }
 }
 .homepage-updates .latest-changes h3 {
   font-family: "Merriweather", Georgia, serif;
@@ -13856,7 +13867,7 @@ html {
   font-weight: bold;
 }
 .homepage-updates .latest-changes .recent-change .recent-title {
-  margin-top: 8px;
+  margin-top: 0.2em;
 }
 .homepage-updates .latest-changes .recent-change .recent-title:after {
   content: url("../images/external-link.svg");
@@ -13874,6 +13885,12 @@ html {
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -13883,10 +13900,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -14067,6 +14080,12 @@ html {
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -14076,10 +14095,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -14127,6 +14142,12 @@ html {
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -14136,10 +14157,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -14172,6 +14189,12 @@ html {
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -14181,10 +14204,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -14230,6 +14249,12 @@ header .reg-title {
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -14239,10 +14264,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -14413,6 +14434,12 @@ aside.left-sidebar[data-state=collapsed] div.toc-controls [data-set-state=expand
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -14422,10 +14449,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -14486,6 +14509,12 @@ aside.right-sidebar button .button-image {
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -14495,10 +14524,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -14566,6 +14591,12 @@ html {
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -14575,10 +14606,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
@@ -14650,6 +14677,12 @@ footer .footer-right i:hover {
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 a {
@@ -14659,10 +14692,6 @@ a:hover {
   color: #17415F;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-a.external:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
 }
 
 html {
