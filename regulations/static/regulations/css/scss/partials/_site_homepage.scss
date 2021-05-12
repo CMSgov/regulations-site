@@ -9,7 +9,7 @@
 
     .site-container {
 
-        @media (max-width: 1350px) {
+        @include custom-max(1350) {
             padding-top: 0; 
         }
     }
@@ -127,8 +127,8 @@
             font-family: $primary_site_font;
             font-size: $font-size-4xl;
 
-            @include custom-max(1490) {
-                font-size: 2.7em;  
+            @include custom-max(1490) {     // Deliberately non-conforming
+                font-size: 2.7em;        
                 line-height: 1.1em;
                 margin-bottom: $spacer-1;
             }
