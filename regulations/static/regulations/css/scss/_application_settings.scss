@@ -114,8 +114,14 @@ $width-xxl: 1440px;  // The largest the site container will get
 }
 
 // For adjustments that don't fit into the usual breakpoints
-@mixin custom($screen) {
+@mixin custom-min($screen) {
    @media (min-width: $screen+'px') {
+       @content;
+   }
+}
+
+@mixin custom-max($screen) {
+   @media (max-width: $screen+'px') {
        @content;
    }
 }

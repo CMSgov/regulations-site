@@ -19,7 +19,7 @@
     .hero-banner {
         background: $hero_background_color;
         color: $reverse_text_color;
-        padding: $spacer-4;
+        padding: $spacer-4 0;
 
         .hero-search {
             height: 42px;           // Height of the search box
@@ -34,7 +34,7 @@
             z-index: 2;
             text-shadow: 3px 1px 5px $secondary_color;
 
-            @media (max-width: 1350px) {
+            @include custom-min(1350) {
                 height: 260px;
             }
 
@@ -61,37 +61,39 @@
             // All of these media queries are needed to get the overlapping effect without overlapping the text smoothly at different screen sizes (I know, I designed a mildly ridiculous-to-code homepage because it looked awesome)
 
             @include screen-lg {
-                width: 58%;
-                top: -60px;
-                right: -56px;
-            }
-
-            @include custom(1050) {
                 width: 56%;
+                top: -60px;
+                right: -45px;
             }
 
-            @include custom(1100) {
+            @include custom-min(1050) {
+                width: 54%;
+                right: -34px;
+            }
+
+            @include custom-min(1100) {
                 width: 54%;
                 right: -40px;
+                top: -70px;
             }
 
-            @include custom(1140) {
+            @include custom-min(1120) {
                 width: 52%;
                 right: -30px;
-                top: -55px;
+                top: -75px;
             }
 
-            @include custom(1170) {
-                width: 50%;
-                top: -50px;
-            }
-
-            @include custom(1190) {
+            @include custom-min(1170) {
                 width: 50%;
                 top: -60px;
             }
 
-            @include custom(1235) {
+            @include custom-min(1190) {
+                width: 50%;
+                top: -70px;
+            }
+
+            @include custom-min(1235) {
                 width: 50%;
                 top: -86px;
                 right: -30px;
@@ -103,8 +105,8 @@
                 right: 0;
             }
 
-            @include custom(1350) {
-                top: -78px;
+            @include custom-min(1300) {
+                top: -98px;
                 width: 49%;
                 right: 0;
             }
@@ -125,7 +127,7 @@
             font-family: $primary_site_font;
             font-size: $font-size-4xl;
 
-            @include custom(1490) {
+            @include custom-max(1490) {
                 font-size: 2.7em;  
                 line-height: 1.1em;
                 margin-bottom: $spacer-1;
@@ -145,8 +147,7 @@
     }
 
     .feature {
-        @include equal-width-flexbox-col();
-        padding: $spacer-3 $spacer-3 $spacer-3 0;
+        padding: $spacer-2;
 
         h3 {
             font-family: $secondary_site_font;

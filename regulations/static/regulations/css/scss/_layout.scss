@@ -3,6 +3,8 @@
 // Layout
 //-----------------------------------------------------------------------------------------
 
+// We loosely use the CMS Design System grid: https://design.cms.gov/utilities/grid
+
 header {
     padding: $spacer-4;
     border-bottom: 1px solid $primary_color;
@@ -22,10 +24,11 @@ body {
     display: block; 
     margin: 0 auto;
     position: relative;
-    padding: $spacer-3;
+    padding: $spacer-3 $spacer-5;
 
     @include screen-xl {
         max-width: $width-xl;
+        padding: $spacer-3;
     }
 
     @include screen-xxl {

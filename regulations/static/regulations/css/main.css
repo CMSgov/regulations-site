@@ -13526,11 +13526,12 @@ body {
   display: block;
   margin: 0 auto;
   position: relative;
-  padding: 24px;
+  padding: 24px 40px;
 }
 @media (min-width: 1280px) {
   .site-container {
     max-width: 1280px;
+    padding: 24px;
   }
 }
 @media (min-width: 1440px) {
@@ -13647,7 +13648,7 @@ html {
 .site-homepage .hero-banner {
   background: #026666;
   color: #fff;
-  padding: 32px;
+  padding: 32px 0;
 }
 .site-homepage .hero-banner .hero-search {
   height: 42px;
@@ -13661,7 +13662,7 @@ html {
   z-index: 2;
   text-shadow: 3px 1px 5px #026666;
 }
-@media (max-width: 1350px) {
+@media (min-width: 1350px) {
   .site-homepage .hero-banner .hero-text {
     height: 260px;
   }
@@ -13684,39 +13685,41 @@ html {
 }
 @media (min-width: 1024px) {
   .site-homepage .hero-banner .hero-image {
-    width: 58%;
+    width: 56%;
     top: -60px;
-    right: -56px;
+    right: -45px;
   }
 }
 @media (min-width: 1050px) {
   .site-homepage .hero-banner .hero-image {
-    width: 56%;
+    width: 54%;
+    right: -34px;
   }
 }
 @media (min-width: 1100px) {
   .site-homepage .hero-banner .hero-image {
     width: 54%;
     right: -40px;
+    top: -70px;
   }
 }
-@media (min-width: 1140px) {
+@media (min-width: 1120px) {
   .site-homepage .hero-banner .hero-image {
     width: 52%;
     right: -30px;
-    top: -55px;
+    top: -75px;
   }
 }
 @media (min-width: 1170px) {
   .site-homepage .hero-banner .hero-image {
     width: 50%;
-    top: -50px;
+    top: -60px;
   }
 }
 @media (min-width: 1190px) {
   .site-homepage .hero-banner .hero-image {
     width: 50%;
-    top: -60px;
+    top: -70px;
   }
 }
 @media (min-width: 1235px) {
@@ -13733,9 +13736,9 @@ html {
     right: 0;
   }
 }
-@media (min-width: 1350px) {
+@media (min-width: 1300px) {
   .site-homepage .hero-banner .hero-image {
-    top: -78px;
+    top: -98px;
     width: 49%;
     right: 0;
   }
@@ -13755,7 +13758,7 @@ html {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 48px;
 }
-@media (min-width: 1490px) {
+@media (max-width: 1490px) {
   .site-homepage .hero-banner h1 {
     font-size: 2.7em;
     line-height: 1.1em;
@@ -13769,10 +13772,7 @@ html {
   background: #EEFAFE;
 }
 .site-homepage .feature {
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%;
-  padding: 24px 24px 24px 0;
+  padding: 16px;
 }
 .site-homepage .feature h3 {
   font-family: "Merriweather", Georgia, serif;
