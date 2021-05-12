@@ -146,7 +146,7 @@
 
     .feature {
         @include equal-width-flexbox-col();
-        padding: $spacer-3;
+        padding: $spacer-3 $spacer-3 $spacer-3 0;
 
         h3 {
             font-family: $secondary_site_font;
@@ -155,41 +155,50 @@
     }
 }
 
-// Leftover Code from Dec MVP - To Be Deleted
+.homepage-toc {
 
-.site-homepage {
+    h1 {
+        margin-bottom: 0;
+    }
 
-    .reg-title {
-        h1 {
-            margin-bottom: 0;
-            font-size: 1.7em;
+    h4 {
+        font-family: $secondary_site_font;
+    }
+
+    h4 + .toc-external-ref {
+        margin: $spacer-4 0 0;
+    }
+
+    .toc-external-ref {
+        font-style: italic;
+        margin: $spacer-5 0;
+    }
+
+    .subchapter {
+        border-bottom: 1px solid $border_color;
+        padding: 1em 0;
+    }
+
+    .part-names {
+        display: block;
+        margin: $spacer-3 0;
+        padding: 0;
+        font-size: $font-size-lg;
+
+        a {
+            text-decoration: none;
+
+            .part-number {
+                font-weight: bold;
+                display: table-cell;
+            }
+
+            .part-title {
+                display: table-cell;
+            }
+
         }
     }
 }
 
-.subchapter {
-    border-bottom: 1px solid $border_color;
-    padding: 1em 0;
-}
 
-.part-names {
-    display: block;
-    margin: 1em 0;
-    padding: 0;
-
-    a {
-        text-decoration: none;
-        font-size: 1.2em;
-
-        .part-number {
-            font-weight: bold;
-            display: table-cell;
-            padding-right: .3em;
-        }
-
-        .part-title {
-            display: table-cell;
-        }
-
-    }
-}

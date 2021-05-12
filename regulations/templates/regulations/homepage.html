@@ -50,25 +50,32 @@
         </div>
     </div>
 
-    <main class="site-homepage">
-        <div class="container">
+    <div class="site-container">
+
+        <main class="homepage-toc">
+
             {% for title in structure %}
 
-            <h1> {{title.label}} </h1>
+                <h1> {{title.label}} </h1>
+                
+                {% for child in title.children %}
+                    {% with "regulations/homepage/"|add:child.type|add:".html regulations/homepage/child.html" as templates %}
+                        {% include templates.split %}
+                    {% endwith %}
+                {% endfor %}
             
-            {% for child in title.children %}
-                {% with "regulations/homepage/"|add:child.type|add:".html regulations/homepage/child.html" as templates %}
-                    {% include templates.split %}
-                {% endwith %}
-            {% endfor %}
-            
-
             {% endfor %}
 
+            <p class="toc-external-ref">For subsequent subchapters (F-I), see <a href="https://ecfr.federalregister.gov/current/title-42/chapter-IV" target="_blank" class="external">Title 42 Chapter IV in eCFR</a></p>
+
+        </main>
+
+        <aside class="homepage-updates">
             {% if regulations %}
                 {% include "regulations/partials/recent_changes.html" %}
             {% endif %}
+        </aside>
 
-        </div>
-    </main>
+    </div>
+
 {% endblock %}
