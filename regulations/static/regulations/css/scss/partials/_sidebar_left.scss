@@ -21,7 +21,7 @@ aside.left-sidebar {
 	padding-right: 0;
 	transition: all .25s ease-out;
 
-	// Collapsed
+	// Entire Sidebar Collapsed
 
 	&[data-state="collapsed"] {
 		width: 1em;
@@ -32,7 +32,7 @@ aside.left-sidebar {
 			display: none;
 		}
 
-		div.toc-controls {
+		div.toc-controls {		// Buttons in the sidebar collapsed state - do not style the open state button here
 			margin: 0 -1em;
 			display: block;
 
@@ -73,6 +73,16 @@ aside.left-sidebar {
 		padding-right: $spacer-4;
 	}
 
+	.toc-subgroup-list {
+		padding-left: 0;
+	}
+
+	.toc-subgroup-name {
+		margin-left: $spacer-4;
+		margin-right: $spacer-2;
+		font-size: $font-size-md;
+	}
+
 	.toc-section-number {
 		font-size: $font-size-sm;
 	}
@@ -90,14 +100,16 @@ aside.left-sidebar {
 		display: table-cell;
 
 		&:hover {
-			span {
+			button {
 				color: $reverse_link_hover;
 				background: $reverse_background_lighter;
 				@include transition;
 			}
 		}
 
-		span {
+		button {
+			background: none;
+			border: none;
 			color: $reverse_link_color;
 			cursor: pointer;
 			margin-top: 4px;
@@ -149,7 +161,7 @@ aside.left-sidebar {
 				transition-property: max-height;
 				transition-duration: 1s;
 				transition-timing-function: ease-in;
-				max-height: 200vh;
+				max-height: 250vh;
 
 				&.active {
 					background: $reverse_background_darker;	
@@ -190,8 +202,6 @@ aside.left-sidebar {
 		border-radius: $border-radius;
 
 		&:not(li.active ul a.menu-section) {
-			background: $reverse_background_color;
-
 			&:hover {
 				background: $reverse_background_lighter;
 			}
@@ -211,7 +221,6 @@ aside.left-sidebar {
 
 .toc-controls {
 	border-bottom: 1px solid $secondary_border_color;
-	padding-bottom: $spacer-2;
 
 	button {
 		outline: none;
@@ -222,15 +231,28 @@ aside.left-sidebar {
 		cursor: pointer;
 		text-transform: uppercase;
 		font-weight: 600;
+		padding: $spacer-2;
+		border-radius: $border_radius;
 
 		&:hover {
-			color: $reverse_link_hover;
+			background: $secondary_link_hover; 
+			color: $reverse_text_color;
 			@include transition;
 		}
 
 		img {
 			height: $base-font-size;
 			padding-right: 5px;
+			display: inline-block;
+			vertical-align: middle;
+			line-height: $font-size-md;
+		}
+
+		span {
+			font-size: $font_size_xs;
+			display: inline-block;
+			vertical-align: middle;
+			line-height: $font-size-md;
 		}
 
 		&[data-set-state="expanded"] {

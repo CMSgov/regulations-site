@@ -1,10 +1,12 @@
+{% load static %}
+
 <div class="toc-controls">
     <button data-set-state="collapsed" data-state-name="left-sidebar">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        Collapse
+        <img src="{% static 'images/sidebar-collapse.svg' %}" />
+        <span>Collapse</span>
     </button>
     <button data-set-state="expanded" data-state-name="left-sidebar">
-        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        <img src="{% static 'images/sidebar-expand.svg' %}" />
     </button>
 </div>
 

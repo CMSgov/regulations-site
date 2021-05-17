@@ -13535,18 +13535,17 @@ main {
   padding: 48px;
 }
 
-aside {
-  padding: 16px 32px;
-}
 aside.left-sidebar {
   display: table-cell;
   width: 400px;
   background: #17415F;
   flex-shrink: 0;
+  padding: 0 32px;
 }
 aside.right-sidebar {
   display: table-cell;
   width: 400px;
+  padding: 16px 32px;
   border-left: 1px solid #D6D7D9;
 }
 
@@ -13991,6 +13990,14 @@ aside.left-sidebar .subpart-name {
   color: #fff;
   padding-right: 32px;
 }
+aside.left-sidebar .toc-subgroup-list {
+  padding-left: 0;
+}
+aside.left-sidebar .toc-subgroup-name {
+  margin-left: 32px;
+  margin-right: 16px;
+  font-size: 16px;
+}
 aside.left-sidebar .toc-section-number {
   font-size: 14px;
 }
@@ -14003,12 +14010,14 @@ aside.left-sidebar .toc-toggles {
   width: 64px;
   display: table-cell;
 }
-aside.left-sidebar .toc-toggles:hover span {
+aside.left-sidebar .toc-toggles:hover button {
   color: #fff;
   background: #205982;
   transition: all 0.1s ease-in;
 }
-aside.left-sidebar .toc-toggles span {
+aside.left-sidebar .toc-toggles button {
+  background: none;
+  border: none;
   color: #A3E8FF;
   cursor: pointer;
   margin-top: 4px;
@@ -14017,10 +14026,10 @@ aside.left-sidebar .toc-toggles span {
   margin-right: 16px;
   border-radius: 3px;
 }
-aside.left-sidebar .toc-toggles span[data-set-state=expanded][data-state=expanded] {
+aside.left-sidebar .toc-toggles button[data-set-state=expanded][data-state=expanded] {
   display: none;
 }
-aside.left-sidebar .toc-toggles span[data-set-state=collapsed][data-state=collapsed] {
+aside.left-sidebar .toc-toggles button[data-set-state=collapsed][data-state=collapsed] {
   display: none;
 }
 aside.left-sidebar ul {
@@ -14048,7 +14057,7 @@ aside.left-sidebar ul li.subtoc {
   transition-property: max-height;
   transition-duration: 1s;
   transition-timing-function: ease-in;
-  max-height: 200vh;
+  max-height: 250vh;
 }
 aside.left-sidebar ul li.subtoc.active {
   background: #102E43;
@@ -14076,9 +14085,6 @@ aside.left-sidebar .menu-section {
   margin: 0 16px;
   border-radius: 3px;
 }
-aside.left-sidebar .menu-section:not(li.active ul a.menu-section) {
-  background: #17415F;
-}
 aside.left-sidebar .menu-section:not(li.active ul a.menu-section):hover {
   background: #205982;
 }
@@ -14091,7 +14097,6 @@ aside.left-sidebar li.active ul a.menu-section:hover {
 
 .toc-controls {
   border-bottom: 1px solid #046791;
-  padding-bottom: 16px;
 }
 .toc-controls button {
   outline: none;
@@ -14102,14 +14107,26 @@ aside.left-sidebar li.active ul a.menu-section:hover {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
+  padding: 16px;
+  border-radius: 3px;
 }
 .toc-controls button:hover {
+  background: #046791;
   color: #fff;
   transition: all 0.1s ease-in;
 }
 .toc-controls button img {
   height: 16px;
   padding-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 16px;
+}
+.toc-controls button span {
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 16px;
 }
 .toc-controls button[data-set-state=expanded] {
   margin: 0 auto;
