@@ -3,23 +3,14 @@
     Used once per section. Contained by subparts at the top level.
 {% endcomment %}
 
-{% load citation %}
-
 <section id="{{c.label | join:'-'}}" class="reg-section depth-{{c.label|length}}">
    <!-- <a class="reference" href="#{{c.label | join:'-'}}"><i class="fa fa-link"></i></a>-->
-    {% if c.title %}
-        {% if first == "true" %}
-            <h1 tabindex="0"> {{c.title}} </h1>
-        {% else %}
-            <h2 class="section-title" tabindex="0"> {{c.title}} </h2>
-        {% endif %}
-    {% endif %}
+    <h2 class="section-title" tabindex="0"> {{c.title}} </h2>
     {{c.text | safe}}
-    {% if c.Type == "Citation" %}
-        {{c.Content | citation}}
-    {% endif %}
 </section>
 
 {% for node in c.children %}
+    {% if node.node_type %}
     {% render_nested "regulations/partials/"|add:node.node_type|add:".html" "regulations/partials/regulation_text.html" c=node first="false" %}
+    {% endif %}
 {% endfor %}
