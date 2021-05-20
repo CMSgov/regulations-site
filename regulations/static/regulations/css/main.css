@@ -14585,6 +14585,10 @@ aside.right-sidebar button .button-image {
   background: #026666;
 }
 
+.related-rule-header {
+  margin-bottom: 8px;
+}
+
 .related-rule-date {
   color: #046791;
   font-weight: bold;
@@ -14600,6 +14604,11 @@ aside.right-sidebar button .button-image {
 
 .related-rule-title {
   color: #046791;
+  text-decoration: none;
+}
+
+.related-rule-list .related-rule {
+  margin-bottom: 24px;
 }
 
 .indicator {

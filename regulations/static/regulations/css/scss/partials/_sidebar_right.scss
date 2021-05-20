@@ -72,6 +72,10 @@ aside.right-sidebar {
     background: $secondary_color;
 }
 
+.related-rule-header {
+    margin-bottom: $spacer-1;
+}
+
 .related-rule-date {
     color: $primary_link_color;
     font-weight: bold;
@@ -87,4 +91,11 @@ aside.right-sidebar {
 
 .related-rule-title {
     color: $primary_link_color;
+    text-decoration: none;
+}
+
+.related-rule-list {
+    .related-rule {
+        margin-bottom: $spacer-3;
+    }
 }
