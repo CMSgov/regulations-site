@@ -8,6 +8,7 @@ register = template.Library()
 
 el = ('<a href="https://federalregister.gov/citation/', '">', '</a>')
 
+
 @register.filter(name='citation', needs_autoescape=True, is_safe=True)
 @stringfilter
 def citation(citation, autoescape=True):
@@ -26,4 +27,3 @@ def linkify(citation):
         url = f'{el[0]}{fr_url}{el[1]}{fr}{el[2]}'
         citation = citation.replace(fr, url)
     return citation
-
