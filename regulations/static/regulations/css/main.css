@@ -14657,9 +14657,9 @@ html {
 .reg-section {
   max-width: 75ch;
   margin: 16px;
+  text-indent: -2.5ch;
 }
 .reg-section:target {
-  background: #EEFAFE;
   padding: 8px 0;
   scroll-margin-top: 32px;
 }
@@ -14668,6 +14668,27 @@ html {
 }
 .reg-section:hover .reference {
   visibility: visible;
+}
+.reg-section.depth-4 {
+  margin-left: 32px;
+}
+.reg-section.depth-5 {
+  margin-left: 48px;
+}
+.reg-section.depth-6 {
+  margin-left: 64px;
+}
+.reg-section.depth-7 {
+  margin-left: 80px;
+}
+.reg-section.depth-8 {
+  margin-left: 96px;
+}
+.reg-section.depth-9 {
+  margin-left: 112px;
+}
+.reg-section.depth-10 {
+  margin-left: 128px;
 }
 .reg-section .section-text {
   line-height: 1.8em;
