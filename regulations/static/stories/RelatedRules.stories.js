@@ -13,5 +13,6 @@ const Template = (args, { argTypes }) => ({
 
 export const Basic = Template.bind({});
 Basic.args = {
-    "url": "https://www.federalregister.gov/api/v1/documents.json?fields[]=type&fields[]=abstract&fields[]=citation&fields[]=correction_of&fields[]=dates&fields[]=docket_id&fields[]=docket_ids&fields[]=document_number&fields[]=effective_on&fields[]=html_url&fields[]=publication_date&fields[]=regulation_id_number_info&fields[]=regulation_id_numbers&fields[]=title&per_page=20&conditions[type][]=RULE&conditions[cfr][title]=42&conditions[cfr][part]=433",
+    "title": "42",
+    "part": "433",
 };
