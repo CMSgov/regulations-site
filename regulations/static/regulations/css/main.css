@@ -14654,43 +14654,62 @@ html {
   color: #17415F;
 }
 
-.reg-section {
+article {
   max-width: 75ch;
-  margin: 16px;
-  text-indent: -2.5ch;
+  margin: 32px;
 }
-.reg-section:target {
+article i {
+  font-weight: bold;
+}
+article h1 {
+  text-indent: -1ch;
+  margin-left: -48px;
+  padding-left: 24px;
+}
+article:target {
   padding: 8px 0;
   scroll-margin-top: 32px;
 }
-.reg-section .reference {
+article p {
+  margin: 24px 0;
+  padding: 0 24px 0 48px;
+  text-indent: -2.5ch;
+}
+article p.depth-4 {
+  padding-left: 64px;
+}
+article p.depth-5 {
+  padding-left: 88px;
+}
+article p.depth-6 {
+  padding-left: 112px;
+}
+article p.depth-7 {
+  padding-left: 136px;
+}
+article p.depth-8 {
+  padding-left: 160px;
+}
+article p.depth-9 {
+  padding-left: 184px;
+}
+article p.depth-10 {
+  padding-left: 208px;
+}
+article .reg-section h2 {
+  margin-left: -48px;
+  padding-left: 24px;
+}
+article .paragraphs {
+  margin-left: -27px;
+}
+article .reference {
   visibility: hidden;
 }
-.reg-section:hover .reference {
+article :hover > .reference {
   visibility: visible;
 }
-.reg-section.depth-4 {
-  margin-left: 32px;
-}
-.reg-section.depth-5 {
-  margin-left: 48px;
-}
-.reg-section.depth-6 {
-  margin-left: 64px;
-}
-.reg-section.depth-7 {
-  margin-left: 80px;
-}
-.reg-section.depth-8 {
-  margin-left: 96px;
-}
-.reg-section.depth-9 {
-  margin-left: 112px;
-}
-.reg-section.depth-10 {
-  margin-left: 128px;
-}
-.reg-section .section-text {
+article .section-text {
   line-height: 1.8em;
   display: inline;
 }

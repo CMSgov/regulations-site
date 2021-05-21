@@ -17,31 +17,59 @@
     }
 }
 
-.reg-section {
+article {
     max-width: 75ch;
-    margin: $spacer-2;
-    text-indent: -2.5ch;
+    margin: $spacer-4;
+
+    i {
+        font-weight: bold;
+    }
+
+    h1 {
+        text-indent: -1ch;
+        margin-left: -$spacer-6;
+        padding-left: $spacer-3;
+    }
 
     &:target {
         padding: $spacer-1 0;
         scroll-margin-top: $spacer-4;
     }
 
+    p {
+        margin: $spacer-3 0;
+        padding: 0 $spacer-3 0 $spacer-6;
+
+        text-indent: -2.5ch;
+        @for $i from 4 through 10 {
+
+            &.depth-#{$i} {
+                padding-left: $spacer-5 + $spacer-3 * ($i - 3);
+            }
+        }
+    }
+
+    .reg-section {
+        h2 {
+            margin-left: -$spacer-6;
+            padding-left: $spacer-3;
+        }
+    }
+
+    .paragraphs {
+        margin-left: -27px;
+    }
+
     .reference {
        visibility: hidden;
     }
 
-    &:hover {
-        .reference {
+    :hover {
+        > .reference {
             visibility: visible;
         }
-   }
+    }
 
-   @for $i from 4 through 10 {
-       &.depth-#{$i} {
-           margin-left: $spacer-2 + 16px * ($i - 3);
-       }
-   }
 
    .section-text {
         line-height: 1.8em;

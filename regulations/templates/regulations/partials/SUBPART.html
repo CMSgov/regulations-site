@@ -3,15 +3,15 @@
 {% comment %}
     Used once per section. Contained by subparts at the top level.
 {% endcomment %}
-
-<section id="{{c.label | join:'-'}}" class="reg-section depth-{{c.label|length}}">
-   <!-- <a class="reference" href="#{{c.label | join:'-'}}"><i class="fa fa-link"></i></a>-->
-    <h1 tabindex="0"> {{c.title}} </h1>
+<article>
+    <h1 tabindex="0">
+    <a class="reference" href="#{{c.label | join:'-'}}"><i class="fa fa-link"></i></a>
+    {{c.title}} </h1>
     {{c.text | safe}}
-</section>
 
-{% for node in c.children %}
-    {% if node.node_type %}
-    {% render_nested "regulations/partials/"|add:node.node_type|add:".html" "regulations/partials/regulation_text.html" c=node first="false" %}
-    {% endif %}
-{% endfor %}
+    {% for node in c.children %}
+        {% if node.node_type %}
+        {% render_nested "regulations/partials/"|add:node.node_type|add:".html" "regulations/partials/regulation_text.html" c=node first="false" %}
+        {% endif %}
+    {% endfor %}
+</article>
