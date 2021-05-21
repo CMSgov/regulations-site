@@ -17,6 +17,8 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "react": "16.x",
     "react-dom": "16.x",
+    "rollup": "^2.48.0",
+    "rollup-plugin-vue": "^5.1.9",
     "sass": "^1.32.8",
     "vue": "^2.6.12"
   },

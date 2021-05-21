@@ -8,19 +8,6 @@
 aside.right-sidebar {
     max-width: 400px;
 
-    div {
-        padding-left: $spacer-3;
-
-        h4 {
-            margin: 0;
-        }
-
-        p {
-            color: $secondary_text_color;
-            margin: 0;
-        }
-    }
-
     button {
         font-size: 1rem;
         font-weight: 700;
@@ -62,6 +49,19 @@ aside.right-sidebar {
             padding: 0;
         }
     }
+
+    ul {
+        list-style: none;
+        padding: 0  0 $spacer-2 0;
+    }
+
+    .resource-info {
+        font-size: $font-size-sm;
+        font-weight: normal;
+        color: $primary_text_color;
+        padding-right: $spacer-4;
+    }
+
 }
 
 .related-rule-type {
@@ -95,7 +95,12 @@ aside.right-sidebar {
 }
 
 .related-rule-list {
+    padding-left: $spacer-2;
     .related-rule {
         margin-bottom: $spacer-3;
     }
+}
+
+.rules-with-preamble {
+    max-height: 1000em;
 }
