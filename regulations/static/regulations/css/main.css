@@ -14662,39 +14662,36 @@ article i {
   font-weight: bold;
 }
 article h1 {
-  text-indent: -1ch;
   margin-left: -48px;
   padding-left: 24px;
 }
-article:target {
-  padding: 8px 0;
-  scroll-margin-top: 32px;
-}
 article p {
   margin: 24px 0;
-  padding: 0 24px 0 48px;
-  text-indent: -2.5ch;
+  padding: 0 24px 0 24px;
+}
+article p.depth-3 {
+  padding-left: 48px;
 }
 article p.depth-4 {
-  padding-left: 64px;
+  padding-left: 72px;
 }
 article p.depth-5 {
-  padding-left: 88px;
+  padding-left: 96px;
 }
 article p.depth-6 {
-  padding-left: 112px;
+  padding-left: 120px;
 }
 article p.depth-7 {
-  padding-left: 136px;
+  padding-left: 144px;
 }
 article p.depth-8 {
-  padding-left: 160px;
+  padding-left: 168px;
 }
 article p.depth-9 {
-  padding-left: 184px;
+  padding-left: 192px;
 }
 article p.depth-10 {
-  padding-left: 208px;
+  padding-left: 216px;
 }
 article .reg-section h2 {
   margin-left: -48px;
@@ -14704,6 +14701,8 @@ article .paragraphs {
   margin-left: -27px;
 }
 article .reference {
+  position: absolute;
+  margin-left: -1.5em;
   visibility: hidden;
 }
 article :hover > .reference {

@@ -26,25 +26,18 @@ article {
     }
 
     h1 {
-        text-indent: -1ch;
         margin-left: -$spacer-6;
         padding-left: $spacer-3;
     }
 
-    &:target {
-        padding: $spacer-1 0;
-        scroll-margin-top: $spacer-4;
-    }
-
     p {
         margin: $spacer-3 0;
-        padding: 0 $spacer-3 0 $spacer-6;
+        padding: 0 $spacer-3 0 $spacer-3;
 
-        text-indent: -2.5ch;
-        @for $i from 4 through 10 {
+        @for $i from 3 through 10 {
 
             &.depth-#{$i} {
-                padding-left: $spacer-5 + $spacer-3 * ($i - 3);
+                padding-left: $spacer-3 + $spacer-3 * ($i - 2);
             }
         }
     }
@@ -61,6 +54,8 @@ article {
     }
 
     .reference {
+       position: absolute;
+       margin-left: -1.5em;
        visibility: hidden;
     }
 
