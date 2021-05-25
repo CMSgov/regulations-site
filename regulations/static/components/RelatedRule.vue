@@ -2,7 +2,7 @@
   <div class="related-rule">
     <div class="related-rule-header">
       <span class="related-rule-type ds-c-badge ds-c-badge--final">{{ expandedType }}</span>
-      <span class="related-rule-date">{{ effective_on|formatDate }}</span><span class="related-rule-citation">{{ citation }}</span>
+      <span class="related-rule-date" v-if="effective_on">{{ effective_on|formatDate }}</span><span class="related-rule-citation">{{ citation }}</span>
     </div>
     <div>
       <a class="related-rule-title" :href="html_url">{{ title }} <i class="fas fa-external-link-alt"></i></a>
@@ -28,10 +28,7 @@ export default {
       type: String,
       required: true,
     },
-    effective_on: {
-      type: String,
-      required: true,
-    },
+    effective_on: String,
     document_number: {
       type: String,
       required: true,

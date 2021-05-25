@@ -28,10 +28,7 @@ var script$2 = {
       type: String,
       required: true,
     },
-    effective_on: {
-      type: String,
-      required: true,
-    },
+    effective_on: String,
     document_number: {
       type: String,
       required: true,
@@ -153,9 +150,11 @@ var __vue_render__$2 = function() {
         [_vm._v(_vm._s(_vm.expandedType))]
       ),
       _vm._v(" "),
-      _c("span", { staticClass: "related-rule-date" }, [
-        _vm._v(_vm._s(_vm._f("formatDate")(_vm.effective_on)))
-      ]),
+      _vm.effective_on
+        ? _c("span", { staticClass: "related-rule-date" }, [
+            _vm._v(_vm._s(_vm._f("formatDate")(_vm.effective_on)))
+          ])
+        : _vm._e(),
       _c("span", { staticClass: "related-rule-citation" }, [
         _vm._v(_vm._s(_vm.citation))
       ])
