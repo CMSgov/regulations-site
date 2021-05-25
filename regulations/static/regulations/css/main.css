@@ -14474,6 +14474,10 @@ aside.left-sidebar li.active ul a.menu-section:hover {
 .jump-to .jump-to-input {
   display: inline-block;
 }
+.jump-to .jump-to-input select {
+  display: inline-block;
+  width: 80px;
+}
 .jump-to input.submit {
   display: inline-block;
   padding: 0.4em 1em;
