@@ -34,10 +34,9 @@ article {
         margin: $spacer-3 0;
         padding: 0 $spacer-3 0 $spacer-3;
 
-        @for $i from 3 through 10 {
-
+        @for $i from 1 through 10 {
             &.depth-#{$i} {
-                padding-left: $spacer-3 + $spacer-3 * ($i - 2);
+                padding-left: $spacer-3 + $spacer-3 * ($i - 1);
             }
         }
     }
