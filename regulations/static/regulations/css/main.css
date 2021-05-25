@@ -14593,13 +14593,13 @@ aside.right-sidebar .resource-info {
   color: #046791;
   font-weight: bold;
   padding-right: 8px;
+  margin-right: 8px;
   border-right: 1px solid #000;
 }
 
 .related-rule-citation {
   color: #046791;
   font-weight: bold;
-  padding-left: 8px;
 }
 
 .related-rule-title {
