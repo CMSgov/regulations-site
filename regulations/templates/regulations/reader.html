@@ -10,7 +10,7 @@
         </aside>
 
         <main class="reg-text">
-            {% render_nested "regulations/partials/"|add:tree.node_type|add:".html" "regulations/partials/regulation_text.html" c=tree first="false" %}
+            {% include "regulations/partials/node_types/node.html" with node=tree %}
             {% include "regulations/partials/navigation.html" %}
         </main>
 
