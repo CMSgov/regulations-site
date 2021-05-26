@@ -7,6 +7,7 @@ register = Library()
 def render_nested(*templates, context=None, **kwargs):
     return loader.select_template(templates).render(context or kwargs)
 
+
 @register.filter
 def interpolate(value, arg):
     try:
