@@ -27,7 +27,7 @@ class RegulationLandingView(TableOfContentsMixin, TemplateView):
         except HTTPError:
             raise Http404
 
-        parts = client.v2_effective_parts(date.today())
+        parts = client.effective_parts(date.today())
         reg_version = current['date']
         toc = current['toc']
 
