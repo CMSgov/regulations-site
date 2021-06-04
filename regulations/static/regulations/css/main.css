@@ -14502,7 +14502,7 @@ aside.left-sidebar .menu-section {
 }
 @media (min-width: 1280px) {
   aside.left-sidebar .menu-section {
-    padding: 8px 32px 8px 32px;
+    padding: 8px 32px;
   }
 }
 aside.left-sidebar .menu-section:not(li.active ul a.menu-section):hover {

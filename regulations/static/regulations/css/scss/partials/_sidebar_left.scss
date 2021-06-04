@@ -200,7 +200,7 @@ aside.left-sidebar {
 		padding: .25em 1.6em;
 
 		@include screen-xl {
-			padding: $spacer-1 $spacer-4 $spacer-1 $spacer-4;
+			padding: $spacer-1 $spacer-4;
 		}
 
 		&:not(li.active ul a.menu-section) {
