@@ -14476,11 +14476,15 @@ aside.left-sidebar li.active ul a.menu-section:hover {
 }
 .jump-to .jump-to-input select {
   display: inline-block;
-  width: 80px;
+  width: 70px;
+  border: none;
+}
+.jump-to .dot {
+  font-size: 24px;
 }
 .jump-to input.submit {
   display: inline-block;
-  padding: 0.4em 1em;
+  padding: 10px 16px;
   background: #A3E8FF;
   border: none;
   border-radius: 3px;
@@ -14490,16 +14494,11 @@ aside.left-sidebar li.active ul a.menu-section:hover {
   background: #fff;
   transition: all 0.1s ease-in;
 }
-.jump-to .number-box {
-  width: 40px;
-  background: none;
+.jump-to input.number-box {
+  width: 60px;
   border: 0;
-  border-bottom: 2px solid #C4C4C4;
+  display: inline-block;
   margin-right: 8px;
-  color: #fff;
-}
-.jump-to .number-box:focus {
-  color: #fff;
 }
 .jump-to label {
   font-weight: 600;

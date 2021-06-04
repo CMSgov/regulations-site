@@ -277,17 +277,23 @@ aside.left-sidebar {
 
 	.jump-to-input {
 		display: inline-block;
+
 		select {
 			display: inline-block;
-			width: 80px;
+			width: 70px;
+			border: none;
 		}
+	}
+
+	.dot {
+		font-size: $font-size-2xl;
 	}
 
 	input {
 
 		&.submit {
 			display: inline-block;
-			padding: .4em 1em;
+			padding: 10px $spacer-2;
 			background: $reverse_link_color;
 			border: none;
 			border-radius: $border-radius;
@@ -298,18 +304,12 @@ aside.left-sidebar {
 				@include transition;
 			}
 		}
-	}
 
-	.number-box {
-		width: 40px;
-		background: none;
-		border: 0;
-		border-bottom: 2px solid $placeholder_color;
-		margin-right: $spacer-1;
-		color: $reverse_text_color;
-
-		&:focus {
-			color: $reverse_text_color;
+		&.number-box {
+			width: 60px;
+			border: 0;
+			display: inline-block;
+			margin-right: $spacer-1;
 		}
 	}
 
