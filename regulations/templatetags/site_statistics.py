@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from django.template import Library, loader
+from django.template import Library
 from regulations.generator import api_reader
 
 register = Library()
