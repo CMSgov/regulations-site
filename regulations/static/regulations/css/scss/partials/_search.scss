@@ -24,24 +24,29 @@
 	.search-back {
 		margin: $spacer-4 0;
 
+		svg {
+			fill: $primary_link_color;
+			margin-right: $spacer-1;
+			vertical-align: middle;
+		}
+
 		a {
 			text-decoration: none;
 
-			.back-arrow {
-				mask: url('/images/previous.svg') no-repeat center;
-				display: inline-block;
-				width: 16px;
-				height: 30px;
-				background: $primary_link_color;
-				margin-right: 10px;
-				vertical-align: bottom;
+			&:visited {
+				color: $primary_link_color;
 			}
 
 			&:hover {
+				color: $primary_link_hover;
 
-				.back-arrow {
-					background: $primary_link_hover;
+				svg {
+				  fill: $primary_link_hover;
 				}
+			}
+
+			span {
+				vertical-align: middle;
 			}
 		}
 	}

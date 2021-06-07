@@ -13918,20 +13918,25 @@ html {
 .search-page .search-back {
   margin: 32px 0;
 }
+.search-page .search-back svg {
+  fill: #046791;
+  margin-right: 8px;
+  vertical-align: middle;
+}
 .search-page .search-back a {
   text-decoration: none;
 }
-.search-page .search-back a .back-arrow {
-  mask: url("/images/previous.svg") no-repeat center;
-  display: inline-block;
-  width: 16px;
-  height: 30px;
-  background: #046791;
-  margin-right: 10px;
-  vertical-align: bottom;
+.search-page .search-back a:visited {
+  color: #046791;
 }
-.search-page .search-back a:hover .back-arrow {
-  background: #17415F;
+.search-page .search-back a:hover {
+  color: #17415F;
+}
+.search-page .search-back a:hover svg {
+  fill: #17415F;
+}
+.search-page .search-back a span {
+  vertical-align: middle;
 }
 .search-page .search-context {
   margin-bottom: 16px;
