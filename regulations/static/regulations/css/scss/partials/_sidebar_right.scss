@@ -8,45 +8,66 @@
 aside.right-sidebar {
     max-width: 400px;
 
-    button {
-        font-size: 1rem;
-        font-weight: 700;
-        height: 66px;
-        color: $secondary-color;
-        border: 1px solid $secondary-color;
+    #view-button {
+        font-size: $base-font-size;
+        color: $primary_link_color;
+        border: 1px solid $primary_link_color;
+        text-align: left;
+        background: none;
+        padding: $spacer-2 $spacer-3;
+        border-radius: $border-radius;
+        margin: 0 auto $spacer-2 auto;
 
-        &[data-state="show"] {
-            color: $reverse-text-color;
-            background: $secondary-color;
+        svg {
+            display: inline-block;
+            vertical-align: middle;
 
-            .button-subheader {
-                color: $reverse-text-color;
+            rect,
+            line {
+                stroke: $primary_link_color;
+            }
+
+            path {
+                fill: $primary_link_color;
             }
         }
 
         .button-inner-container {
             display: inline-block;
-            padding: 0 0 0 0;
-        }
-
-        img {
-            &[data-state="hide"][data-img="light"] {
-                display: none;
-            }
-            &[data-state="show"][data-img="dark"] {
-                display: none;
-            }
+            padding-left: $spacer-2;
+            vertical-align: middle;
+            font-weight: 600;
+            line-height: 1.4;
         }
 
         .button-subheader {
             font-weight: normal;
-            font-size: 0.75rem;
+            font-size: $font-size-xs;
             color: $primary_text_color;
         }
 
-        .button-image {
-            display: inline-block;
-            padding: 0;
+        &:hover, 
+        &[data-state="show"] {
+            color: $reverse_text_color;
+            background: $secondary_link_color;
+            cursor: pointer;
+            @include transition;
+
+            .button-subheader {
+                color: $reverse_text_color;
+            }
+
+            svg {
+
+                rect,
+                line {
+                    stroke: $reverse_text_color;
+                }
+
+                path {
+                    fill: $reverse_text_color;
+                }
+            }
         }
     }
 

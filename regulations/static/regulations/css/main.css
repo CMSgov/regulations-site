@@ -14543,38 +14543,55 @@ html {
 aside.right-sidebar {
   max-width: 400px;
 }
-aside.right-sidebar button {
-  font-size: 1rem;
-  font-weight: 700;
-  height: 66px;
-  color: #026666;
-  border: 1px solid #026666;
+aside.right-sidebar #view-button {
+  font-size: 16px;
+  color: #046791;
+  border: 1px solid #046791;
+  text-align: left;
+  background: none;
+  padding: 16px 24px;
+  border-radius: 3px;
+  margin: 0 auto 16px auto;
 }
-aside.right-sidebar button[data-state=show] {
-  color: #fff;
-  background: #026666;
-}
-aside.right-sidebar button[data-state=show] .button-subheader {
-  color: #fff;
-}
-aside.right-sidebar button .button-inner-container {
+aside.right-sidebar #view-button svg {
   display: inline-block;
-  padding: 0 0 0 0;
+  vertical-align: middle;
 }
-aside.right-sidebar button img[data-state=hide][data-img=light] {
-  display: none;
+aside.right-sidebar #view-button svg rect,
+aside.right-sidebar #view-button svg line {
+  stroke: #046791;
 }
-aside.right-sidebar button img[data-state=show][data-img=dark] {
-  display: none;
+aside.right-sidebar #view-button svg path {
+  fill: #046791;
 }
-aside.right-sidebar button .button-subheader {
+aside.right-sidebar #view-button .button-inner-container {
+  display: inline-block;
+  padding-left: 16px;
+  vertical-align: middle;
+  font-weight: 600;
+  line-height: 1.4;
+}
+aside.right-sidebar #view-button .button-subheader {
   font-weight: normal;
-  font-size: 0.75rem;
+  font-size: 12px;
   color: #212121;
 }
-aside.right-sidebar button .button-image {
-  display: inline-block;
-  padding: 0;
+aside.right-sidebar #view-button:hover, aside.right-sidebar #view-button[data-state=show] {
+  color: #fff;
+  background: #026666;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+aside.right-sidebar #view-button:hover .button-subheader, aside.right-sidebar #view-button[data-state=show] .button-subheader {
+  color: #fff;
+}
+aside.right-sidebar #view-button:hover svg rect,
+aside.right-sidebar #view-button:hover svg line, aside.right-sidebar #view-button[data-state=show] svg rect,
+aside.right-sidebar #view-button[data-state=show] svg line {
+  stroke: #fff;
+}
+aside.right-sidebar #view-button:hover svg path, aside.right-sidebar #view-button[data-state=show] svg path {
+  fill: #fff;
 }
 aside.right-sidebar ul {
   list-style: none;
