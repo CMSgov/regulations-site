@@ -14900,6 +14900,18 @@ article .section-text {
   color: #212121;
 }
 
+.reg-part-homepage h1 {
+  margin-bottom: 0px;
+}
+.reg-part-homepage h2 {
+  color: #17415F;
+}
+.reg-part-homepage .last-updated {
+  margin-bottom: 40px;
+  font-style: italic;
+  font-weight: 600;
+}
+
 .indicator {
   background: #026666;
   text-transform: uppercase;
@@ -15031,6 +15043,42 @@ main.error-page img.error-image {
   flex: auto;
   width: 185px;
   max-width: 185px;
+}
+
+ul.table-of-contents {
+  margin-left: 0;
+  padding-left: 0;
+}
+ul.table-of-contents li {
+  list-style: none;
+}
+ul.table-of-contents li h3 {
+  margin-bottom: 0;
+}
+ul.table-of-contents li p {
+  margin-top: 0;
+}
+ul.table-of-contents ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+ul.table-of-contents ul li {
+  margin-bottom: 8px;
+  margin-left: 15px;
+}
+ul.table-of-contents ul li p {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+ul.table-of-contents ul li .toc-section-number {
+  font-weight: bold;
+}
+ul.table-of-contents .toc-section-name {
+  flex: 1;
+  margin-left: 1em;
+}
+ul.table-of-contents a {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=main.css.map */
