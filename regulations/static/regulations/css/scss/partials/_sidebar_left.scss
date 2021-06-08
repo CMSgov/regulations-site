@@ -17,8 +17,6 @@ aside.left-sidebar {
 	overflow-y: scroll;
 	position: sticky;
 	top: 0;
-	padding-left: 0;
-	padding-right: 0;
 	transition: all .25s ease-out;
 
 	// Entire Sidebar Collapsed
@@ -197,14 +195,24 @@ aside.left-sidebar {
 
 	.menu-section {
 		display: block;
-		padding: $spacer-1 $spacer-4 $spacer-1 $spacer-4;
 		margin: 0 $spacer-2;
 		border-radius: $border-radius;
+		padding: .25em 1.6em;
+
+		@include screen-xl {
+			padding: $spacer-1 $spacer-4;
+		}
 
 		&:not(li.active ul a.menu-section) {
 			&:hover {
 				background: $reverse_background_lighter;
 			}
+		}
+
+		&.active {
+			background: $reverse_background_lighter;
+			border-left-color: $light_blue;
+			border-left-style: solid;
 		}
 
 		li {

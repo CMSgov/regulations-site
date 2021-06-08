@@ -13557,27 +13557,89 @@ body {
   width: 100%;
 }
 
+.match-sides {
+  display: table-cell;
+  width: 260px;
+}
+@media (min-width: 1024px) {
+  .match-sides {
+    width: 300px;
+  }
+}
+@media (min-width: 1280px) {
+  .match-sides {
+    width: 400px;
+  }
+}
+@media (min-width: 1920px) {
+  .match-sides {
+    width: 500px;
+  }
+}
+
+.match-middle {
+  display: table-cell;
+  width: calc(100% - 520px);
+  padding: 0 32px;
+}
+@media (min-width: 1024px) {
+  .match-middle {
+    width: calc(100% - 600px);
+  }
+}
+@media (min-width: 1280px) {
+  .match-middle {
+    width: calc(100% - 800px);
+    padding: 0 48px;
+  }
+}
+@media (min-width: 1920px) {
+  .match-middle {
+    width: calc(100% - 1000px);
+  }
+}
+
 main {
   display: table-cell;
-  width: calc(100% - 800px);
-  padding: 48px;
 }
 
 aside.left-sidebar {
-  display: table-cell;
-  width: 400px;
   background: #17415F;
+  padding: 0;
   flex-shrink: 0;
-  padding: 0 32px;
 }
 aside.right-sidebar {
-  display: table-cell;
-  width: 400px;
-  padding: 16px 32px;
+  padding: 16px;
   border-left: 1px solid #D6D7D9;
 }
-aside.homepage-updates {
-  padding-top: 48px;
+@media (min-width: 1280px) {
+  aside.right-sidebar {
+    padding: 16px 32px;
+  }
+}
+aside[data-state=collapsed] + .match-middle {
+  width: calc(100% - 260px - 32px);
+  padding: 0 32px;
+}
+@media (min-width: 1024px) {
+  aside[data-state=collapsed] + .match-middle {
+    width: calc(100% - 300px - 32px);
+  }
+}
+@media (min-width: 1280px) {
+  aside[data-state=collapsed] + .match-middle {
+    width: calc(100% - 400px - 32px);
+    padding: 0 48px;
+  }
+}
+@media (min-width: 1920px) {
+  aside[data-state=collapsed] + .match-middle {
+    width: calc(100% - 500px - 32px);
+  }
+}
+
+footer .footer-left {
+  padding: 0;
 }
 
 .indicator {
@@ -13661,6 +13723,9 @@ html {
   scroll-behavior: smooth;
 }
 
+.site-homepage {
+  overflow-x: hidden;
+}
 @media (max-width: 1350px) {
   .site-homepage .site-container {
     padding-top: 0;
@@ -13799,7 +13864,28 @@ html {
   font-family: "Merriweather", Georgia, serif;
   font-weight: normal;
 }
+.site-homepage footer .flexbox {
+  margin: 24px auto;
+}
+@media (min-width: 1280px) {
+  .site-homepage footer .flexbox {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1440px) {
+  .site-homepage footer .flexbox {
+    max-width: 1440px;
+  }
+}
+@media (min-width: 1280px) {
+  .site-homepage footer .footer-middle {
+    width: 100%;
+  }
+}
 
+.homepage-toc {
+  margin-top: 32px;
+}
 .homepage-toc h1 {
   margin-bottom: 0;
 }
@@ -13834,6 +13920,9 @@ html {
   display: inline;
 }
 
+.homepage-updates {
+  padding-top: 48px;
+}
 .homepage-updates .last-update-external {
   font-style: italic;
   font-weight: 600;
@@ -14276,8 +14365,6 @@ aside.left-sidebar {
   overflow-y: scroll;
   position: sticky;
   top: 0;
-  padding-left: 0;
-  padding-right: 0;
   transition: all 0.25s ease-out;
 }
 aside.left-sidebar[data-state=collapsed] {
@@ -14409,12 +14496,22 @@ aside.left-sidebar a.subpart-info:hover .toc-titles {
 }
 aside.left-sidebar .menu-section {
   display: block;
-  padding: 8px 32px 8px 32px;
   margin: 0 16px;
   border-radius: 3px;
+  padding: 0.25em 1.6em;
+}
+@media (min-width: 1280px) {
+  aside.left-sidebar .menu-section {
+    padding: 8px 32px;
+  }
 }
 aside.left-sidebar .menu-section:not(li.active ul a.menu-section):hover {
   background: #205982;
+}
+aside.left-sidebar .menu-section.active {
+  background: #205982;
+  border-left-color: #A3E8FF;
+  border-left-style: solid;
 }
 aside.left-sidebar .menu-section li {
   padding: 0 16px;
@@ -14536,6 +14633,14 @@ html {
 aside.right-sidebar {
   max-width: 400px;
 }
+aside.right-sidebar h2 {
+  font-size: 21px;
+}
+@media (min-width: 1280px) {
+  aside.right-sidebar h2 {
+    font-size: 24px;
+  }
+}
 aside.right-sidebar button {
   font-size: 1rem;
   font-weight: 700;
@@ -14573,6 +14678,16 @@ aside.right-sidebar ul {
   list-style: none;
   padding: 0 0 16px 0;
 }
+aside.right-sidebar ul li {
+  font-size: 14px;
+  line-height: 1.4;
+}
+@media (min-width: 1280px) {
+  aside.right-sidebar ul li {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
 aside.right-sidebar .resource-info {
   font-size: 14px;
   font-weight: normal;
@@ -14582,10 +14697,6 @@ aside.right-sidebar .resource-info {
 
 .related-rule-type {
   border-radius: 3px;
-}
-
-.ds-c-badge--final {
-  background: #026666;
 }
 
 .related-rule-header {
@@ -14651,15 +14762,38 @@ html {
 
 .reg-text h1 {
   color: #17415F;
-  font-size: 32px;
+  font-size: 24px;
+  line-height: 1.4;
+}
+@media (min-width: 1280px) {
+  .reg-text h1 {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1440px) {
+  .reg-text h1 {
+    font-size: 32px;
+    line-height: 1.5;
+  }
 }
 .reg-text h2 {
   color: #17415F;
+  font-size: 21px;
+}
+@media (min-width: 1280px) {
+  .reg-text h2 {
+    font-size: 24px;
+  }
 }
 
 article {
-  max-width: 75ch;
-  margin: 32px;
+  max-width: 53rem;
+  margin: 32px 0 32px 32px;
+}
+@media (min-width: 1440px) {
+  article {
+    margin: 32px;
+  }
 }
 article i {
   font-weight: bold;
@@ -14708,11 +14842,29 @@ article .reg-section h2 {
 }
 article .paragraphs {
   margin-left: -27px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+@media (min-width: 1280px) {
+  article .paragraphs {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 article .reference {
   position: absolute;
   margin-left: -1.5em;
   visibility: hidden;
+}
+article h1 > .reference,
+article h2 > .reference {
+  margin-left: -1.2em;
+}
+@media (min-width: 1440px) {
+  article h1 > .reference,
+article h2 > .reference {
+    margin-left: -1.4em;
+  }
 }
 article :hover > .reference {
   visibility: visible;
@@ -14804,11 +14956,6 @@ footer .last-update-footer {
 footer .about-footer {
   font-size: 14px;
 }
-footer .footer-left {
-  display: table-cell;
-  width: 400px;
-  padding: 0 32px;
-}
 footer .footer-left a:hover {
   opacity: 0.8;
 }
@@ -14816,20 +14963,10 @@ footer .footer-left img {
   width: 100%;
   max-width: 219px;
 }
-footer .footer-middle {
-  display: table-cell;
-  width: calc(100% - 800px);
-  padding: 0 48px;
-}
 footer .footer-middle h4 {
   font-family: "Merriweather", Georgia, serif;
   color: #5B616B;
   margin-top: 0;
-}
-footer .footer-right {
-  display: table-cell;
-  width: 400px;
-  padding: 0 32px;
 }
 footer .footer-right i {
   font-size: 30px;
