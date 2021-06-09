@@ -2,6 +2,7 @@ import RelatedRules from './RelatedRules.js';
 import Collapsible from './Collapsible.js';
 import CollapseButton from './CollapseButton.js';
 import Vue from "../../node_modules/vue/dist/vue.esm.browser.min.js";
+import { goToVersion } from "./go-to-version.js";
 
 function isElementInViewport (el) {
     var rect = el.getBoundingClientRect();
@@ -66,6 +67,8 @@ function main() {
     for (const el of stateful_elements) {
         makeStateful(el);
     }
+    
+    goToVersion();
 
     window.addEventListener("hashchange", activateTOCLink);
     activateTOCLink();
