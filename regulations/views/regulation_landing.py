@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from requests import HTTPError
 from django.views.generic.base import TemplateView
 from django.http import Http404
@@ -37,6 +37,7 @@ class RegulationLandingView(TableOfContentsMixin, TemplateView):
             'part': reg_part,
             'reg_part': reg_part,
             'parts': parts,
+            'last_updated': datetime.fromisoformat(current['last_updated']),
             'content': [
                 'regulations/partials/landing_%s.html' % reg_part,
                 'regulations/partials/landing_default.html',

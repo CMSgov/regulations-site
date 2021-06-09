@@ -144,11 +144,9 @@ var __vue_render__$2 = function() {
   var _c = _vm._self._c || _h;
   return _c("div", { staticClass: "related-rule" }, [
     _c("div", { staticClass: "related-rule-header" }, [
-      _c(
-        "span",
-        { staticClass: "related-rule-type indicator" },
-        [_vm._v(_vm._s(_vm.expandedType))]
-      ),
+      _c("span", { staticClass: "related-rule-type indicator" }, [
+        _vm._v(_vm._s(_vm.expandedType))
+      ]),
       _vm._v(" "),
       _vm.effective_on
         ? _c("span", { staticClass: "related-rule-date" }, [
@@ -163,10 +161,11 @@ var __vue_render__$2 = function() {
     _c("div", [
       _c(
         "a",
-        { staticClass: "related-rule-title external", attrs: { href: _vm.html_url } },
-        [
-          _vm._v(_vm._s(_vm.title) + " ")
-        ]
+        {
+          staticClass: "related-rule-title external",
+          attrs: { href: _vm.html_url }
+        },
+        [_vm._v(_vm._s(_vm.title))]
       )
     ])
   ])

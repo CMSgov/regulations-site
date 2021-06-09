@@ -93,7 +93,7 @@ aside.left-sidebar {
 
 	// Toggle Icons
 
-	.toc-toggles {
+	.subpart-toggle {
 		width: $toc_toggles_width;			
 		display: table-cell;
 
@@ -115,14 +115,6 @@ aside.left-sidebar {
 			padding: $spacer-2;  // Helps users by making the toggle target bigger, ~42px square
 			margin-right: $spacer-2;
 			border-radius: $border-radius;
-
-			&[data-set-state="expanded"][data-state="expanded"] {
-				display: none;
-			}
-
-			&[data-set-state="collapsed"][data-state="collapsed"] {
-				display: none;
-			}
 		}
 	}
 
@@ -152,21 +144,6 @@ aside.left-sidebar {
 				.menu-section {
 					margin-left: $spacer-2;
 					padding-left: $spacer-2;
-				}
-			}
-
-			&.subtoc {
-				transition-property: max-height;
-				transition-duration: 1s;
-				transition-timing-function: ease-in;
-				max-height: 250vh;
-
-				&.active {
-					background: $reverse_background_darker;	
-				}					
-			
-				&[data-state="collapsed"] {
-					max-height: 0;
 				}
 			}
 		}

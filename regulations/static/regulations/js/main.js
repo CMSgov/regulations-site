@@ -1,4 +1,6 @@
 import RelatedRules from './RelatedRules.js';
+import Collapsible from './Collapsible.js';
+import CollapseButton from './CollapseButton.js';
 import Vue from "../../node_modules/vue/dist/vue.esm.browser.min.js";
 
 function isElementInViewport (el) {
@@ -51,6 +53,14 @@ function makeStateful(el) {
 }
 
 function main() {
+    new Vue({
+        components: {
+            RelatedRules,
+            Collapsible,
+            CollapseButton,
+        }
+    }).$mount("#vue-app")
+
     const stateful_elements = document.querySelectorAll("[data-state]")
 
     for (const el of stateful_elements) {
@@ -59,13 +69,6 @@ function main() {
 
     window.addEventListener("hashchange", activateTOCLink);
     activateTOCLink();
-
-    
-    new Vue({
-        components: {
-            RelatedRules,
-        }
-    }).$mount("#related-rules")
 }
 
 main();

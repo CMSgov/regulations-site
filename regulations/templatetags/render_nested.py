@@ -1,11 +1,14 @@
-from django.template import Library, loader
+from django.template import Library, loader, TemplateDoesNotExist
 
 register = Library()
 
 
 @register.simple_tag()
 def render_nested(*templates, context=None, **kwargs):
-    return loader.select_template(templates).render(context or kwargs)
+    try:
+        return loader.select_template(templates).render(context or kwargs)
+    except TemplateDoesNotExist:
+        pass
 
 
 @register.filter

@@ -21,24 +21,26 @@ CSS/Javascript etc., should inherit from this template.
     </head>
 
     <body class="ds-base {% block body_class %}{% endblock %}">
-        {% block pre_header %}{% endblock %}
+        <div id="vue-app">
+            {% block pre_header %}{% endblock %}
 
-        {% include "regulations/partials/flash_banner.html" %}
+            {% include "regulations/partials/flash_banner.html" %}
 
-        {% block header %}
-            <header>
-                {% include "regulations/partials/header.html" %}
-            </header>
-        {% endblock %}
+            {% block header %}
+                <header>
+                    {% include "regulations/partials/header.html" %}
+                </header>
+            {% endblock %}
+            
+            {% block body %}{% endblock %}
         
-        {% block body %}{% endblock %}
-       
-        {% block footer %}
-            <footer>
-                {% include "regulations/partials/footer.html" %}
-            </footer>
-        {% endblock %}
+            {% block footer %}
+                <footer>
+                    {% include "regulations/partials/footer.html" %}
+                </footer>
+            {% endblock %}
 
-        {% block post_footer %}{% endblock %}
+            {% block post_footer %}{% endblock %}
+        </div>
     </body>
 </html>
