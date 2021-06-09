@@ -27,6 +27,7 @@ class RegulationLandingView(TableOfContentsMixin, TemplateView):
         except HTTPError:
             raise Http404
 
+        parts = client.effective_parts(date.today())
         reg_version = current['date']
         toc = current['toc']
 
@@ -34,6 +35,8 @@ class RegulationLandingView(TableOfContentsMixin, TemplateView):
             'toc': toc,
             'version': reg_version,
             'part': reg_part,
+            'reg_part': reg_part,
+            'parts': parts,
             'content': [
                 'regulations/partials/landing_%s.html' % reg_part,
                 'regulations/partials/landing_default.html',
