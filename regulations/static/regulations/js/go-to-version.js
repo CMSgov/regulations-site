@@ -1,5 +1,9 @@
-function goToVersion() {
+export function goToVersion() {
     const select = document.querySelector("#view-options");
+    if (!select) {
+        return;
+    }
+
     const options = document.querySelectorAll("#view-options [data-url]");
 
     select.addEventListener('change', function() {
@@ -25,5 +29,3 @@ function goToVersion() {
         }
     }
 }
-
-goToVersion();
