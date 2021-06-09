@@ -1,3 +1,4 @@
+{% load version_date %}
 <div class="view-and-compare" data-state="hide" data-state-name="view">
     <div class="view-container">
         <span class="view-title">View</span>
@@ -7,9 +8,9 @@
                 <option value="" disabled>Select Date</option>
                 {% for version in versions %}
                     {% if citation.1 %}
-                        <option data-url="{% url 'reader_view' citation.0 citation.1 version.date %}">{{version.date}}</option>
+                        <option data-url="{% url 'reader_view' citation.0 citation.1 version.date %}">{{version.date|version_date}}</option>
                     {% else %}
-                        <option data-url="{% url 'reader_view' citation.0 version.date %}">{{version.date}}</option>
+                        <option data-url="{% url 'reader_view' citation.0 version.date %}">{{version.date|version_date}}</option>
                     {% endif %}
 
                 {% endfor %}
