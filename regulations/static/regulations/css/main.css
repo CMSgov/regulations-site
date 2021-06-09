@@ -14715,7 +14715,7 @@ aside.right-sidebar #view-button[data-state=show]:hover {
   transition: all 0.1s ease-in;
 }
 aside.right-sidebar #view-button[data-state=show]:hover .button-subheader {
-  color: #046791;
+  color: #212121;
 }
 aside.right-sidebar #view-button[data-state=show]:hover svg rect,
 aside.right-sidebar #view-button[data-state=show]:hover svg line {
