@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from requests import HTTPError
 from django.views.generic.base import TemplateView
 from django.http import Http404
@@ -23,10 +23,11 @@ class RegulationLandingView(TableOfContentsMixin, TemplateView):
         reg_part = self.kwargs.get("part")
 
         try:
-            current = client.v2_toc(date.today(), 42, reg_part)
+            current = client.toc(date.today(), 42, reg_part)
         except HTTPError:
             raise Http404
 
+        parts = client.effective_parts(date.today())
         reg_version = current['date']
         toc = current['toc']
 
@@ -34,6 +35,9 @@ class RegulationLandingView(TableOfContentsMixin, TemplateView):
             'toc': toc,
             'version': reg_version,
             'part': reg_part,
+            'reg_part': reg_part,
+            'parts': parts,
+            'last_updated': datetime.fromisoformat(current['last_updated']),
             'content': [
                 'regulations/partials/landing_%s.html' % reg_part,
                 'regulations/partials/landing_default.html',

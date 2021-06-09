@@ -17,8 +17,6 @@ aside.left-sidebar {
 	overflow-y: scroll;
 	position: sticky;
 	top: 0;
-	padding-left: 0;
-	padding-right: 0;
 	transition: all .25s ease-out;
 
 	// Entire Sidebar Collapsed
@@ -197,14 +195,24 @@ aside.left-sidebar {
 
 	.menu-section {
 		display: block;
-		padding: $spacer-1 $spacer-4 $spacer-1 $spacer-4;
 		margin: 0 $spacer-2;
 		border-radius: $border-radius;
+		padding: .25em 1.6em;
+
+		@include screen-xl {
+			padding: $spacer-1 $spacer-4;
+		}
 
 		&:not(li.active ul a.menu-section) {
 			&:hover {
 				background: $reverse_background_lighter;
 			}
+		}
+
+		&.active {
+			background: $reverse_background_lighter;
+			border-left-color: $light_blue;
+			border-left-style: solid;
 		}
 
 		li {
@@ -277,13 +285,23 @@ aside.left-sidebar {
 
 	.jump-to-input {
 		display: inline-block;
+
+		select {
+			display: inline-block;
+			width: 70px;
+			border: none;
+		}
+	}
+
+	.dot {
+		font-size: $font-size-2xl;
 	}
 
 	input {
 
 		&.submit {
 			display: inline-block;
-			padding: .4em 1em;
+			padding: 10px $spacer-2;
 			background: $reverse_link_color;
 			border: none;
 			border-radius: $border-radius;
@@ -294,18 +312,12 @@ aside.left-sidebar {
 				@include transition;
 			}
 		}
-	}
 
-	.number-box {
-		width: 40px;
-		background: none;
-		border: 0;
-		border-bottom: 2px solid $placeholder_color;
-		margin-right: $spacer-1;
-		color: $reverse_text_color;
-
-		&:focus {
-			color: $reverse_text_color;
+		&.number-box {
+			width: 60px;
+			border: 0;
+			display: inline-block;
+			margin-right: $spacer-1;
 		}
 	}
 

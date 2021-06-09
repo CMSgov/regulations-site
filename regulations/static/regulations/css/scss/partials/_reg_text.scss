@@ -9,33 +9,96 @@
 
     h1 {
         color: $primary_color;
-        font-size: $base-font-size * 2;
+        font-size: $base-font-size * 1.5;
+        line-height: 1.4;
+
+        @include screen-xl {
+            font-size: $base-font-size * 1.75;
+        }
+
+        @include screen-xxl {
+            font-size: $base-font-size * 2;
+            line-height: 1.5;
+        }
     }
 
     h2 {
        color: $primary_color; 
+       font-size: $font-size-xl;
+
+       @include screen-xl {
+            font-size: $font-size-2xl;
+        }
     }
 }
 
-.reg-section {
-    max-width: 75ch;
-    margin: $spacer-2;
+article {
+    max-width: $text-max-width;
+    margin: $spacer-4 0 $spacer-4 $spacer-4;
 
-    &:target {
-        background: $teritary_background_color;
-        padding: $spacer-1 0;
-        scroll-margin-top: $spacer-4;
+    @include screen-xxl {
+        margin: $spacer-4;
+    }
+
+    i {
+        font-weight: bold;
+    }
+
+    h1 {
+        margin-left: -$spacer-6;
+        padding-left: $spacer-3;
+    }
+
+    p {
+        margin: $spacer-3 0;
+        padding: 0 $spacer-3 0 $spacer-3;
+
+        @for $i from 1 through 10 {
+            &.depth-#{$i} {
+                padding-left: $spacer-3 + $spacer-3 * ($i - 1);
+            }
+        }
+    }
+
+    .reg-section {
+        h2 {
+            margin-left: -$spacer-6;
+            padding-left: $spacer-3;
+        }
+    }
+
+    .paragraphs {
+        margin-left: -27px;
+        font-size: $font-size-sm;
+        line-height: 1.4;
+
+        @include screen-xl {
+            font-size: $font-size-md;
+            line-height: 1.5;
+        }
     }
 
     .reference {
+       position: absolute;
+       margin-left: -1.5em;
        visibility: hidden;
     }
 
-    &:hover {
-       .reference {
-           visibility: visible;
-       }
-   }
+    h1 > .reference,
+    h2 > .reference {
+        margin-left: -1.2em;
+
+        @include screen-xxl {
+            margin-left: -1.4em;
+        }
+    }
+
+    :hover {
+        > .reference {
+            visibility: visible;
+        }
+    }
+
 
    .section-text {
         line-height: 1.8em;
