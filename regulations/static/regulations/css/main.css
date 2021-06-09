@@ -14196,7 +14196,7 @@ html {
 }
 
 .view-and-compare {
-  padding: 20px 0 20px 0px;
+  padding: 16px 32px;
   background-color: #026666;
   color: #fff;
 }
@@ -14212,21 +14212,32 @@ html {
 .view-and-compare .view-title {
   font-weight: bold;
   border-right: 1px solid #D6D7D9;
-  padding-right: 1em;
-  margin-right: 1em;
+  padding-right: 32px;
+  margin-right: 32px;
 }
-.view-and-compare span.view-select {
+.view-and-compare .view-select {
   padding-left: 10px;
   display: inline-block;
 }
+.view-and-compare .view-select select {
+  border: none;
+  padding: 0.8em 32px 0.8em 24px;
+  border-radius: 0;
+}
 .view-and-compare .close-button {
   position: absolute;
-  right: 20px;
+  right: 32px;
   cursor: pointer;
   height: auto;
 }
+.view-and-compare .close-button svg path {
+  fill: #fff;
+}
 .view-and-compare .close-button a {
   color: #fff;
+}
+.view-and-compare .close-button a:hover svg path {
+  fill: #A3E8FF;
 }
 
 .indicator {
