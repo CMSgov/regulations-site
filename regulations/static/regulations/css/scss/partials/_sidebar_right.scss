@@ -6,6 +6,7 @@
 @import "../application_settings";
 
 aside.right-sidebar {
+    padding-top: $spacer-5;
     max-width: 400px;
 
     h2 {
@@ -74,6 +75,29 @@ aside.right-sidebar {
 
                 path {
                     fill: $reverse_text_color;
+                }
+            }
+        }
+
+        &[data-state="show"]:hover {
+            color: $primary_link_color;
+            background: none;
+            cursor: pointer;
+            @include transition;
+
+            .button-subheader {
+                color: $primary_link_color;
+            }
+
+            svg {
+
+                rect,
+                line {
+                    stroke: $primary_link_color;
+                }
+
+                path {
+                    fill: $primary_link_color;
                 }
             }
         }

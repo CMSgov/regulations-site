@@ -14647,6 +14647,7 @@ html {
 }
 
 aside.right-sidebar {
+  padding-top: 40px;
   max-width: 400px;
 }
 aside.right-sidebar h2 {
@@ -14706,6 +14707,22 @@ aside.right-sidebar #view-button[data-state=show] svg line {
 }
 aside.right-sidebar #view-button:hover svg path, aside.right-sidebar #view-button[data-state=show] svg path {
   fill: #fff;
+}
+aside.right-sidebar #view-button[data-state=show]:hover {
+  color: #046791;
+  background: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+aside.right-sidebar #view-button[data-state=show]:hover .button-subheader {
+  color: #046791;
+}
+aside.right-sidebar #view-button[data-state=show]:hover svg rect,
+aside.right-sidebar #view-button[data-state=show]:hover svg line {
+  stroke: #046791;
+}
+aside.right-sidebar #view-button[data-state=show]:hover svg path {
+  fill: #046791;
 }
 aside.right-sidebar ul {
   list-style: none;
