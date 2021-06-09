@@ -8,6 +8,14 @@
 aside.right-sidebar {
     max-width: 400px;
 
+    h2 {
+        font-size: $font-size-xl;
+
+       @include screen-xl {
+            font-size: $font-size-2xl;
+        }
+    }
+
     #view-button {
         font-size: $base-font-size;
         color: $primary_link_color;
@@ -74,6 +82,16 @@ aside.right-sidebar {
     ul {
         list-style: none;
         padding: 0  0 $spacer-2 0;
+
+        li {
+            font-size: $font-size-sm;
+            line-height: 1.4;
+
+            @include screen-xl {
+                font-size: $font-size-md;
+                line-height: 1.5;
+            }
+        }
     }
 
     .resource-info {
@@ -87,10 +105,6 @@ aside.right-sidebar {
 
 .related-rule-type {
     border-radius: 3px;
-}
-
-.ds-c-badge--final {
-    background: $secondary_color;
 }
 
 .related-rule-header {

@@ -27,6 +27,7 @@ class ReaderView(TableOfContentsMixin, CitationContextMixin, TemplateView):
         reg_part = context["part"]
         tree = self.client.part(reg_version, 42, reg_part)
         versions = self.get_versions(42, reg_part)
+        parts = self.client.effective_parts(reg_version)
         document = tree['document']
         toc = tree['toc']
 
@@ -36,6 +37,7 @@ class ReaderView(TableOfContentsMixin, CitationContextMixin, TemplateView):
             'tree':         self.get_content(context, document, toc),
             'reg_part':     reg_part,
             'toc':          toc,
+            'parts':        parts,
             'versions':     versions,
         }
 

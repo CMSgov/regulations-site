@@ -146,7 +146,7 @@ var __vue_render__$2 = function() {
     _c("div", { staticClass: "related-rule-header" }, [
       _c(
         "span",
-        { staticClass: "related-rule-type ds-c-badge ds-c-badge--final" },
+        { staticClass: "related-rule-type indicator" },
         [_vm._v(_vm._s(_vm.expandedType))]
       ),
       _vm._v(" "),
@@ -163,10 +163,9 @@ var __vue_render__$2 = function() {
     _c("div", [
       _c(
         "a",
-        { staticClass: "related-rule-title", attrs: { href: _vm.html_url } },
+        { staticClass: "related-rule-title external", attrs: { href: _vm.html_url } },
         [
-          _vm._v(_vm._s(_vm.title) + " "),
-          _c("i", { staticClass: "fas fa-external-link-alt" })
+          _vm._v(_vm._s(_vm.title) + " ")
         ]
       )
     ])
