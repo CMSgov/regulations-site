@@ -5,9 +5,9 @@
 </div>
 
 <div class="reg-title">
-    {% if meta.cfr_title_number %}
-        <a href="{% url 'regulation_landing_view' reg_part %}">{{ meta.cfr_title_number }} CFR Part {{ reg_part }} {% if meta.reg_letter %}(Regulation {{ meta.reg_letter }}){% endif %}</a>
+    {% if reg_part %}
+    <a href="{% url 'regulation_landing_view' reg_part %}">42 CFR Part {{ reg_part }}</a>
     {% endif %}
-</div> 
+</div>
 
 {% include "regulations/partials/header-search.html" %}
