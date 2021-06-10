@@ -4,6 +4,7 @@ from datetime import datetime
 
 register = template.Library()
 
+
 @register.filter(name='version_date')
 @stringfilter
 def version_date(date):
