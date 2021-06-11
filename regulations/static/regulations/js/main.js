@@ -55,10 +55,9 @@ function makeStateful(el) {
 
 function viewButtonClose() {
     const viewButton = document.querySelector("#view-button");
-    console.log("Clicked view button");
     viewButton.addEventListener("click", function() {
         if(this.getAttribute("data-state") === "show") {
-          closeLink = document.querySelector('#close-link');
+          const closeLink = document.querySelector('#close-link');
           closeLink.click();
         }
     });
@@ -78,9 +77,9 @@ function main() {
     for (const el of stateful_elements) {
         makeStateful(el);
     }
-    
-    goToVersion();
+
     viewButtonClose();
+    goToVersion();
 
     window.addEventListener("hashchange", activateTOCLink);
     activateTOCLink();
