@@ -8,5 +8,5 @@ register = template.Library()
 @register.filter(name='version_date')
 @stringfilter
 def version_date(date):
-	new_date = datetime.strptime(date, "%Y-%m-%d")	
-	return datetime.strftime(new_date, "%-m/%-d/%Y")
+    new_date = datetime.strptime(date, "%Y-%m-%d")	
+    return datetime.strftime(new_date, "%-m/%-d/%Y")
