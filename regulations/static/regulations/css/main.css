@@ -14663,7 +14663,7 @@ aside.right-sidebar #view-button svg path {
 }
 aside.right-sidebar #view-button .button-inner-container {
   display: inline-block;
-  padding-left: 16px;
+  padding-left: 8px;
   vertical-align: middle;
   font-weight: 600;
   line-height: 1.4;
