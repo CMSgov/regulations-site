@@ -15111,4 +15111,19 @@ ul.table-of-contents a {
   text-decoration: none;
 }
 
+main.about aside {
+  float: right;
+  margin-left: 1em;
+}
+main.about section {
+  margin-top: 40px;
+  clear: both;
+}
+main.about h2 {
+  color: #17415F;
+}
+main.about .subtitle {
+  font-weight: 600;
+}
+
 /*# sourceMappingURL=main.css.map */

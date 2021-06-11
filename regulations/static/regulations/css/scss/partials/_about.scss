@@ -1,0 +1,21 @@
+main.about {
+
+    aside {
+        float: right;
+        margin-left: 1em;
+    }
+
+    section {
+        margin-top: $spacer-5;
+        clear: both;
+    }
+
+    h2 {
+        color: $primary_color; 
+    }
+
+    .subtitle {
+        font-weight: 600;
+    }
+
+}
