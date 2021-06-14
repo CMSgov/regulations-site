@@ -30,7 +30,7 @@ class RegulationLandingView(TableOfContentsMixin, TemplateView):
         parts = client.effective_parts(date.today())
         reg_version = current['date']
         toc = current['toc']
-        part_label = toc['label'].split("-")[1]
+        part_label = toc['label_description']
 
         c = {
             'toc': toc,
