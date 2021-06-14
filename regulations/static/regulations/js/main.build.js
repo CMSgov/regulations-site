@@ -858,6 +858,16 @@
       }
   }
 
+  function viewButtonClose() {
+      const viewButton = document.querySelector("#view-button");
+      viewButton.addEventListener("click", function() {
+          if(this.getAttribute("data-state") === "show") {
+            const closeLink = document.querySelector('#close-link');
+            closeLink.click();
+          }
+      });
+  }
+
   function main() {
       new yn({
           components: {
@@ -868,15 +878,23 @@
       }).$mount("#vue-app");
 
       const stateful_elements = document.querySelectorAll("[data-state]");
-
       for (const el of stateful_elements) {
           makeStateful(el);
       }
-      
+
+      viewButtonClose();
       goToVersion();
 
       window.addEventListener("hashchange", activateTOCLink);
       activateTOCLink();
+
+      let reset_button = document.getElementById("search-reset");
+      if(reset_button) {
+          reset_button.addEventListener("click", (event) => {
+              document.getElementById("search-field").value = '';
+              event.preventDefault();
+          });
+      }
   }
 
   main();
