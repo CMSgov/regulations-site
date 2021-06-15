@@ -860,6 +860,9 @@
 
   function viewButtonClose() {
       const viewButton = document.querySelector("#view-button");
+      if(!viewButton) {
+          return;
+      }
       viewButton.addEventListener("click", function() {
           if(this.getAttribute("data-state") === "show") {
             const closeLink = document.querySelector('#close-link');
