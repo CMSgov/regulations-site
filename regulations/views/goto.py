@@ -19,23 +19,21 @@ class GoToRedirectView(TableOfContentsMixin, RedirectView):
 
     def get_redirect_url(self, *args, **kwargs):
         kwargs = self.request.GET.dict()
+        
         url_kwargs = {
                 "part": kwargs.get("part"),
-                "version": kwargs.get("version"),
         }
 
-        try:
-            toc = client.toc(url_kwargs['version'], 42, url_kwargs['part'])['toc']
-        except HTTPError:
-            raise Http404
+        if kwargs.get("section") is not None and kwargs.get("section") != "":
+            url_kwargs["section"] = kwargs.get("section")
 
-        try:
-            subpart = find_subpart(kwargs.get("section"), toc)
-            if subpart is None:
-                raise Http404()
-            url_kwargs["subpart"] = "Subpart-{}".format(subpart)
-        except NotInSubpart:
-            pass
-        citation = url_kwargs["part"] + '-' + kwargs["section"]
-        url = reverse(self.pattern_name, kwargs=url_kwargs) + "#" + citation
+            if kwargs.get(f'{kwargs.get("part")}-version') is not None:
+                url_kwargs["version"] = kwargs.get(f'{kwargs.get("part")}-version')
+
+        citation = [url_kwargs["part"]]
+        if url_kwargs.get("section"):
+            citation.append(url_kwargs["section"])
+
+        url = reverse(self.pattern_name, kwargs=url_kwargs) + "#" + "-".join(citation)
         return url
+
