@@ -38,7 +38,19 @@ header {
 	float: right;
 
 	.search-box {
-		width: 380px;
+		width: 260px;
+
+	    @include screen-lg {
+	        width: 250px;
+	    }
+
+	    @include screen-xl {
+	        width: 310px;
+	    }
+
+	    @include screen-xxl {
+	        width: 330px;
+	    }
 
 		input {
 			border: 1px solid $border_color;

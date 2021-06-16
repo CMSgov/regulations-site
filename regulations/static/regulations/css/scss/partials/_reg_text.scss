@@ -12,12 +12,8 @@
         font-size: $base-font-size * 1.5;
         line-height: 1.4;
 
-        @include screen-xl {
-            font-size: $base-font-size * 1.75;
-        }
-
         @include screen-xxl {
-            font-size: $base-font-size * 2;
+            font-size: $base-font-size * 1.9;
             line-height: 1.5;
         }
     }
@@ -27,6 +23,10 @@
        font-size: $font-size-xl;
 
        @include screen-xl {
+            font-size: $font-size-xl;
+        }
+
+        @include screen-xxl {
             font-size: $font-size-2xl;
         }
     }
@@ -34,10 +34,10 @@
 
 article {
     max-width: $text-max-width;
-    margin: $spacer-4 0 $spacer-4 $spacer-4;
+    margin: $spacer-5 0 $spacer-4 $spacer-4;
 
     @include screen-xxl {
-        margin: $spacer-4;
+        margin: $spacer-5 $spacer-6;
     }
 
     i {

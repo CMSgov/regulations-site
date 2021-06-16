@@ -58,7 +58,7 @@ body {
     }
 
     @include screen-xl {
-        width: 400px;
+        width: 350px;
     }
 
     @include screen-3xl {
@@ -76,12 +76,13 @@ body {
     }
 
     @include screen-xl {
-        width: calc(100% - 800px);
-        padding: 0 $spacer-6;
+        width: calc(100% - 700px);
+        padding: 0 $spacer-4;
     }
 
     @include screen-3xl {
         width: calc(100% - 1000px);
+        padding: 0 $spacer-6;
     }
 }
 

@@ -159,7 +159,7 @@ $width-3xl: 1920px;  // The largest the site container will get
    @media (max-width: $screen+'px') {
        @content;
    }
-}
+} 
 
 //--------------------------
 // Transitions

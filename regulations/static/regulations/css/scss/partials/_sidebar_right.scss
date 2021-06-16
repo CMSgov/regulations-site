@@ -109,11 +109,11 @@ aside.right-sidebar {
 
         li {
             font-size: $font-size-sm;
-            line-height: 1.4;
+            line-height: 1.3;
 
             @include screen-xl {
                 font-size: $font-size-md;
-                line-height: 1.5;
+                line-height: 1.4;
             }
         }
     }
@@ -133,6 +133,11 @@ aside.right-sidebar {
 
 .related-rule-header {
     margin-bottom: $spacer-1;
+    font-size: $font-size-sm;
+
+    @include screen-xxl {
+        font-size: $font-size-md;
+    }
 }
 
 .related-rule-date {
@@ -151,6 +156,7 @@ aside.right-sidebar {
 .related-rule-title {
     color: $primary_link_color;
     text-decoration: none;
+    font-size: $font-size-sm;
 }
 
 .related-rule-list {
