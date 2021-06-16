@@ -30,11 +30,13 @@ class RegulationLandingView(TableOfContentsMixin, TemplateView):
         parts = client.effective_parts(date.today())
         reg_version = current['date']
         toc = current['toc']
+        part_label = toc['label_description']
 
         c = {
             'toc': toc,
             'version': reg_version,
             'part': reg_part,
+            'part_label': part_label,
             'reg_part': reg_part,
             'parts': parts,
             'last_updated': datetime.fromisoformat(current['last_updated']),
