@@ -14653,6 +14653,11 @@ aside.right-sidebar h2 {
 }
 @media (min-width: 1280px) {
   aside.right-sidebar h2 {
+    font-size: 22.4px;
+  }
+}
+@media (min-width: 1440px) {
+  aside.right-sidebar h2 {
     font-size: 24px;
   }
 }
@@ -14828,12 +14833,7 @@ html {
 }
 .reg-text h2 {
   color: #17415F;
-  font-size: 21px;
-}
-@media (min-width: 1280px) {
-  .reg-text h2 {
-    font-size: 21px;
-  }
+  font-size: 19.2px;
 }
 @media (min-width: 1440px) {
   .reg-text h2 {
