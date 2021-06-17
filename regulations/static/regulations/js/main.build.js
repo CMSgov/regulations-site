@@ -865,6 +865,10 @@
       }
       viewButton.addEventListener("click", function() {
           if(this.getAttribute("data-state") === "show") {
+            this.setAttribute("data-set-state", "close"); 
+          }
+
+          if(this.getAttribute("data-state") === "close") {
             const closeLink = document.querySelector('#close-link');
             closeLink.click();
           }
