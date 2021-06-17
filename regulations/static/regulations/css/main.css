@@ -14329,8 +14329,11 @@ header.sticky {
 header.sticky .search-header {
   margin-right: 64px;
 }
-header.sticky + .reg-content {
+header.sticky + .content {
   padding-top: 105px;
+}
+header.sticky + .content aside {
+  top: 105px;
 }
 header a {
   text-decoration: none;

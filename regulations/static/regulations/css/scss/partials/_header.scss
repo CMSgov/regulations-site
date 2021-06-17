@@ -5,6 +5,8 @@
 
 @import "../application_settings";
 
+$header-height: 105px;
+
 header {
 
 	// Sticky Header and Content Adjustments
@@ -23,8 +25,12 @@ header {
 			margin-right: 64px;
 		}
 
-		+ .reg-content {
-		  padding-top: 105px;   // This should be the height of the header
+		+ .content {
+			padding-top: $header-height;
+
+		  	aside {
+				top: $header-height;
+			}
 		}
 
 	}

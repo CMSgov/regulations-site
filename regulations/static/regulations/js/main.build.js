@@ -906,7 +906,7 @@
 
   window.onscroll = function() {stickyHeader()};
 
-  var header = document.getElementById("header-js");
+  var header = document.getElementById("header");
   var sticky = header.offsetTop;
 
   function stickyHeader() {
