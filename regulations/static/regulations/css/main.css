@@ -14333,7 +14333,7 @@ header.sticky + .content {
   padding-top: 105px;
 }
 header.sticky + .content aside {
-  top: 105px;
+  top: 100px;
 }
 header a {
   text-decoration: none;

@@ -5,8 +5,6 @@
 
 @import "../application_settings";
 
-$header-height: 105px;
-
 header {
 
 	// Sticky Header and Content Adjustments
@@ -26,10 +24,10 @@ header {
 		}
 
 		+ .content {
-			padding-top: $header-height;
+			padding-top: 105px; 	// Header height
 
 		  	aside {
-				top: $header-height;
+				top: 100px;
 			}
 		}
 
