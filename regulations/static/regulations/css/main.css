@@ -13513,6 +13513,13 @@ html {
   scroll-behavior: smooth;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
+}
+
 header {
   padding: 32px;
   border-bottom: 1px solid #17415F;
@@ -13671,6 +13678,13 @@ html {
   scroll-behavior: smooth;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
+}
+
 html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -13722,6 +13736,13 @@ a:hover {
 
 html {
   scroll-behavior: smooth;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
 }
 
 .site-homepage {
@@ -13996,6 +14017,13 @@ html {
   scroll-behavior: smooth;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
+}
+
 .search-page main {
   width: calc(100% - 450px);
 }
@@ -14196,6 +14224,13 @@ html {
   scroll-behavior: smooth;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
+}
+
 .view-and-compare {
   padding: 16px 32px;
   background-color: #026666;
@@ -14269,6 +14304,13 @@ html {
   scroll-behavior: smooth;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
+}
+
 .flash-banner {
   background: #EEFAFE;
   text-align: center;
@@ -14314,6 +14356,13 @@ a:hover {
 
 html {
   scroll-behavior: smooth;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
 }
 
 header.sticky {
@@ -14408,6 +14457,13 @@ a:hover {
 
 html {
   scroll-behavior: smooth;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
 }
 
 aside.left-sidebar {
@@ -14663,6 +14719,13 @@ html {
   scroll-behavior: smooth;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
+}
+
 aside.right-sidebar {
   padding-top: 40px;
   max-width: 400px;
@@ -14837,6 +14900,13 @@ a:hover {
 
 html {
   scroll-behavior: smooth;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
 }
 
 .reg-text h1 {
@@ -15014,6 +15084,13 @@ html {
   scroll-behavior: smooth;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
+}
+
 footer {
   padding: 32px;
   border-top: 1px solid #D6D7D9;
@@ -15092,6 +15169,13 @@ a:hover {
 
 html {
   scroll-behavior: smooth;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
 }
 
 main.error-page {
