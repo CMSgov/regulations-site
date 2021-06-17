@@ -13568,7 +13568,7 @@ body {
 }
 @media (min-width: 1280px) {
   .match-sides {
-    width: 400px;
+    width: 350px;
   }
 }
 @media (min-width: 1920px) {
@@ -13589,13 +13589,14 @@ body {
 }
 @media (min-width: 1280px) {
   .match-middle {
-    width: calc(100% - 800px);
-    padding: 0 48px;
+    width: calc(100% - 700px);
+    padding: 0 32px;
   }
 }
 @media (min-width: 1920px) {
   .match-middle {
     width: calc(100% - 1000px);
+    padding: 0 48px;
   }
 }
 
@@ -14341,7 +14342,22 @@ header .reg-title {
   float: right;
 }
 .search-header .search-box {
-  width: 380px;
+  width: 260px;
+}
+@media (min-width: 1024px) {
+  .search-header .search-box {
+    width: 250px;
+  }
+}
+@media (min-width: 1280px) {
+  .search-header .search-box {
+    width: 310px;
+  }
+}
+@media (min-width: 1440px) {
+  .search-header .search-box {
+    width: 330px;
+  }
 }
 .search-header .search-box input {
   border: 1px solid #D6D7D9;
@@ -14637,6 +14653,11 @@ aside.right-sidebar h2 {
 }
 @media (min-width: 1280px) {
   aside.right-sidebar h2 {
+    font-size: 22.4px;
+  }
+}
+@media (min-width: 1440px) {
+  aside.right-sidebar h2 {
     font-size: 24px;
   }
 }
@@ -14712,12 +14733,12 @@ aside.right-sidebar ul {
 }
 aside.right-sidebar ul li {
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 @media (min-width: 1280px) {
   aside.right-sidebar ul li {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.4;
   }
 }
 aside.right-sidebar .resource-info {
@@ -14733,6 +14754,12 @@ aside.right-sidebar .resource-info {
 
 .related-rule-header {
   margin-bottom: 8px;
+  font-size: 14px;
+}
+@media (min-width: 1440px) {
+  .related-rule-header {
+    font-size: 16px;
+  }
 }
 
 .related-rule-date {
@@ -14751,6 +14778,7 @@ aside.right-sidebar .resource-info {
 .related-rule-title {
   color: #046791;
   text-decoration: none;
+  font-size: 14px;
 }
 
 .related-rule-list {
@@ -14797,22 +14825,17 @@ html {
   font-size: 24px;
   line-height: 1.4;
 }
-@media (min-width: 1280px) {
-  .reg-text h1 {
-    font-size: 28px;
-  }
-}
 @media (min-width: 1440px) {
   .reg-text h1 {
-    font-size: 32px;
+    font-size: 30.4px;
     line-height: 1.5;
   }
 }
 .reg-text h2 {
   color: #17415F;
-  font-size: 21px;
+  font-size: 19.2px;
 }
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
   .reg-text h2 {
     font-size: 24px;
   }
@@ -14820,11 +14843,11 @@ html {
 
 article {
   max-width: 53rem;
-  margin: 32px 0 32px 32px;
+  margin: 40px 0 32px 32px;
 }
 @media (min-width: 1440px) {
   article {
-    margin: 32px;
+    margin: 40px 48px;
   }
 }
 article i {
