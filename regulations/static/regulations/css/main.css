@@ -15341,6 +15341,7 @@ html {
 ul.table-of-contents {
   margin-left: 0;
   padding-left: 0;
+  max-width: 53rem;
 }
 ul.table-of-contents li {
   list-style: none;
