@@ -11,9 +11,11 @@ ul.table-of-contents {
     li {
         list-style: none;
         color: $secondary_text_color;
+        margin: $spacer-3 0;
 
         h3 {
             margin-bottom: 0;
+            display: initial;
         }
 
         p {
@@ -28,8 +30,7 @@ ul.table-of-contents {
         padding-left: 0;
 
         li {
-            margin-bottom: $spacer-1;
-            margin-left: 15px;
+            margin: 0 0 $spacer-1 $spacer-2;
 
             p {
                 margin-top: $spacer-2;
