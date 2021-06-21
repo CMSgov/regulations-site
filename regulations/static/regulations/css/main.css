@@ -13710,6 +13710,10 @@ h2 {
   font-family: "Merriweather", Georgia, serif;
 }
 
+su {
+  vertical-align: super;
+}
+
 .indicator {
   background: #026666;
   text-transform: uppercase;
