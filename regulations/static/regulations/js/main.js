@@ -55,8 +55,15 @@ function makeStateful(el) {
 
 function viewButtonClose() {
     const viewButton = document.querySelector("#view-button");
+    if(!viewButton) {
+        return;
+    }
     viewButton.addEventListener("click", function() {
         if(this.getAttribute("data-state") === "show") {
+          this.setAttribute("data-set-state", "close"); 
+        }
+
+        if(this.getAttribute("data-state") === "close") {
           const closeLink = document.querySelector('#close-link');
           closeLink.click();
         }
@@ -93,3 +100,18 @@ function main() {
 }
 
 main();
+
+// Sticky header
+
+window.onscroll = function() {stickyHeader()};
+
+var header = document.getElementById("header");
+var sticky = header.offsetTop;
+
+function stickyHeader() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+} 
