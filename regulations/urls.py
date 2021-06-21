@@ -14,9 +14,11 @@ register_converter(converters.VersionConverter, 'version')
 urlpatterns = [
     path('', HomepageView.as_view(), name='homepage'),
     path('<numeric:part>/', RegulationLandingView.as_view(), name="regulation_landing_view"),
-    path('<numeric:part>/<version:version>/', PartReaderView.as_view(), name='reader_view'),
+    path('<numeric:part>/', RegulationLandingView.as_view(), name="reader_view"),
+    path('<numeric:part>/<numeric:section>/', SectionReaderView.as_view(), name='reader_view'),
     path('<numeric:part>/<numeric:section>/<version:version>/', SectionReaderView.as_view(), name='reader_view'),
     path('<numeric:part>/<subpart:subpart>/<version:version>/', SubpartReaderView.as_view(), name="reader_view"),
+    path('<numeric:part>/<version:version>/', PartReaderView.as_view(), name='reader_view'),
     path('goto/', GoToRedirectView.as_view(), name='goto'),
     path('search/', SearchView.as_view(), name='search'),
 ]
