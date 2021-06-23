@@ -2,16 +2,18 @@
 {% load static %}
 
 {% block body %}
-    <div class="flexbox">
+    <div class="content">
+        <div class="flexbox">
 
-        <aside class="left-sidebar match-sides" data-state="expanded" data-state-name="left-sidebar">
-            {% include "regulations/partials/sidebar_left.html" %}
-        </aside>
+            <aside class="left-sidebar match-sides" data-state="expanded" data-state-name="left-sidebar">
+                {% include "regulations/partials/sidebar_left.html" %}
+            </aside>
 
-        <main class="reg-part-homepage match-middle">
-	        {% include content %}
-	    </main>
+            <main class="reg-part-homepage match-middle">
+        	   {% include content %}              
+    	    </main>
 
+        </div>
     </div>
 {% endblock %}
 

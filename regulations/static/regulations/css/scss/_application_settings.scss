@@ -50,6 +50,9 @@ $teritary_link_hover: $mid_blue;
 $reverse_link_color: $light_blue;
 $reverse_link_hover: $white;
 
+$secondary_reverse_link_color: $white;
+$secondary_reverse_link_hover: $light_blue;
+
 $visited_link_color: $magenta;
 
 // Forms
@@ -156,7 +159,7 @@ $width-3xl: 1920px;  // The largest the site container will get
    @media (max-width: $screen+'px') {
        @content;
    }
-}
+} 
 
 //--------------------------
 // Transitions
@@ -204,6 +207,8 @@ a {
 
 // For margins and padding: From the CMS Design System, default to $spacer-* where * is a number between 1–7 (i.e. $spacer-2)
 
+$header-height: 105px;  // Update if header height changes
+
 a {
     color: $primary_link_color;
 
@@ -216,4 +221,11 @@ a {
 
 html {
     scroll-behavior: smooth;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: $header-height;
+    margin: -$header-height 0 0;
 }

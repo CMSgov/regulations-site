@@ -43,12 +43,6 @@ class ReaderView(TableOfContentsMixin, CitationContextMixin, TemplateView):
 
         return {**context, **c}
 
-    def get_regulation(self, label_id, version):
-        regulation = self.client.regulation(label_id, version)
-        if regulation is None:
-            raise Http404
-        return regulation
-
     def get_versions(self, title, part):
         versions = self.client.regversions(title, part)
         if versions is None:
@@ -111,11 +105,21 @@ class SectionReaderView(TableOfContentsMixin, View):
         }
 
         client = api_reader.ApiReader()
-        toc = client.toc(url_kwargs['version'], 42, url_kwargs['part'])['toc']
 
-        subpart = find_subpart(kwargs.get("section"), toc)
-        if subpart is not None:
-            url_kwargs["subpart"] = "Subpart-{}".format(subpart)
+        if url_kwargs['version'] is None:
+            versions = client.regversions(42, url_kwargs['part'])
+            if versions is None:
+                raise Http404
+            url_kwargs['version'] = versions[0]['date']
+
+        try:
+            toc = client.toc(url_kwargs['version'], 42, url_kwargs['part'])['toc']
+
+            subpart = find_subpart(kwargs.get("section"), toc)
+            if subpart is not None:
+                url_kwargs["subpart"] = "Subpart-{}".format(subpart)
+        except NotInSubpart:
+            pass
 
         url = reverse("reader_view", kwargs=url_kwargs)
         return HttpResponseRedirect(url)

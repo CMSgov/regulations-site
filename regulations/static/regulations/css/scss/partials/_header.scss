@@ -7,6 +7,32 @@
 
 header {
 
+	// Sticky Header and Content Adjustments
+
+	&.sticky {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		background: $main_background_color;
+		z-index: 9999999;
+		box-shadow: 0 3px 10px 0px rgba(0,0,0,0.08);
+		-webkit-box-shadow: 0 3px 10px 0px rgba(0,0,0,0.08);
+		-moz-box-shadow: 0 3px 10px 0px rgba(0,0,0,0.08);
+
+		.search-header {
+			margin-right: 64px;
+		}
+
+		+ .content {
+			padding-top: $header-height; 	
+
+		  	aside {
+				top: 100px;
+			}
+		}
+
+	}
+
 	a {
 		text-decoration: none;
 		color: $secondary_link_color;
@@ -38,7 +64,19 @@ header {
 	float: right;
 
 	.search-box {
-		width: 380px;
+		width: 260px;
+
+	    @include screen-lg {
+	        width: 250px;
+	    }
+
+	    @include screen-xl {
+	        width: 310px;
+	    }
+
+	    @include screen-xxl {
+	        width: 330px;
+	    }
 
 		input {
 			border: 1px solid $border_color;
