@@ -2,7 +2,7 @@ main.about {
 
     aside {
         float: right;
-        margin-left: 1em;
+        margin-left: $spacer-3;
     }
 
     section {
@@ -16,6 +16,10 @@ main.about {
 
     .subtitle {
         font-weight: 600;
+    }
+
+    .note {
+        font-style: italic;
     }
 
 }

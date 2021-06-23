@@ -15113,7 +15113,7 @@ ul.table-of-contents a {
 
 main.about aside {
   float: right;
-  margin-left: 1em;
+  margin-left: 24px;
 }
 main.about section {
   margin-top: 40px;
@@ -15124,6 +15124,9 @@ main.about h2 {
 }
 main.about .subtitle {
   font-weight: 600;
+}
+main.about .note {
+  font-style: italic;
 }
 
 /*# sourceMappingURL=main.css.map */
