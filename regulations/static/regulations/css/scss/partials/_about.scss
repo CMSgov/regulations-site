@@ -1,5 +1,9 @@
 main.about {
 
+    display: block;
+    margin: 0 auto;
+    max-width: $text-max-width;
+
     aside {
         float: right;
         margin-left: $spacer-3;

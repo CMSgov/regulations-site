@@ -15383,6 +15383,11 @@ ul.table-of-contents .toc-section-name {
   margin-left: 16px;
 }
 
+main.about {
+  display: block;
+  margin: 0 auto;
+  max-width: 53rem;
+}
 main.about aside {
   float: right;
   margin-left: 24px;
