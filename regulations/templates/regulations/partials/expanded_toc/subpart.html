@@ -1,12 +1,12 @@
 {% load render_nested %}
 <li>
-    <a href="{{ url }}" class="subpart-info"><!-- This is what should link to a new page that is the top of the relevant subpart -->
+    <a href="{% url 'reader_view' title part identifier.0 version %}" class="subpart-info"><!-- This is what should link to a new page that is the top of the relevant subpart -->
         <h3 class="subpart-letter">{{label_level|safe}}</h3>
     </a>
     <p class="subpart-name">{{label_description|safe}}</p>
     <ul>
         {% for item in children %}
-          {% render_nested "regulations/partials/expanded_toc/"|add:item.type|add:".html" context=item %}
+          {% render_nested "regulations/partials/expanded_toc/"|add:item.type|add:".html" context=item subpart=identifier.0 title=title version=version %}
         {% endfor %}
     </ul>
 </li>

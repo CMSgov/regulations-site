@@ -6,8 +6,8 @@
 
 <div class="reg-title">
     {% if part %}
-    <a href="{% url 'regulation_landing_view' reg_part %}">
-      <b>42 CFR Part {{ part }}</b>
+    <a href="{% url 'regulation_landing_view' title reg_part %}">
+      <b>{{title}} CFR Part {{ part }}</b>
       {% if part_label %}
         - {{ part_label }}
       {% endif %}
