@@ -1,4 +1,3 @@
-from django.urls import NoReverseMatch
 
 
 def build_citation(context):
@@ -17,4 +16,3 @@ class CitationContextMixin:
         context = super(CitationContextMixin, self).get_context_data(**kwargs)
         context['citation'] = build_citation(context)
         return context
-

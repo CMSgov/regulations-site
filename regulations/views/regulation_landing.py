@@ -2,11 +2,8 @@ from datetime import date, datetime
 from requests import HTTPError
 from django.views.generic.base import TemplateView
 from django.http import Http404
-from django.urls import reverse
 
 from regulations.generator import api_reader
-from regulations.views.errors import NotInSubpart
-from regulations.views.utils import find_subpart
 
 client = api_reader.ApiReader()
 
