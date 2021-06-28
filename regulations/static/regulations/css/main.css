@@ -15383,27 +15383,71 @@ ul.table-of-contents .toc-section-name {
   margin-left: 16px;
 }
 
+.indicator {
+  background: #026666;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+
+a.external:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
+}
+
+a {
+  color: #046791;
+}
+a:hover {
+  color: #17415F;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 105px;
+  margin: -105px 0 0;
+}
+
 main.about {
   display: block;
-  margin: 0 auto;
+  margin: 24px auto 56px;
   max-width: 53rem;
-}
-main.about aside {
-  float: right;
-  margin-left: 24px;
 }
 main.about section {
   margin-top: 40px;
   clear: both;
 }
+main.about .ds-l-container {
+  padding: 0;
+}
+main.about .ds-l-container img {
+  margin-top: 16px;
+}
 main.about h2 {
   color: #17415F;
+}
+main.about .ecfr-graphic {
+  border: 1px solid #D6D7D9;
 }
 main.about .subtitle {
   font-weight: 600;
 }
 main.about .note {
   font-style: italic;
+}
+main.about :target::before {
+  margin-top: 0;
+  height: auto;
 }
 
 /*# sourceMappingURL=main.css.map */
