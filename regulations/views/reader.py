@@ -30,12 +30,14 @@ class ReaderView(TableOfContentsMixin, CitationContextMixin, TemplateView):
         parts = self.client.effective_parts(reg_version)
         document = tree['document']
         toc = tree['toc']
+        part_label = toc['label_description']
 
         self.build_toc_urls(context, toc)
 
         c = {
             'tree':         self.get_content(context, document, toc),
             'reg_part':     reg_part,
+            'part_label':   part_label,
             'toc':          toc,
             'parts':        parts,
             'versions':     versions,

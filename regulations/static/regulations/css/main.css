@@ -13968,26 +13968,6 @@ html {
   font-size: 16px;
   margin-bottom: 40px;
 }
-.homepage-updates .latest-changes .recent-change {
-  margin: 16px 0;
-  font-size: 14px;
-}
-.homepage-updates .latest-changes .recent-change a {
-  text-decoration: none;
-}
-.homepage-updates .latest-changes .recent-change .recent-date {
-  font-weight: bold;
-}
-.homepage-updates .latest-changes .recent-change .recent-fr {
-  font-weight: bold;
-}
-.homepage-updates .latest-changes .recent-change .recent-title {
-  margin-top: 0.2em;
-}
-.homepage-updates .latest-changes .recent-change .recent-title:after {
-  content: url("../images/external-link.svg");
-  padding-left: 5px;
-}
 .homepage-updates .latest-changes .see-fr {
   font-style: italic;
   font-size: 12px;
@@ -14884,15 +14864,35 @@ aside.right-sidebar .resource-info {
   font-size: 14px;
 }
 
-.related-rule-list {
+.rules-with-preamble {
+  max-height: 1000em;
+}
+.rules-with-preamble .related-rule-list {
   padding-left: 16px;
 }
-.related-rule-list .related-rule {
+.rules-with-preamble .related-rule-list .related-rule {
   margin-bottom: 24px;
 }
 
-.rules-with-preamble {
-  max-height: 1000em;
+.recent-change {
+  margin: 16px 0;
+  font-size: 14px;
+}
+.recent-change a {
+  text-decoration: none;
+}
+.recent-change .recent-date {
+  font-weight: bold;
+}
+.recent-change .recent-fr {
+  font-weight: bold;
+}
+.recent-change .recent-title {
+  margin-top: 0.2em;
+}
+.recent-change .recent-title:after {
+  content: url("../images/external-link.svg");
+  padding-left: 5px;
 }
 
 .indicator {
