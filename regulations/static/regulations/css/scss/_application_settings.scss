@@ -223,7 +223,7 @@ html {
     scroll-behavior: smooth;
 }
 
-:target:before {
+:target:before {       // Moves content down so it's not covered by the sticky header 
     content: "";
     display: block;
     height: $header-height;

@@ -11,10 +11,7 @@ class NumericConverter(PathConverter):
 
 
 class SubpartConverter(PathConverter):
-    regex = r'[Ss]ubpart-[A-Za-z]'
-
-    def to_python(self, value):
-        return value[0].upper() + value[1:-1] + value[-1].upper()
+    regex = r'[A-Za-z]'
 
 
 class VersionConverter(PathConverter):

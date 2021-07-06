@@ -15,6 +15,7 @@
 
     <form method="GET" action="{% url 'goto' %}">
       <input name="{{ reg_part }}-version" type="hidden" required value={{ version }}>
+      <input name="title" type="hidden" required value={{ title }}>
 
         <div class="jump-to-input">
             § <select name="part" class="ds-c-field">
@@ -35,7 +36,7 @@
     <ul>
         {% for item in toc.children %}
             {% if item.type == "section" %}
-                {% include "regulations/partials/toc_section.html" with extra_class="orphan" %}
+                {% include "regulations/partials/toc_orphan_section.html" with extra_class="orphan" %}
             {% elif item.type == "subpart" %}
                 {% with item_subpart="Subpart-"|add:item.identifier.0 %}
                     {% if subpart and item_subpart == subpart %}

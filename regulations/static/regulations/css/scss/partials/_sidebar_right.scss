@@ -163,13 +163,42 @@ aside.right-sidebar {
     font-size: $font-size-sm;
 }
 
-.related-rule-list {
-    padding-left: $spacer-2;
-    .related-rule {
-        margin-bottom: $spacer-3;
-    }
-}
 
 .rules-with-preamble {
     max-height: 1000em;
+
+    .related-rule-list {
+        padding-left: $spacer-2;
+        .related-rule {
+            margin-bottom: $spacer-3;
+        }
+    }
+}
+
+.recent-change {
+    margin: $spacer-2 0;
+    font-size: $font-size-sm;
+
+    a {
+	text-decoration: none;
+    }
+
+    .recent-flag {
+    }
+
+    .recent-date {
+	font-weight: bold;
+    }
+
+    .recent-fr {
+	font-weight: bold;
+    }
+
+    .recent-title {
+	margin-top: .2em;
+
+	&:after {
+	    @include external-link;
+        }
+    }
 }
