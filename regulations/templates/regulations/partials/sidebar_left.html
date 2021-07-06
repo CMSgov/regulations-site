@@ -2,11 +2,11 @@
 
 <div class="toc-controls">
     <button data-set-state="collapsed" data-state-name="left-sidebar">
-        <img src="{% static 'images/sidebar-collapse.svg' %}" />
+        <img src="{% static 'images/sidebar-collapse.svg' %}" alt="collapse left arrow button" />
         <span>Collapse</span>
     </button>
     <button data-set-state="expanded" data-state-name="left-sidebar">
-        <img src="{% static 'images/sidebar-expand.svg' %}" />
+        <img src="{% static 'images/sidebar-expand.svg' %}" alt="expand right arrow button" />
     </button>
 </div>
 
@@ -17,13 +17,19 @@
       <input name="{{ reg_part }}-version" type="hidden" required value={{ version }}>
 
         <div class="jump-to-input">
-            § <select name="part" class="ds-c-field">
+            § <select name="part" class="ds-c-field" title="Select a Regulation part" aria-label="Select a Regulation part">
                 {% for part in parts %}
                 <option value="{{ part.name }}" {% if reg_part == part.name %}selected{% endif %}>{{ part.name }}</option>
                 {% endfor %}
             </select>
             <span class="dot">.</span>
-            <input class="number-box ds-c-field" name="section" placeholder="{{section}}" type="text" pattern="\d+" title="Regulation section number, i.e. 111">
+            <input
+              class="number-box ds-c-field"
+              name="section" placeholder="{{section}}"
+              type="text" pattern="\d+"
+              title="Regulation section number, i.e. 111"
+              aria-label="Regulation section number, i.e. 111"
+            >
         </div>
 
         <input class="submit" type="submit" value="Go">
