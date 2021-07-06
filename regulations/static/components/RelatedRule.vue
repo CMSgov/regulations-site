@@ -1,12 +1,10 @@
 <template>
-  <div class="related-rule">
-    <div class="related-rule-header">
-      <span class="related-rule-type indicator">{{ expandedType }}</span>
-      <span class="related-rule-date" v-if="effective_on">{{ effective_on|formatDate }}</span><span class="related-rule-citation">{{ citation }}</span>
-    </div>
-    <div>
-      <a class="related-rule-title external" :href="html_url">{{ title }}</a>
-    </div>
+  <div class="related-rule recent-change">
+    <a class="related-rule-title" :href="html_url">
+      <span class="recent-flag indicator">{{ expandedType }}</span>
+      <span class="recent-date" v-if="effective_on">{{ effective_on|formatDate }}</span> | <span class="recent-fr">{{ citation }}</span>
+      <div class="recent-title">{{ title }}</div>
+    </a>
   </div>
 </template>
 

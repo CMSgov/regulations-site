@@ -1,18 +1,24 @@
 {% load static %}
 
-<div class="site-title">
-    <a href="{% url 'homepage' %}">Medicaid &amp; CHIP Regulations</a>
-</div>
+<div class="flexbox">
 
-<div class="reg-title">
-    {% if part %}
-    <a href="{% url 'regulation_landing_view' title reg_part %}">
-      <b>{{title}} CFR Part {{ part }}</b>
-      {% if part_label %}
-        - {{ part_label }}
-      {% endif %}
-    </a>
-    {% endif %}
-</div>
+    <div class="site-title">
+        <a href="{% url 'homepage' %}">Medicaid &amp; CHIP Regulations</a>
+    </div>
 
-{% include "regulations/partials/header-search.html" %}
+    <div class="reg-title">
+        {% if part %}
+        <a href="{% url 'regulation_landing_view' title reg_part %}">
+            <strong>{{title}} CFR Part {{ part }}</strong>
+            <span class="header-part-name">
+            {% if part_label %}
+             - {{ part_label }}
+            {% endif %}
+            </span>
+        </a>
+        {% endif %}
+    </div>
+
+    {% include "regulations/partials/header-search.html" %}
+
+</div>

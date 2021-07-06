@@ -6,6 +6,7 @@
 @import "../application_settings";
 
 header {
+	height: calc($header-height - $spacer-4);
 
 	// Sticky Header and Content Adjustments
 
@@ -23,11 +24,11 @@ header {
 			margin-right: 64px;
 		}
 
-		+ .content {
+		+ .content {						// Moves content/aside down so they're not covered by the sticky header 
 			padding-top: $header-height; 	
 
 		  	aside {
-				top: 100px;
+				top: $header-height;
 			}
 		}
 
@@ -46,6 +47,10 @@ header {
 		}
 	}
 
+	.flexbox {
+		align-items: center;
+	}
+
 	.site-title {
 		display: inline-block;
 		border-right: 1px solid $border_color;
@@ -57,6 +62,20 @@ header {
 
 	.reg-title {
 		display: inline-block;
+		flex: 2;
+		padding-right: $spacer-2;
+
+		a {
+			max-width: $text-max-width;
+			display: inline-block;
+		}
+	}
+
+	.header-part-name {
+
+		@include custom-max(1290) {
+			display: none;
+		}
 	}
 }
 

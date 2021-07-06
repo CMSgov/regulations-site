@@ -31,11 +31,13 @@ class ReaderView(CitationContextMixin, TemplateView):
         parts = self.client.effective_title_parts(reg_version, reg_title)
         document = tree['document']
         toc = tree['toc']
+        part_label = toc['label_description']
 
         c = {
             'tree':         self.get_content(context, document, toc),
             'title':        reg_title,
             'reg_part':     reg_part,
+            'part_label':   part_label,
             'toc':          toc,
             'parts':        parts,
             'versions':     versions,
