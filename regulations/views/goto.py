@@ -1,13 +1,12 @@
 from django.urls import reverse
 from django.views.generic.base import RedirectView
 
-from regulations.views.mixins import TableOfContentsMixin
 from regulations.generator import api_reader
 
 client = api_reader.ApiReader()
 
 
-class GoToRedirectView(TableOfContentsMixin, RedirectView):
+class GoToRedirectView(RedirectView):
 
     permanent = False
     pattern_name = 'reader_view'
@@ -16,7 +15,8 @@ class GoToRedirectView(TableOfContentsMixin, RedirectView):
         kwargs = self.request.GET.dict()
 
         url_kwargs = {
-                "part": kwargs.get("part"),
+            "title": kwargs.get("title"),
+            "part": kwargs.get("part"),
         }
 
         if kwargs.get("section") is not None and kwargs.get("section") != "":

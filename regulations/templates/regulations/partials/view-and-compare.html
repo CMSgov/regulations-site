@@ -8,9 +8,9 @@
                 <option value="" disabled>Select Date</option>
                 {% for version in versions %}
                     {% if citation.1 %}
-                        <option data-url="{% url 'reader_view' citation.0 citation.1 version.date %}">{{version.date|version_date}}</option>
+                        <option data-url="{% url 'reader_view' title citation.0 citation.1 version.date %}">{{version.date|version_date}}</option>
                     {% else %}
-                        <option data-url="{% url 'reader_view' citation.0 version.date %}">{{version.date|version_date}}</option>
+                        <option data-url="{% url 'reader_view' title citation.0 version.date %}">{{version.date|version_date}}</option>
                     {% endif %}
 
                 {% endfor %}
@@ -18,9 +18,9 @@
         </span>
         <span class="close-button">
             {% if citation.1 %}
-            <a id="close-link" href="{% url 'reader_view' citation.0 citation.1 versions.0.date  %}">
+            <a id="close-link" href="{% url 'reader_view' title citation.0 citation.1 versions.0.date  %}">
             {% else %}
-            <a id="close-link" href="{% url 'reader_view' citation.0 versions.0.date  %}">
+            <a id="close-link" href="{% url 'reader_view' title citation.0 versions.0.date  %}">
             {% endif %}
                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <title>Close</title>

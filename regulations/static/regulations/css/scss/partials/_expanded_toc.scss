@@ -14,15 +14,8 @@ ul.table-of-contents {
         color: $secondary_text_color;
         margin: $spacer-3 0;
 
-        h3 {
-            margin-bottom: 0;
-            display: initial;
-        }
-
-        p {
-            margin-top: 0;
-            font-size: $font-size-sm;
-            color: $primary_text_color;
+        .subpart-name {
+            font-weight: normal;
         }
     }
 
@@ -46,11 +39,12 @@ ul.table-of-contents {
 
     .menu-section {
         text-decoration: none;
-        font-size: $font-size-sm;
+        font-size: $font-size-md;
     }
 
     .toc-section-number {
         font-weight: bold;
+        min-width: 70px;
     }
 
     .toc-section-name {

@@ -4,7 +4,7 @@
             :title="rule.title"
             :type="rule.type"
             :citation="rule.citation"
-            :effective_on="rule.effective_on"
+            :publication_date="rule.publication_date"
             :document_number="rule.document_number"
             :html_url="rule.html_url">
         </related-rule>

@@ -26,30 +26,26 @@
                 <div class="hero-image">
                     <img src="{% static 'images/hero-graphic.svg' %}" alt="Flat illustration of two doctors and a man in a wheelchair holding his smartphone. In the background, there is a tall plant and a heart with a monitor line."/>
                 </div>
-
             </div>
         </div>
 
         <div class="site-features">
             <div class="site-container">
                 <div class="ds-l-row">
-
                     <div class="feature ds-l-col--4">
                         <h3>Sub-Regulatory Guidance</h3>
-                        <p>See related State Medicaid Director Letters, CMCS Informational Bulletins, and more. <a href="/about">Learn more.</a></p>
+                        <p>See related State Medicaid Director Letters, CMCS Informational Bulletins, and more. <a href="{% url 'about' %}#sub-regulatory-guidance">Learn more.</a></p>
                     </div>
 
                     <div class="feature ds-l-col--4">
                         <h3>Regulation History</h3>
-                        <p>View current and past versions and compare them to find changes over time. <a href="/about">Learn more.</a></p>
+                        <p>View current and past versions and compare them to find changes over time. <a href="{% url 'about' %}#regulation-history">Learn more.</a></p>
                     </div>
 
                     <div class="feature ds-l-col--4">
                         <h3>Cross-References</h3>
-                        <p>Use direct links to jump to cited statutes, regulations, and rules. <a href="/about">Learn more.</a></p>
+                        <p>Use direct links to jump to cited statutes, regulations, and rules. <a href="{% url 'about' %}#cross-references">Learn more.</a></p>
                     </div>
-
-                </div>
             </div>
         </div>
 
@@ -63,7 +59,7 @@
                         <h1> {{title.label}} </h1>
 
                         {% for child in title.children %}
-                            {% render_nested "regulations/homepage/"|add:child.type|add:".html" "regulations/homepage/child.html" context=child %}
+                            {% render_nested "regulations/homepage/"|add:child.type|add:".html" "regulations/homepage/child.html" context=child title=title.identifier.0 %}
                         {% endfor %}
 
                     {% endfor %}
@@ -82,4 +78,8 @@
         </div>
     </main>
 
+{% endblock %}
+
+{% block post_footer %}
+    <script src="{% static '/js/main.build.js' %}"></script>
 {% endblock %}
