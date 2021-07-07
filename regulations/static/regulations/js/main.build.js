@@ -728,7 +728,10 @@
     return _c("div", { class: { visible: _vm.visible } }, [
       _c(
         "button",
-        { on: { click: _vm.click } },
+        {
+          attrs: { "aria-label": "expand or collapse a subpart" },
+          on: { click: _vm.click }
+        },
         [
           _vm.visible ? _vm._t("expanded", [_vm._v("Hide")]) : _vm._e(),
           _vm._v(" "),

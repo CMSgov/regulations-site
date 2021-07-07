@@ -1,6 +1,6 @@
 <template>
     <div v-bind:class="{ visible: visible }">
-        <button v-on:click="click">
+        <button v-on:click="click" aria-label="expand or collapse a subpart">
             <slot name="expanded" v-if="visible">Hide</slot>
             <slot name="collapsed" v-if="!visible">Show</slot>
         </button>
