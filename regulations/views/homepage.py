@@ -5,6 +5,7 @@ from django.views.generic.base import TemplateView
 from requests import HTTPError
 
 from regulations.generator import api_reader
+from .utils import get_structure
 
 
 logger = logging.getLogger(__name__)
@@ -25,10 +26,7 @@ class HomepageView(TemplateView):
             parts = client.effective_parts(today)
             if not parts:
                 return context
-
-            full_structure = [parts[0]['structure']]
-            for part in parts[1:]:
-                merge_children(full_structure, part['structure'])
+            full_structure = get_structure(parts)
 
             c = {
                 'structure': full_structure,
@@ -40,14 +38,3 @@ class HomepageView(TemplateView):
             logger.warning("NOTE: eRegs homepage loaded without any stored regulations.")
 
         return {**context, **c}
-
-
-def different(one, two):
-    return one['identifier'] != two['identifier']
-
-
-def merge_children(one, two):
-    if different(one[len(one)-1], two):
-        one.append(two)
-        return
-    merge_children(one[len(one)-1]['children'], two['children'][0])

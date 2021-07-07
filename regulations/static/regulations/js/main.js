@@ -70,6 +70,27 @@ function viewButtonClose() {
     });
 }
 
+function makeSticky(el) {
+
+    // Sticky header
+
+    if (!el) {
+        return;
+    }
+
+    var sticky = el.offsetTop;
+
+    function stickyHeader() {
+        if (window.pageYOffset > sticky) {
+          el.classList.add("sticky");
+        } else {
+          el.classList.remove("sticky");
+        }
+    } 
+
+    window.addEventListener("scroll", stickyHeader);
+}
+
 function main() {
     new Vue({
         components: {
@@ -97,21 +118,10 @@ function main() {
             event.preventDefault();
         });
     }
+
+    let header = document.getElementById("header");
+    makeSticky(header);
 }
 
 main();
 
-// Sticky header
-
-window.onscroll = function() {stickyHeader()};
-
-var header = document.getElementById("header");
-var sticky = header.offsetTop;
-
-function stickyHeader() {
-    if (window.pageYOffset > sticky) {
-      header.classList.add("sticky");
-    } else {
-      header.classList.remove("sticky");
-    }
-} 

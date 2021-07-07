@@ -20,7 +20,7 @@
 
     <collapsible state="{{ collapse_state }}" name="{{ item_subpart }}" transition="0.5s" direction="vertical">
         {% if item.children %}
-            {% include "regulations/partials/toc_sub_toc.html" with type="subpart" %}
+            {% include "regulations/partials/sidebar_left/subpart/sub_toc.html" with type="subpart" %}
         {% endif %}
     </collapsible>
 </li>

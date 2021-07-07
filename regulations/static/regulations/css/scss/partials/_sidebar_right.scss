@@ -8,6 +8,9 @@
 aside.right-sidebar {
     padding-top: $spacer-5;
     max-width: 400px;
+    position: sticky;
+    height: 100vh;
+    overflow-y: scroll;
 
     h2 {
         font-size: $font-size-xl;

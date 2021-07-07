@@ -14018,6 +14018,22 @@ html {
 .search-page aside.left-sidebar[data-state=expanded] + main {
   width: calc(100% - 800px);
 }
+.search-page aside.left-sidebar p {
+  margin: 0;
+}
+.search-page aside.left-sidebar .search-sidebar-element {
+  padding: 8px 0;
+  margin: 0 16px;
+}
+.search-page aside.left-sidebar h2 {
+  margin: 8px 8px 8px 16px;
+}
+.search-page aside.left-sidebar h3 {
+  margin: 8px 8px 8px 16px;
+}
+.search-page aside.left-sidebar h4 {
+  margin: 8px 8px 8px 16px;
+}
 .search-page .container {
   margin: 0;
 }
@@ -14477,7 +14493,7 @@ aside.left-sidebar {
   overflow-y: scroll;
   position: sticky;
   top: 0;
-  transition: all 0.25s ease-out;
+  transition: width 0.25s ease-out;
 }
 aside.left-sidebar[data-state=collapsed] {
   width: 1em;
@@ -14734,6 +14750,9 @@ html {
 aside.right-sidebar {
   padding-top: 40px;
   max-width: 400px;
+  position: sticky;
+  height: 100vh;
+  overflow-y: scroll;
 }
 aside.right-sidebar h2 {
   font-size: 21px;

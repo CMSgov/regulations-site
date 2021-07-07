@@ -15,6 +15,29 @@
 		width: calc(100% - 800px);
 	}
 
+	aside.left-sidebar {
+		p {
+			margin: 0;
+		}
+
+		.search-sidebar-element {
+			padding: $spacer-1 0;
+			margin: 0 $spacer-2;
+		}
+
+		h2 {
+			margin: $spacer-1 $spacer-1 $spacer-1 $spacer-2;
+		}
+
+		h3 {
+			margin: $spacer-1 $spacer-1 $spacer-1 $spacer-2;
+		}
+		
+		h4 {
+			margin: $spacer-1 $spacer-1 $spacer-1 $spacer-2;
+		}
+	}
+
 	.container {
 		margin: 0;
 	}

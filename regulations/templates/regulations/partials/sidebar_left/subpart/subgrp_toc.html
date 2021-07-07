@@ -1,7 +1,7 @@
 <ol class="{{type}}">
     {% for sub_toc_item in item.children %}
         {% if sub_toc_item.type == "section" %}
-            {% include "regulations/partials/toc_section.html" with item=sub_toc_item %}
+            {% include "regulations/partials/sidebar_left/subpart/section.html" with item=sub_toc_item %}
         {% else %}
             <li>
                 <a href="{{sub_toc_item.url}}">
