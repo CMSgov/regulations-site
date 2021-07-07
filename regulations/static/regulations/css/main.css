@@ -13611,6 +13611,10 @@ main {
   display: table-cell;
 }
 
+.homepage {
+  display: initial;
+}
+
 aside.left-sidebar {
   background: #17415F;
   padding: 0;
