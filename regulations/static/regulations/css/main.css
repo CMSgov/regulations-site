@@ -13802,7 +13802,7 @@ html {
   text-shadow: 3px 1px 5px #026666;
   font-size: 14px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .site-homepage .hero-banner .hero-text {
     width: 50%;
     height: 276px;

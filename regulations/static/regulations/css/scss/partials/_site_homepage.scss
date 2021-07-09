@@ -53,7 +53,7 @@
             text-shadow: 3px 1px 5px $secondary_color;
             font-size: $font-size-sm;
 
-            @include screen-lg {
+            @include screen-md {
                 width: 50%;
                 height: 276px;
                 padding-top: 0;
