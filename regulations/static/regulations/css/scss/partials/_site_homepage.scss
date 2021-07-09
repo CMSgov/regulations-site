@@ -113,7 +113,7 @@
             }
 
             @include screen-xxl {
-                top: -85px;
+                top: -105px;
                 width: 50%;
                 right: 0;
             }
@@ -145,6 +145,10 @@
 
     .site-features {
         background: $teritary_background_color;
+
+        .site-container {
+            padding: $spacer-1 $spacer-3;
+        }
     }
 
     .feature {

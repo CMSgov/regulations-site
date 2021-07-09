@@ -13861,7 +13861,7 @@ html {
 }
 @media (min-width: 1440px) {
   .site-homepage .hero-banner .hero-image {
-    top: -85px;
+    top: -105px;
     width: 50%;
     right: 0;
   }
@@ -13886,6 +13886,9 @@ html {
 }
 .site-homepage .site-features {
   background: #EEFAFE;
+}
+.site-homepage .site-features .site-container {
+  padding: 8px 24px;
 }
 .site-homepage .feature {
   padding: 16px;
