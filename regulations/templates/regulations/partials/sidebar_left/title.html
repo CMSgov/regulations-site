@@ -22,7 +22,7 @@
 
                     {% for part in subchapter.children %}
                         <li>
-                            <a class="subpart-info" href="{% url 'reader_view' title.identifier.0 part.identifier.0 %}">
+                          <a class="subpart-info" href="{% url 'reader_view' title.identifier.0 part.identifier.0 %}" aria-label="Go to {{part.label_level}}">
                                 <div class="toc-titles">
                                     <h3>
                                         <p class="subpart-letter">{{ part.label_level }}</p>
