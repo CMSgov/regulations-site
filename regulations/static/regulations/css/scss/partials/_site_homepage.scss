@@ -26,14 +26,39 @@
             height: 42px;           // Height of the search box
             position: relative;
             z-index: 2;
+
+            .search-header {
+                float: none;
+
+                @include screen-md {
+                    float: right;
+                }
+
+                .search-box {
+                    width: 100%;
+
+                    @include screen-md {
+                        width: 260px
+                    }
+                }
+            }
         }
 
         .hero-text {
-            width: 50%;
-            height: 276px;
+            width: 100%;
+            height: auto;
+            padding-top: $spacer-2;
             position: relative;
             z-index: 2;
             text-shadow: 3px 1px 5px $secondary_color;
+            font-size: $font-size-sm;
+
+            @include screen-lg {
+                width: 50%;
+                height: 276px;
+                padding-top: 0;
+                font-size: $font-size-md;
+            }
 
             @include custom-min(1350) {
                 height: 260px;
@@ -53,11 +78,15 @@
         }
 
         .hero-image {
-            position: absolute;
-            right: 0;
-            width: 50%;
-            top: -85px;
-            text-align: right;
+            width: 100%;
+
+            @include screen-md {
+                width: 50%;
+                top: -85px;
+                text-align: right;
+                position: absolute;
+                right: 0;
+            }
 
             // All of these media queries are needed to get the overlapping effect without overlapping the text smoothly at different screen sizes (I know, I designed a mildly ridiculous-to-code homepage because it looked awesome)
 
@@ -126,9 +155,13 @@
         h1 {
             margin-bottom: 0;
             font-family: $primary_site_font;
-            font-size: $font-size-4xl;
+            font-size: $font_size_xxl;
 
-            @include custom-max(1490) {     // Deliberately non-conforming
+            @include screen-lg {
+                font-size: $font-size-4xl;
+            }
+
+            @include custom-min(1490) {     // Deliberately non-conforming
                 font-size: 2.7em;        
                 line-height: 1.1em;
                 margin-bottom: $spacer-1;

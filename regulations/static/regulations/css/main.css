@@ -13706,6 +13706,7 @@ h1 {
   font-family: "Merriweather", Georgia, serif;
   margin-bottom: 40px;
   margin-top: 0;
+  line-height: 1.2;
 }
 @media (min-width: 1024px) {
   h1 {
@@ -13776,12 +13777,38 @@ html {
   position: relative;
   z-index: 2;
 }
+.site-homepage .hero-banner .hero-search .search-header {
+  float: none;
+}
+@media (min-width: 768px) {
+  .site-homepage .hero-banner .hero-search .search-header {
+    float: right;
+  }
+}
+.site-homepage .hero-banner .hero-search .search-header .search-box {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .site-homepage .hero-banner .hero-search .search-header .search-box {
+    width: 260px;
+  }
+}
 .site-homepage .hero-banner .hero-text {
-  width: 50%;
-  height: 276px;
+  width: 100%;
+  height: auto;
+  padding-top: 16px;
   position: relative;
   z-index: 2;
   text-shadow: 3px 1px 5px #026666;
+  font-size: 14px;
+}
+@media (min-width: 1024px) {
+  .site-homepage .hero-banner .hero-text {
+    width: 50%;
+    height: 276px;
+    padding-top: 0;
+    font-size: 16px;
+  }
 }
 @media (min-width: 1350px) {
   .site-homepage .hero-banner .hero-text {
@@ -13798,11 +13825,16 @@ html {
   color: #A3E8FF;
 }
 .site-homepage .hero-banner .hero-image {
-  position: absolute;
-  right: 0;
-  width: 50%;
-  top: -85px;
-  text-align: right;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .site-homepage .hero-banner .hero-image {
+    width: 50%;
+    top: -85px;
+    text-align: right;
+    position: absolute;
+    right: 0;
+  }
 }
 @media (min-width: 1024px) {
   .site-homepage .hero-banner .hero-image {
@@ -13877,9 +13909,14 @@ html {
 .site-homepage .hero-banner h1 {
   margin-bottom: 0;
   font-family: "Open Sans", Helvetica, sans-serif;
-  font-size: 48px;
+  font-size: 30px;
 }
-@media (max-width: 1490px) {
+@media (min-width: 1024px) {
+  .site-homepage .hero-banner h1 {
+    font-size: 48px;
+  }
+}
+@media (min-width: 1490px) {
   .site-homepage .hero-banner h1 {
     font-size: 2.7em;
     line-height: 1.1em;
@@ -14327,7 +14364,7 @@ html {
   background: #EEFAFE;
   text-align: center;
   font-size: 14px;
-  padding: 8px;
+  padding: 8px 16px;
   position: relative;
   z-index: 100;
 }
