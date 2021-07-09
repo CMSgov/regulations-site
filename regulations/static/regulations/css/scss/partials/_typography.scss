@@ -20,10 +20,14 @@ body {
 }
 
 h1 {
-    font-size: $font-size-3xl;
+    font-size: 30px;  // Aligns with the CMS Design System, but their variable is depreciated
     font-family: $secondary_site_font;
     margin-bottom: $spacer-5;
     margin-top: 0;
+
+    @include screen-lg {
+        font-size: $font-size-3xl;
+    }
 }
 
 h2 {
