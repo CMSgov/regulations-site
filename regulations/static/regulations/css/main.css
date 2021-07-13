@@ -13833,14 +13833,13 @@ html {
     top: 35px;
     text-align: right;
     position: absolute;
-    right: -20px;
+    right: 0;
   }
 }
 @media (min-width: 770px) {
   .site-homepage .hero-banner .hero-image {
     width: 58%;
     top: 35px;
-    right: -10px;
   }
 }
 @media (min-width: 800px) {
@@ -13851,13 +13850,11 @@ html {
 @media (min-width: 830px) {
   .site-homepage .hero-banner .hero-image {
     top: 0;
-    right: -10px;
   }
 }
 @media (min-width: 870px) {
   .site-homepage .hero-banner .hero-image {
     top: -5px;
-    right: -5px;
     width: 57%;
   }
 }
@@ -13891,53 +13888,44 @@ html {
   .site-homepage .hero-banner .hero-image {
     width: 56%;
     top: -60px;
-    right: -45px;
   }
 }
 @media (min-width: 1050px) {
   .site-homepage .hero-banner .hero-image {
     width: 54%;
-    right: -34px;
   }
 }
-@media (min-width: 1096px) {
+@media (min-width: 1090px) {
   .site-homepage .hero-banner .hero-image {
     width: 54%;
-    right: -40px;
     top: -70px;
   }
 }
-@media (min-width: 1120px) {
+@media (min-width: 1114px) {
   .site-homepage .hero-banner .hero-image {
     width: 52%;
-    right: -30px;
     top: -75px;
   }
 }
-@media (min-width: 1170px) {
+@media (min-width: 1165px) {
   .site-homepage .hero-banner .hero-image {
     width: 50%;
     top: -60px;
   }
 }
-@media (min-width: 1190px) {
+@media (min-width: 1184px) {
   .site-homepage .hero-banner .hero-image {
-    width: 50%;
     top: -70px;
   }
 }
-@media (min-width: 1235px) {
+@media (min-width: 1200px) {
   .site-homepage .hero-banner .hero-image {
-    width: 50%;
-    top: -86px;
-    right: -30px;
+    top: -85px;
   }
 }
 @media (min-width: 1235px) {
   .site-homepage .hero-banner .hero-image {
-    width: 50%;
     top: -86px;
-    right: -30px;
   }
 }
 @media (min-width: 1250px) {
@@ -13949,21 +13937,18 @@ html {
   .site-homepage .hero-banner .hero-image {
     width: 49%;
     top: -98px;
-    right: 0;
   }
 }
 @media (min-width: 1300px) {
   .site-homepage .hero-banner .hero-image {
     top: -98px;
     width: 49%;
-    right: 0;
   }
 }
 @media (min-width: 1440px) {
   .site-homepage .hero-banner .hero-image {
     top: -105px;
     width: 50%;
-    right: 0;
   }
 }
 .site-homepage .hero-banner .hero-image img {

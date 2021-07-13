@@ -85,7 +85,7 @@
                 top: 35px;
                 text-align: right;
                 position: absolute;
-                right: -20px;
+                right: 0;
             }
 
             // All of these media queries are needed to get the overlapping effect without overlapping the text smoothly at different screen sizes (I know, I designed a mildly ridiculous-to-code homepage because it looked awesome)
@@ -93,7 +93,6 @@
             @include custom-min(770) {
                 width: 58%;
                 top: 35px;
-                right: -10px;
             }
 
             @include custom-min(800) {
@@ -102,12 +101,10 @@
 
             @include custom-min(830) {
                 top: 0;
-                right: -10px;
             }
 
             @include custom-min(870) {
                 top: -5px;
-                right: -5px;
                 width: 57%;
             }
 
@@ -135,46 +132,37 @@
             @include screen-lg {
                 width: 56%;
                 top: -60px;
-                right: -45px;
             }
 
             @include custom-min(1050) {
                 width: 54%;
-                right: -34px;
             }
 
-            @include custom-min(1096) {
+            @include custom-min(1090) {
                 width: 54%;
-                right: -40px;
                 top: -70px;
             }
 
-            @include custom-min(1120) {
+            @include custom-min(1114) {
                 width: 52%;
-                right: -30px;
                 top: -75px;
             }
 
-            @include custom-min(1170) {
+            @include custom-min(1165) {
                 width: 50%;
                 top: -60px;
             }
 
-            @include custom-min(1190) {
-                width: 50%;
+            @include custom-min(1184) {
                 top: -70px;
             }
 
-            @include custom-min(1235) {
-                width: 50%;
-                top: -86px;
-                right: -30px;
+            @include custom-min(1200) {
+                top: -85px;
             }
 
             @include custom-min(1235) {
-                width: 50%;
                 top: -86px;
-                right: -30px;
             }
 
             @include custom-min(1250) {
@@ -184,19 +172,16 @@
             @include screen-xl {
                 width: 49%;
                 top: -98px;
-                right: 0;
             }
 
             @include custom-min(1300) {
                 top: -98px;
                 width: 49%;
-                right: 0;
             }
 
             @include screen-xxl {
                 top: -105px;
                 width: 50%;
-                right: 0;
             }
 
             img {
