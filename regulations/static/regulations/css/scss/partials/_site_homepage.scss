@@ -241,7 +241,7 @@
             padding: $spacer-1 $spacer-3;
 
             @include screen-md {
-                padding: $spacer-1 $spacer-4;
+                padding: $spacer-1 38px;
             }
         }
     }
@@ -308,6 +308,7 @@
     .ds-l-row {
         @include custom-max(1024) {
             display: block;
+            margin: 0;
         }
     }
 }
@@ -318,6 +319,7 @@
 
     @include custom-max(1024) {
         max-width: 100%;
+        padding: 0;
     }
 
     h1 {
@@ -329,9 +331,14 @@
     }
 
     h2 {
+        font-size: $font-size-lg;
 
-        @include custom-max(1024) {
+        @include screen-lg {
             font-size: $font-size-xl;
+        }
+
+        @include screen-xl {
+            font-size: $font-size-2xl;
         }
     }
 

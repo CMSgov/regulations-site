@@ -14002,7 +14002,7 @@ html {
 }
 @media (min-width: 768px) {
   .site-homepage .site-features .site-container {
-    padding: 8px 32px;
+    padding: 8px 38px;
   }
 }
 .site-homepage .feature {
@@ -14057,6 +14057,7 @@ html {
 @media (max-width: 1024px) {
   .homepage-main-content .ds-l-row {
     display: block;
+    margin: 0;
   }
 }
 
@@ -14066,6 +14067,7 @@ html {
 @media (max-width: 1024px) {
   .homepage-toc {
     max-width: 100%;
+    padding: 0;
   }
 }
 .homepage-toc h1 {
@@ -14076,9 +14078,17 @@ html {
     font-size: 24px;
   }
 }
-@media (max-width: 1024px) {
+.homepage-toc h2 {
+  font-size: 18px;
+}
+@media (min-width: 1024px) {
   .homepage-toc h2 {
     font-size: 21px;
+  }
+}
+@media (min-width: 1280px) {
+  .homepage-toc h2 {
+    font-size: 24px;
   }
 }
 .homepage-toc h4 {
