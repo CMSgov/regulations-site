@@ -30,7 +30,7 @@ body {
 
     @include screen-xl {
         max-width: $width-xl;
-        padding: $spacer-3;
+        padding: $spacer-4;
     }
 
     @include screen-xxl {

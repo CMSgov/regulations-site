@@ -179,17 +179,47 @@
     .site-features {
         background: $teritary_background_color;
 
+        .ds-l-row {
+            @include custom-max(768) {
+                display: block;
+            }
+        }
+
         .site-container {
             padding: $spacer-1 $spacer-3;
+
+            @include screen-md {
+                padding: $spacer-1 $spacer-4;
+            }
         }
     }
 
     .feature {
-        padding: $spacer-2;
+        padding: 0 $spacer-4;
+
+        @include screen-md {
+            padding: 0 $spacer-2
+        }
+
+        @include custom-max(768) {
+            max-width: 100%;
+        }
+
+        @include screen-xl {
+            padding: $spacer-2;
+        }
 
         h3 {
             font-family: $secondary_site_font;
             font-weight: normal;
+        }
+
+        p {
+            font-size: $font-size-sm;
+
+            @include screen-xl {
+                font-size: $font-size-md;
+            }
         }
     }
 
@@ -220,11 +250,37 @@
 
 // Table of Contents
 
+
+.homepage-main-content {
+
+    .ds-l-row {
+        @include custom-max(1024) {
+            display: block;
+        }
+    }
+}
+
+
 .homepage-toc {
     margin-top: $spacer-4;
 
+    @include custom-max(1024) {
+        max-width: 100%;
+    }
+
     h1 {
         margin-bottom: 0;
+
+        @include custom-max(1024) {
+            font-size: $font-size-2xl;
+        }
+    }
+
+    h2 {
+
+        @include custom-max(1024) {
+            font-size: $font-size-xl;
+        }
     }
 
     h4 {
@@ -247,9 +303,13 @@
 
     .part-names {
         display: flex;
-        margin: $spacer-3 0;
+        margin: $spacer-2 0;
         padding: 0;
-        font-size: $font-size-lg;
+        font-size: $font-size-md;
+
+        @include screen-lg {
+            font-size: $font-size-lg;
+        }
 
         a {
             text-decoration: none;
@@ -270,7 +330,15 @@
 // Aside - Latest Updates
 
 .homepage-updates {
-    padding-top: $spacer-6;
+    padding: 0 0 $spacer-2 0;
+
+    @include screen-lg {
+        padding-top: $spacer-4;
+    }
+
+    @include custom-max(1024) {
+        max-width: 100%;
+    }
 
     .last-update-external {
         font-style: italic;
@@ -281,7 +349,11 @@
 
     .latest-changes {
         background: $secondary_background_color;
-        padding: $spacer-4;
+        padding: $spacer-3 $spacer-4;
+
+        @include screen-lg {
+            padding: $spacer-4;
+        }
 
         @include screen-xl {
             padding: $spacer-4 $spacer-6;

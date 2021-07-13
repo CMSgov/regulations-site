@@ -13544,7 +13544,7 @@ body {
 @media (min-width: 1280px) {
   .site-container {
     max-width: 1280px;
-    padding: 24px;
+    padding: 32px;
   }
 }
 @media (min-width: 1440px) {
@@ -13929,15 +13929,48 @@ html {
 .site-homepage .site-features {
   background: #EEFAFE;
 }
+@media (max-width: 768px) {
+  .site-homepage .site-features .ds-l-row {
+    display: block;
+  }
+}
 .site-homepage .site-features .site-container {
   padding: 8px 24px;
 }
+@media (min-width: 768px) {
+  .site-homepage .site-features .site-container {
+    padding: 8px 32px;
+  }
+}
 .site-homepage .feature {
-  padding: 16px;
+  padding: 0 32px;
+}
+@media (min-width: 768px) {
+  .site-homepage .feature {
+    padding: 0 16px;
+  }
+}
+@media (max-width: 768px) {
+  .site-homepage .feature {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1280px) {
+  .site-homepage .feature {
+    padding: 16px;
+  }
 }
 .site-homepage .feature h3 {
   font-family: "Merriweather", Georgia, serif;
   font-weight: normal;
+}
+.site-homepage .feature p {
+  font-size: 14px;
+}
+@media (min-width: 1280px) {
+  .site-homepage .feature p {
+    font-size: 16px;
+  }
 }
 .site-homepage footer .flexbox {
   margin: 24px auto;
@@ -13958,11 +13991,32 @@ html {
   }
 }
 
+@media (max-width: 1024px) {
+  .homepage-main-content .ds-l-row {
+    display: block;
+  }
+}
+
 .homepage-toc {
   margin-top: 32px;
 }
+@media (max-width: 1024px) {
+  .homepage-toc {
+    max-width: 100%;
+  }
+}
 .homepage-toc h1 {
   margin-bottom: 0;
+}
+@media (max-width: 1024px) {
+  .homepage-toc h1 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-toc h2 {
+    font-size: 21px;
+  }
 }
 .homepage-toc h4 {
   font-family: "Merriweather", Georgia, serif;
@@ -13980,9 +14034,14 @@ html {
 }
 .homepage-toc .part-names {
   display: flex;
-  margin: 24px 0;
+  margin: 16px 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 16px;
+}
+@media (min-width: 1024px) {
+  .homepage-toc .part-names {
+    font-size: 18px;
+  }
 }
 .homepage-toc .part-names a {
   text-decoration: none;
@@ -13996,7 +14055,17 @@ html {
 }
 
 .homepage-updates {
-  padding-top: 48px;
+  padding: 0 0 16px 0;
+}
+@media (min-width: 1024px) {
+  .homepage-updates {
+    padding-top: 32px;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-updates {
+    max-width: 100%;
+  }
 }
 .homepage-updates .last-update-external {
   font-style: italic;
@@ -14005,7 +14074,12 @@ html {
 }
 .homepage-updates .latest-changes {
   background: #F3F3F3;
-  padding: 32px;
+  padding: 24px 32px;
+}
+@media (min-width: 1024px) {
+  .homepage-updates .latest-changes {
+    padding: 32px;
+  }
 }
 @media (min-width: 1280px) {
   .homepage-updates .latest-changes {
